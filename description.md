@@ -239,4 +239,4 @@ We can obtain de client's IP system information, using "request.getHeader("User-
 This is used in "welcome.jsp"
 
 ###Static content
-For convention in using Spring Boot, static content (images for example) is served in /src/main/resources/static classpath. In this web app, we use an imaged served in /src/main/resources/static/images/Head.png. We can call this image just with the /images/Head.png path, thanks to the facilities that Spring Boot provides us.
+For convention in using Spring Boot, static content (images for example) is served in /src/main/resources/static classpath. In this web app, we use an image served in /src/main/resources/static/images/Head.png. We can call this image just with the /images/Head.png path, thanks to the facilities that Spring Boot provides us.
