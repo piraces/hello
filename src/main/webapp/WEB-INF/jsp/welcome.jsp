@@ -19,22 +19,36 @@ Provides to the main JSP page of the project, a simple way to make the client-si
 	divided on two lines and one message per line, with glyphicons added
 	clearing the source format.
 	Check Glyphicon section on description.md for more information-->
-
-	<span class="glyphicon glyphicon-time" ><kbd> ${time}</kbd></span><br>
-	<span class="glyphicon glyphicon-user" ><kbd> ${message}</kbd></span><br>
-	<!--Shows the IP addres of the client-->
-	<span class="glyphicon glyphicon-info-sign" ><kbd> <%out.println("IP:" + request.getRemoteAddr()); %></kbd></span><br>
-	<!--Shows the Info System of the client-->
-	<span class="glyphicon glyphicon-arrow-right" ><kbd> <%out.println("System:" + request.getHeader("User-Agent"));%></kbd></span><br<br><br>
-	
+	<div>
+		<span class="glyphicon glyphicon-time" ><kbd> ${time}</kbd></span><br>
+		<span class="glyphicon glyphicon-user" ><kbd> ${message}</kbd></span><br>
+		<!--Shows the IP addres of the client-->
+		<span class="glyphicon glyphicon-info-sign" ><kbd> <%out.println("IP:" + request.getRemoteAddr()); %></kbd></span><br>
+		<!--Shows the Info System of the client-->
+		<span class="glyphicon glyphicon-arrow-right" ><kbd> <%out.println("System:" + request.getHeader("User-Agent"));%></kbd></span><br<br><br>
+		
+	</div>
 	<h3>Complete with your dates:</h3>
 	<!-- Formulary which a user can write and send to the server. All the params are required-->
 	<form action="/" method="POST">
-	Name: <input type="text" name="name" required><br />
-	Age: <input type="text" name="age" required><br />
-	Curse: <input type="text" name="curse" required><br />
-	Speciality: <input type="text" name="speciality" required><br />
-	<input type="submit" value="Send" />
+<div class="input-group">
+<span class="input-group-addon" >Name</span>
+  <input type="text" class="form-control" placeholder="What's your name?" name="name" required></div></div>
+<br/>
+
+<div class="input-group">
+<span class="input-group-addon" >Age</span>
+  <input type="text" class="form-control" placeholder="What's age?" name="age" required></div>
+<br/>
+<div class="input-group">
+<span class="input-group-addon" >Curse</span>
+  <input type="text" class="form-control" placeholder="What curse are you in?" name="curse" required></div>
+<br/>
+<div class="input-group">
+<span class="input-group-addon" >Speciality</span>
+  <input type="text" class="form-control" placeholder="What speciality are you in?" name="speciality" required></div>
+<br/>
+	<input class="btn btn-default" type="submit" value="Send" />
 </form>
 
 </html>

@@ -6,6 +6,8 @@
 /.settings/
 /.classpath
 /.project
+/dist/
+/gradle/
 
 #VIM buffer files
 .*.swp
