@@ -5,9 +5,12 @@ import java.util.Date;
 import java.util.Map;
 
 /* Imports the SpringFramework's libraries */
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /*
@@ -17,6 +20,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HelloController {
 	
+	private int countReq = 0;	//Request counter
+	private int secondsRunning = 0;	//Seconds running the app
+	//Declares logger on this class
+	private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
 	/*
     * This annotation is used to set a default value from properties file
 	*/
@@ -53,6 +60,8 @@ public class HelloController {
 	* As "welcome" is returned, "welcome.jsp" file will render the page.
 	*/
 	public String welcome(Map<String, Object> model) {
+		// Each request to the root path is counted
+		this.countReq += 1;
 		/* It is made the first entry in the Map. Displays the current date and time, 
 			including the day of the week, the time zone and the Daylight Saving Time
 			or the Winter Time */
@@ -73,6 +82,37 @@ public class HelloController {
 	*/
 	@RequestMapping(value="/", method=RequestMethod.POST)
 	public String userdata(){
+		//Each request to userdata page is counted
+		countReq += 1;
 		return "userdata";
 	}		
+
+	/**
+	* The @Scheduled annotation indicates this method can be performed periodically according to
+	* the parameter that is assigned milliseconds.
+	*/
+	@Scheduled(fixedRate = 60000)
+
+	/** 
+	* This method sends info level log messages with information about the apps's execution such 
+	* as the actual date, the time it has been running and the number of requests that have been 
+	* made to the root page. 
+	* It is called every minute.
+	*/
+	public void infoServer(){
+		logger.info(new Date() + ": Server has been running for " + secondsRunning + " seconds");
+		logger.info(countReq + " resquests have been made since the server started");
+	}
+
+	/**
+	* The @Scheduled annotation indicates this method can be performed periodically according to
+	* the parameter that is assigned milliseconds.
+	*/
+	@Scheduled(fixedRate = 1000)
+	/** 
+	* This method increments the seconds the server has been running by one every one second.
+	*/
+	public void updateMilisRunning(){
+		this.secondsRunning += 1;
+	}	
 }

@@ -22,6 +22,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 * and filter mappings.
 */
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * The @SpringBootApplication annotation configures the web application, adding
@@ -37,6 +38,11 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
  * settings.
  */
 @SpringBootApplication
+/*
+* The @EnableScheduling annonation allows the application to run methods defined as @Scheduled
+*  which means executing task periodically.
+*/
+@EnableScheduling
 public class Application extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
@@ -50,6 +56,7 @@ public class Application extends SpringBootServletInitializer {
 		 */
 		SpringApplication.run(Application.class, args);
 	}
+
 
 	@Override
 	/**
