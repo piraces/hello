@@ -14,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.core.io.ByteArrayResource;
+import java.nio.charset.Charset;
 /*
 * Indicates that the class should use Spring's JUnit facilities. SpringJUnit4ClassRunner is a custom extension of JUnit's BlockJUnit4ClassRunner
 * which provides functionality of the Spring TestContext Framework
@@ -136,8 +138,8 @@ public class SystemTests {
 		// Information given by a GET petition to the URL specified by the first
 		// parameter
 		// is stored on an ResponseEntity.
-		ResponseEntity<String> entity = new TestRestTemplate()
-			.getForEntity("http:/" + "/localhost:" + this.port + "/images/Head.png", String.class);
+		ResponseEntity<byte[]> entity = new TestRestTemplate()
+			.getForEntity("http:/" + "/localhost:" + this.port + "/images/Head.png", byte[].class);
 		
 		// Check if the StatusCode is equal to 200 (HttpStatus.OK) which is the standard response
 		// for succesful HTTP requests. If correct, it means that is available to connect and the
@@ -145,7 +147,8 @@ public class SystemTests {
 
 		assertEquals(HttpStatus.OK, entity.getStatusCode());
 
-		assertTrue("Wrong body:\n" + entity.getBody(), entity.getBody().contains("PNG"));
+		//ByteArrayResource resource = new ByteArrayResource(entity.getBody());
+		assertEquals("Wrong title\n", new String(entity.getBody(), Charset.forName("ISO-8859-1")), "Head.png");
 
 		// Checks if the 'Content-type' field of the GET petition is correct. This means,
 		// the returned entity is a PNG file. If the verification is not positive it throws
