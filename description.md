@@ -242,8 +242,6 @@ This is used in "welcome.jsp"
 We can obtain de client's IP system information, using "request.getHeader("User-Agent")".
 This is used in "welcome.jsp"
 
-<<<<<<< HEAD
-
 ###Using Branches
 A branch represent an independent line of devlopment which allows to isolate changes from the main line of
 development. Usually is used when a developer wants to add a new feature or fix a bug. He spawns a new branch to
