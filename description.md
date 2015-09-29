@@ -1,4 +1,4 @@
-﻿#Hello Application
+#Hello Application
 
 ##About
 Hello is a web application that greets their clients and shows the current date and time. It is developed in Java and uses [Spring Framework] (http://projects.spring.io/spring-framework/).
