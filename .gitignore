@@ -1,6 +1,13 @@
+#Rules that are going to be ignored. You can see more about
+#this file in the description.md file
 /bin/
 /build/
 /.gradle/
 /.settings/
 /.classpath
 /.project
+/dist/
+/gradle/
+
+#VIM buffer files
+.*.swp

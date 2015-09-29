@@ -1,0 +1,3 @@
+//This file sets the project name.
+//Needed for the correct creation of production files (For Heroku Deployment)
+rootProject.name = 'hello'

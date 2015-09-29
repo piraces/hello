@@ -1,7 +1,16 @@
-buildscript {
+// This block defines the dependencies of the build script itself.
+buildscript { 
+
+    // The repositories block indicates that the build should resolve its dependencies from the Maven
+    // Central repository. Gradle leans heavily on many conventions and facilities established by the
+    // Maven build tool, including the option of using Maven Central as a source of library dependencies.
+
     repositories {
         mavenCentral()
     }
+
+    // The dependencies block contains all the external dependencies that are need.
+
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE") 
         classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
@@ -14,13 +23,58 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 apply plugin: 'spring-boot' 
 apply plugin: 'io.spring.dependency-management' 
+apply plugin: 'jacoco' //Plugin to calculate code coverage
+apply plugin: 'pmd' //Plugin of a source code analyzer. It finds common programming flaws like unused variables,
+					// empty catch blocks, unnecessary object creation, and so forth. Additionally it includes copy-paste-detector.
+apply plugin: 'jdepend' //Plugin to calculate extensibility, reusability, and maintainability
+
+pmd {
+	//it defines the rules checked by the pmd plugin. More rules can be add.
+      ruleSets = [
+        'java-basic',
+        'java-braces',
+        'java-clone',
+        'java-codesize',
+        'java-comments',
+        'java-controversial',
+        'java-design',
+        'java-empty',
+        'java-finalizers',
+        'java-j2ee',
+        'java-javabeans',
+        'java-junit',
+        'java-logging-jakarta-commons',
+        'java-logging-java',
+        'java-migrating',
+        'java-naming',
+        'java-optimizations',
+        'java-strictexception',
+        'java-strings',
+        'java-sunsecure',
+        'java-typeresolution',
+        'java-unnecessary',
+        'java-unusedcode'           
+        ]
+    toolVersion = '5.1.1'
+    ignoreFailures = true
+}
+
+// The jar block specifies how the JAR file will be named. In this case, it will render hello-1.0.jar.
 
 jar {
     baseName = 'hello'
     version = '1.0'
 }
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+
+sourceCompatibility = 1.8 // Java version compatibility to use when compiling java source
+targetCompatibility = 1.8 // Java version to generate clases for
+
+// The war block specifies how the WAR file will be named. In this case, it will render hello-1.0.jar.
+
+war {
+    baseName = 'hello'
+    version = '1.0'
+}
 
 repositories {
     mavenCentral()
@@ -35,6 +89,8 @@ dependencies {
     compile 'org.webjars:bootstrap:3.3.5'
     compile 'org.webjars:jquery:2.1.4'    
 
+    // 'providedRuntime' dependencies are not added to the WAR archive
+    // because they should already be in the execution environment
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper'
 
@@ -46,14 +102,48 @@ eclipse {
     classpath {
          containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
          containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
-		 file {
+         file {
              whenMerged { c ->
                  c.entries.findAll {entry -> entry.kind=='lib' && entry.moduleVersion.name?.startsWith('tomcat-')  }*.exported = false
-	         }
-	     }
+             }
+         }
     }
 }
 
+// This task will generate a report file under $buildDir/reports/jacoco/test
+// with code coverage stats. It will generate files in xml and html formats.
+// Note that this task will be skipped if no test are run (e.g., if test are UP TO DATE)
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        csv.enabled = false
+        html.enabled = true
+    }
+}
+
+test {
+    // Try to run jacocoTestReport on test end (even if it fails)
+    finalizedBy jacocoTestReport
+}
+
+// The following task provides the Gradle Wrapper to the project. The Gradle Wrapper consists of
+// a batch script for Windows and a shell script for OS X and Linux. These scripts allow to run a
+// Gradle build without requiring that Gradle be installed on your system. gradleVersion is the
+// version the project should use
+
 task wrapper(type: Wrapper) {
     gradleVersion = '2.2.1'
+}
+
+//When installApp task is fired, it will create production files on dist/ folder
+installApp{ 
+        destinationDir = file('dist') 
+} 
+
+//This task is called by Heroku on every github push.
+//It only declares that needs "build" and installApp" task to run
+//InstallApp tasks prepare production files that are going to be executed
+task stage(dependsOn: [build,installApp]) {
+ 
 }
