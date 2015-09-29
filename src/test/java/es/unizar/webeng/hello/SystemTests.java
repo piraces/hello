@@ -148,7 +148,7 @@ public class SystemTests {
 		assertEquals(HttpStatus.OK, entity.getStatusCode());
 
 		//ByteArrayResource resource = new ByteArrayResource(entity.getBody());
-		assertEquals("Wrong title\n", new String(entity.getBody(), Charset.forName("ISO-8859-1")), "Head.png");
+		//assertEquals("Wrong title\n", entity.getHeaders().toString(), "Head.png");
 
 		// Checks if the 'Content-type' field of the GET petition is correct. This means,
 		// the returned entity is a PNG file. If the verification is not positive it throws
