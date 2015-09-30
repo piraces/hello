@@ -1,4 +1,4 @@
-#Hello Application
+﻿#Hello Application
 
 ##About
 Hello is a web application that greets their clients and shows the current date and time. It is developed in Java and uses [Spring Framework] (http://projects.spring.io/spring-framework/).
@@ -310,6 +310,7 @@ in the logback.xml file where we can define which level we want our different lo
 using Logback. In addition, we make use of the SpringBoot's default configuration adding a log file which
 reference is the value of the field logging.file in application.properties. You can find more info about
 logback [here](logback.qos.ch).
+
 
 ## IntelliJ IDEA
 

@@ -1,27 +1,28 @@
 package es.unizar.webeng.hello;
 
 /*
-* Imports the SpringFramework's libraries 
-* SpringApplication contains a group of classes that can be used to bootstrap and
-* launch a Spring application from the main method in Java.
-*/
+ * Imports the SpringFramework's libraries 
+ * SpringApplication contains a group of classes that can be used to bootstrap and
+ * launch a Spring application from the main method in Java.
+ */
 import org.springframework.boot.SpringApplication;
 
-/* SpringBootApplication is used to indicate a 
-* configuration class that can declare several @Bean methods and triggers.
-* It is equivalent to declaring @Configuration @EnableAutoConfiguration
-* and @ComponentScan manually.
-*/
+/* 
+ * SpringBootApplication is used to indicate a 
+ * configuration class that can declare several @Bean methods and triggers.
+ * It is equivalent to declaring @Configuration @EnableAutoConfiguration
+ * and @ComponentScan manually.
+ */
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /* SpringApplicationBuilder is a simpler builder for SpringApplication
-* and ApplicationContext with an API.
-*/
+ * and ApplicationContext with an API.
+ */
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /* SpringBootServletInitializer binds an application that starts a 
-* Spring Boot with the servlet and filter mappings.
-*/
+ * Spring Boot with the servlet and filter mappings.
+ */
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -44,17 +45,17 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 
 /*
-* The @EnableScheduling annonation allows the application to run
-* methods defined as @Scheduled which means executing task periodically.
-*/
+ * The @EnableScheduling annonation allows the application to run
+ * methods defined as @Scheduled which means executing task periodically.
+ */
 @EnableScheduling
 
 //class Application which initializes the server/application
 public class Application extends SpringBootServletInitializer {
 
 	/**
-	* main method of the Application which initializes the server/application
-	*/
+	 * main method of the Application which initializes the server/application
+	 */
 	public static void main(final String[] args) {
 
 		/*
