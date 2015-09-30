@@ -3,6 +3,5 @@
 <file name="C:\Users\Jorge\hello\src\main\java\es\unizar\webeng\hello\Application.java">
 </file>
 <file name="C:\Users\Jorge\hello\src\main\java\es\unizar\webeng\hello\HelloController.java">
-<error line="14" severity="warning" message="&apos;java.util.Date&apos;should be separated from previous import group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 </file>
 </checkstyle>
