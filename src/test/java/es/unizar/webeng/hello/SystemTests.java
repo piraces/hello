@@ -115,7 +115,7 @@ public class SystemTests {
     * return an exception if one of them is not correct.
     */
 
-	/*
+   /*
     * Check if the StatusCode is equal to 200 (HttpStatus.OK) which is the
     * standard response
     * for successful HTTP requests. If correct, it means that is available
@@ -159,7 +159,8 @@ public class SystemTests {
     * parameter is stored on an ResponseEntity.
     */
     ResponseEntity<byte[]> entity = new TestRestTemplate()
-                 .getForEntity("http:/" + "/localhost:" + this.port + "/images/Head.png", byte[].class);
+                 .getForEntity("http:/" + "/localhost:" + 
+				     this.port + "/images/Head.png", byte[].class);
 
    /*				   
     * Check if the StatusCode is equal to 200 (HttpStatus.OK) which is the standard response
