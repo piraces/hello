@@ -318,9 +318,6 @@ logback [here](logback.qos.ch).
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) is a Java integrated development enviroment(IDE) fro developing computer software, but also offers
 enterprise frameworks(Spring,Grails...), mobile and web development(AndroidmAngularJS,JavaScript...)
 
-###
-
-
 ### Set-up process
 
 1. Set up your GitHub account
@@ -333,8 +330,3 @@ enterprise frameworks(Spring,Grails...), mobile and web development(AndroidmAngu
 6. IntelliJ automatically resolves dependencies and downloads necessary repositories.
 7. Select Run tests in hello (Gradle option) (This will download Gradle dependencies if they aren't already installed)
 8. Use VCS/Update Project and VCS/Commit changes to work with git
-
-
-
-
-
