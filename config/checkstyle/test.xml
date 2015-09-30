@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<checkstyle version="6.0">
-<file name="C:\Users\Jorge\hello\src\test\java\es\unizar\webeng\hello\IntegrationTests.java">
-</file>
-<file name="C:\Users\Jorge\hello\src\test\java\es\unizar\webeng\hello\SystemTests.java">
-</file>
-<file name="C:\Users\Jorge\hello\src\test\java\es\unizar\webeng\hello\UnitTest.java">
-</file>
-</checkstyle>

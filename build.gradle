@@ -91,7 +91,6 @@ jacocoTestReport {
 
 checkstyle {
 	toolVersion = "6.0"
-	reportsDir = rootProject.file('config/checkstyle')
 }
 
 test {
