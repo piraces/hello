@@ -5,18 +5,3 @@ before_install:
   - pip install --user codecov
 after_success:
   - codecov
-env:
-  global:
-   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-   #   via the "travis encrypt" command using the project repo's public key
-   - secure: "r1Z9Zl8I6awA8+RsW9dGFr8h5xPlSPqGqCNQDDeeJHCFrmMCU1dQhotwKl439kScz63hbcLQ1nfUG86fcz3lUVl8uNB5MURMJAQie+QPP31HzOviU5GZiOTWwy+gxP4vDYA8EucqLDZDcsR8NVvHA4oua3nspdXJxIE61YM9gA86kLsv+2ZmrFFIUMY35sB96rZNtxdwaieAhSqr7EZetLSz2OFM3Q1hHKM24MBzBDKPJRdykwo6Mo09V3vtNHzF1uwUGAMyR4a7y6C3N6sb2IT9rBU735/r6rKISycw9PNvqRPRVyGtjAr/MVTA9rNL8JMmx3bfxu9qmRXvWs/OmQeIBxkTyTp3W1bDQAZbSXNJJGRTrebTJDvsff1i0B6Nkwr7BjFHQJc/v4FK+U3ly4+gLydFW6GUb1DgcQTi6NLXdpQUjmd7sHRhdBJ73il7w4CNY7ONUsIctJxaVPKFRLsuAmFE/S0p6tddtQV8kFG0K0zaa/wDF9JXYv5FhzGrgufpTgnBJb55lQC01OzDJjWAE348iCEz+gXifIsEQ++uBZnOUptScIHaXmf5UdLwhWPpdp9QIn6QTF0xwLM+4LR2+PzzNDGwKzLiLO8Gc7BDya6c3tClxj6VTdNPA5YEWcAV3oagatimfcwtUz/x/R0fLw7JbmD/uf3jPdWmNS8="
-
-addons:
-  coverity_scan:
-    project:
-      name: "jorcox/hello"
-      description: "Build submitted via Travis CI"
-    notification_email: 646122@unizar.es
-    build_command_prepend: "./configure"
-    build_command: "make -j2"
-    branch_pattern: master
