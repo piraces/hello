@@ -1,5 +1,6 @@
 package es.unizar.webeng.hello;
 
+import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,12 +12,14 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
-import static org.hamcrest.CoreMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.hamcrest.CoreMatchers.is;
 /*
-* Indicates that the class should use Spring's JUnit facilities. SpringJUnit4ClassRunner is a custom extension of JUnit's BlockJUnit4ClassRunner
+* Indicates that the class should use Spring's JUnit facilities. 
+* SpringJUnit4ClassRunner is a custom extension of JUnit's BlockJUnit4ClassRunner
 * which provides functionality of the Spring TestContext Framework
 */
 
@@ -43,25 +46,31 @@ import static org.hamcrest.CoreMatchers.*;
  */
 public class IntegrationTests {
 
-	// Autowire relationships between collaborating beans, in this case, place
-	// an instance of WebApplicationContext into wac
+	/** 
+	 * Autowire relationships between collaborating beans, in this case, place
+	 * an instance of WebApplicationContext into wac
+	 */
 	@Autowired
-	private WebApplicationContext wac;
+	private transient WebApplicationContext wac;
 
-	// Default value for message to compare at tests
+	/**
+	/* Default value for message to compare at tests
+	 */
 	@Value("${app.message:Hello World}")
-	private String message;
+	private transient String message;
 
-	// Create a new MockMvc object for test which in turn is used perform
-	// requests and define expectations.
-	private MockMvc mockMvc;
+	/** 
+	 * Create a new MockMvc object for test which in turn is used perform
+	 * requests and define expectations.
+	 */
+	private transient MockMvc mockMvc;
 
-	/*
+	/**
 	 * Sentence to be executed before the test, in order to prepare the base
 	 * architecture for the proper functioning of the tests
 	 */
 	@Before
-	public void setup() {
+	public void setUp() {
 		// Build a MockMvc using the given WebApplicationContext
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 	}
@@ -75,17 +84,23 @@ public class IntegrationTests {
 	 * the type returned by the request.
 	 */
 	@Test
-	public void testMessage() throws Exception {
+	public void testMessage() {
 		// Perform a request and return a type that allows chaining further
 		// actions,
 		// such as asserting expectations, on the result.
 		// Perform a petition
-		this.mockMvc.perform(get("/"))
-		// Execute action
+		try {
+			this.mockMvc.perform(get("/"))
+			// Execute action
 				.andDo(print()) 
 				// Verify status is Ok
 				.andExpect(status().isOk()) 
-				// Verify attribute "message" in the model equals to the value in the field message
+				// Verify attribute "message" in the model equals to the 
+				// value in the field message
 				.andExpect(model().attribute("message", is(message))); 
+		}
+		catch (Exception e) {
+			fail();
+		}
 	}
 }

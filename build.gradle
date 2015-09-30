@@ -56,7 +56,7 @@ pmd {
         'java-unusedcode'           
         ]
     toolVersion = '5.1.1'
-    ignoreFailures = true
+    ignoreFailures = false
 }
 
 // The jar block specifies how the JAR file will be named. In this case, it will render hello-1.0.jar.

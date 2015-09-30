@@ -18,24 +18,39 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * role of a controller
  */
 @Controller
+/**
+* class HelloController
+*/
 public class HelloController {
 	
-	private int countReq = 0;	//Request counter
-	private int secondsRunning = 0;	//Seconds running the app
-	//Declares logger on this class
-	private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
+	/**
+	 * Request counter
+	 */
+	private transient int countReq;	
+	
+	/**
+	 * Seconds running the app
+	 */
+	private transient int secondsRunning;	
+	
+	/**
+	 * Declares logger on this class
+	 */
+	private static final Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
+	
 	/*
     * This annotation is used to set a default value from properties file
 	*/
 	@Value("${app.message:Hello World}")
-	private String message;
+	/**
+	 * message to be display on the server 
+	 */
+	private transient String message;
 	/*
-	 * The annotation @RequestMapping is used by Spring to
-	 * know which Controller or which Controller’s method must
-	 * each http customer call be addressed to. In this case,
-	 * we are informing that every http customer call to the
-	 * homepage, which was a request of GET kind,
-         * is going to be managed by the public method
+	 * The annotation @RequestMapping is used by Spring to know which Controller
+     * or which Controller’s method must each http customer call be addressed to.
+	 * In this case, we are informing that every http customer call to the homepage,
+	 * which was a request of GET kind, is going to be managed by the public method
 	 * named “welcome” of our Controller.
 	 */
 	@RequestMapping(value="/", method=RequestMethod.GET)
@@ -43,23 +58,26 @@ public class HelloController {
 	
 	/**
 	* It is called when a HTTP request is made to the root path and the request was 
-        * GET kind , as indicated @RequestMapping(value="/", method=RequestMethod.GET)
-	* 
+    * GET kind , as indicated @RequestMapping(value="/", method=RequestMethod.GET)
+	*/
+	/**
 	* In addition, it makes two new entries in the Map of Strings (as key)
-	* and Objects (as value) passed by parameter. The first one has the key “time”, and
-	* its value is a Date object which manages the current date.
+	* and Objects (as value) passed by parameter. The first one has the 
+	* key “time”, and its value is a Date object which manages the current date.
 	* The second one has the key “message”, and its value is the
 	* reference to the String identified by “message” explained before.
-	*
+	*/
+	/**
 	* @param model This parameter is used for passing data from the controller 
 	* to the view.
 	* Controller adds key-value pairs to the model and the view access them with 
 	* the ${key} syntax. When rendering, ${key} is replaced with its value.
-	*
+	*/
+	/**
 	* @return The name of the view responsible for rendering the HTML page. 
 	* As "welcome" is returned, "welcome.jsp" file will render the page.
 	*/
-	public String welcome(Map<String, Object> model) {
+	public String welcome(final Map<String, Object> model) {
 		// Each request to the root path is counted
 		this.countReq += 1;
 		/* It is made the first entry in the Map. Displays the current date and time, 
@@ -88,29 +106,32 @@ public class HelloController {
 	}		
 
 	/**
-	* The @Scheduled annotation indicates this method can be performed periodically according to
-	* the parameter that is assigned milliseconds.
+	* The @Scheduled annotation indicates this method can be performed
+	* periodically according to the parameter that is assigned milliseconds.
 	*/
 	@Scheduled(fixedRate = 60000)
 
 	/** 
-	* This method sends info level log messages with information about the apps's execution such 
-	* as the actual date, the time it has been running and the number of requests that have been 
-	* made to the root page. 
+	* This method sends info level log messages with information about the
+	* apps's execution such as the actual date, the time it has been running
+	* and the number of requests that have been made to the root page. 
 	* It is called every minute.
 	*/
 	public void infoServer(){
-		logger.info(new Date() + ": Server has been running for " + secondsRunning + " seconds");
-		logger.info(countReq + " resquests have been made since the server started");
+		if (LOGGER.isInfoEnabled()) {
+			LOGGER.info(new Date() + ": Server has been running for " + secondsRunning + " seconds");
+			LOGGER.info(countReq + " resquests have been made since the server started");
+		}
 	}
 
 	/**
-	* The @Scheduled annotation indicates this method can be performed periodically according to
-	* the parameter that is assigned milliseconds.
+	* The @Scheduled annotation indicates this method can be performed 
+	* periodically according to the parameter that is assigned milliseconds.
 	*/
 	@Scheduled(fixedRate = 1000)
 	/** 
-	* This method increments the seconds the server has been running by one every one second.
+	* This method increments the seconds the server has been running
+	* by one every one second.
 	*/
 	public void updateMilisRunning(){
 		this.secondsRunning += 1;
