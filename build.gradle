@@ -90,7 +90,7 @@ jacocoTestReport {
 }
 
 checkstyle {
-	reportsDir = rootProject.file('checkstyle')
+	reportsDir = rootProject.file('config/checkstyle')
 }
 
 test {
