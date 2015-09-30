@@ -315,19 +315,24 @@ logback [here](logback.qos.ch).
 ## IntelliJ IDEA
 
 ### What is it?
-IntelliJ IDEA is a Java integrated development enviroment(IDE) fro developing computer software, but also offers
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) is a Java integrated development enviroment(IDE) fro developing computer software, but also offers
 enterprise frameworks(Spring,Grails...), mobile and web development(AndroidmAngularJS,JavaScript...)
+
+###
 
 
 ### Set-up process
+
 1. Set up your GitHub account
 2. Set up JDK home.
-3. Select check out from version control and clone the repository, adding the  following upstream:
-   UNIZAR-30246-WebEngineering (The directory must be created first).
-4. Import project from Gradle, set up gradle home and JVM, E.g.-> C:\gradle_2.7
+3. Select check out from version control and clone the "hello" repository from your GitHub account.
+    * You can also use git or download from GitHub, but in this case, the project must be created manually.
+4. Import project from Gradle, set up gradle home and JViM
+    * This wouldn't be neccesary by using a gradle wrapper
 5. Select project format type: .idea(directory based).
 6. IntelliJ automatically resolves dependencies and downloads necessary repositories.
 7. Select Run tests in hello (Gradle option) (This will download Gradle dependencies if they aren't already installed)
+8. Use VCS/Update Project and VCS/Commit changes to work with git
 
 
 
