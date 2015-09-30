@@ -326,9 +326,9 @@ enterprise frameworks(Spring,Grails...), mobile and web development(AndroidmAngu
    UNIZAR-30246-WebEngineering (The directory must be created first).
 4. Import project from Gradle, set up gradle home and JVM, E.g.-> C:\gradle_2.7
 5. Select project format type: .idea(directory based).
-6. Automatically resolve dependeces and download necesary repositories.
-7. Unregistered VCS root detected, directory is under Gitm but is not registered in the Settings, assign a root automatically.
-8. Select Run tests in hello (Gradle option) (This will download Gradle dependencies if they aren't already installed)
+6. IntelliJ automatically resolves dependencies and downloads necessary repositories.
+7. Select Run tests in hello (Gradle option) (This will download Gradle dependencies if they aren't already installed)
+
 
 
 
