@@ -89,6 +89,11 @@ jacocoTestReport {
     }
 }
 
+checkstyle {
+    configFile = rootProject.file('checkstyle/checkstyle.xml')
+	reportsDir = rootProject.file('checkstyle')
+}
+
 test {
     // Try to run jacocoTestReport on test end (even if it fails)
     finalizedBy jacocoTestReport
