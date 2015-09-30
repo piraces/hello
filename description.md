@@ -310,3 +310,26 @@ in the logback.xml file where we can define which level we want our different lo
 using Logback. In addition, we make use of the SpringBoot's default configuration adding a log file which
 reference is the value of the field logging.file in application.properties. You can find more info about
 logback [here](logback.qos.ch).
+
+
+## IntelliJ IDEA
+
+### What is it?
+IntelliJ IDEA is a Java integrated development enviroment(IDE) fro developing computer software, but also offers
+enterprise frameworks(Spring,Grails...), mobile and web development(AndroidmAngularJS,JavaScript...)
+
+
+### Set-up process
+1. Set up your GitHub account
+2. Set up JDK home.
+3. Select check out from version control and clone the repository, adding the  following upstream:
+   UNIZAR-30246-WebEngineering (The directory must be created first).
+4. Import project from Gradle, set up gradle home and JVM, E.g.-> C:\gradle_2.7
+5. Select project format type: .idea(directory based).
+6. Automatically resolve dependeces and download necesary repositories.
+7. Unregistered VCS root detected, directory is under Gitm but is not registered in the Settings, assign a root automatically.
+8. Select Run tests in hello (Gradle option) (This will download Gradle dependencies if they aren't already installed)
+
+
+
+
