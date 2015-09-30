@@ -90,7 +90,6 @@ jacocoTestReport {
 }
 
 checkstyle {
-    configFile = rootProject.file('checkstyle/checkstyle.xml')
 	reportsDir = rootProject.file('checkstyle')
 }
 
