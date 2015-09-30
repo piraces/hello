@@ -31,7 +31,7 @@ public class HelloController {
   */
   @Value("${app.message:Hello World}")
   private String message;
- /*
+ /**
   * The annotation @RequestMapping is used by Spring to
   * know which Controller or which Controller’s method must
   * each http customer call be addressed to. In this case,
@@ -54,12 +54,12 @@ public class HelloController {
   * reference to the String identified by “message” explained before.
   *
   * @param model This parameter is used for passing data from the controller 
-  * to the view.
-  * Controller adds key-value pairs to the model and the view access them with 
-  * the ${key} syntax. When rendering, ${key} is replaced with its value.
+  *     to the view.
+  *     Controller adds key-value pairs to the model and the view access them with 
+  *     the ${key} syntax. When rendering, ${key} is replaced with its value.
   *
   * @return The name of the view responsible for rendering the HTML page. 
-  * As "welcome" is returned, "welcome.jsp" file will render the page.
+  *     As "welcome" is returned, "welcome.jsp" file will render the page.
   */
   public String welcome(Map<String, Object> model) {
     // Each request to the root path is counted
@@ -82,7 +82,7 @@ public class HelloController {
   * GET kind , as indicated @RequestMapping(value="/", method=RequestMethod.GET)
   *
   * @return The name of the view responsible for rendering the HTML page. 
-  * As "userdata" is returned, "userdata.jsp" file will render the page.
+  *     As "userdata" is returned, "userdata.jsp" file will render the page.
   */
   @RequestMapping(value = "/", method = RequestMethod.POST)
   public String userdata() {

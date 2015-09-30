@@ -39,7 +39,6 @@ import org.springframework.web.context.WebApplicationContext;
 
  /**
   * IntegrationTests
-  *
   * Program that performs the integration tests of the application 'hello'
   * Integration tests ensure the proper behaviour of the application and are
   * tipically performed after system and unitary testing.
@@ -72,7 +71,6 @@ public class IntegrationTests {
 
  /**
   * Integration Test to verify Messages
-  *
   * Running this method will execute the integration test on 'hello'
   * application, in order to check out the message "message", after
   * requesting a petition, executing an action and verifying the status of

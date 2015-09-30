@@ -41,7 +41,6 @@ import java.util.HashMap;
 
 /**
  * UnitTest
- *
  * Program that performs the unit test of the application 'hello' Unit tests
  * check the proper behavior of a code module to ensure that each module works
  * properly separately.
@@ -59,8 +58,7 @@ public class UnitTest {
 
  /**
   * The function run the unity tests, if a test fail, the function will throw
-  * a Exception
-  *
+  * a Exception.
   * Running this function will execute the unity tests on 'hello' application,
   * checking that all its parts are correct (messages, if the Date object
   * does or does not exists and, in that case, if the Date on the time field
@@ -99,8 +97,8 @@ public class UnitTest {
   }
 
  /**
-  * This test verificate the correct execution of the method "userdaata()"
-  * @throws Exception
+  * This test verificate the correct execution of the method "userdata()".
+  * @throws an exception when something is not correct
   */
   @Test
   public void testUserdata() throws Exception {
