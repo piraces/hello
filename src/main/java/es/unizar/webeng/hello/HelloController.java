@@ -45,8 +45,7 @@ public class HelloController {
 
  /**
   * It is called when a HTTP request is made to the root path and the request was 
-  * GET kind , as indicated @RequestMapping(value="/", method=RequestMethod.GET)
-  * 
+  * GET kind , as indicated @RequestMapping(value="/", method=RequestMethod.GET) 
   * In addition, it makes two new entries in the Map of Strings (as key)
   * and Objects (as value) passed by parameter. The first one has the key “time”, and
   * its value is a Date object which manages the current date.
