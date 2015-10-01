@@ -1,11 +1,21 @@
 package es.unizar.webeng.hello;
 
+/*
+ * Import a class called Test, which allows define a test in JUnit
+ * */
 import org.junit.Test;
+
 import org.junit.runner.RunWith;
+
+/* Imports the SpringFramework's libraries */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+/* 
+ * Imports java utilities
+ **/
 import java.util.HashMap;
 import java.util.Date;
 
