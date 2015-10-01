@@ -190,7 +190,7 @@ public class SystemTests {
     * entity is the png file we wanted. If the verification is not positive it throws
     * an error with the given message.
     */
-    assertEquals("Wrong content\n", entity.getBody(), "[B@6274a191");
+    assertEquals("Wrong content\n", entity.toString().getBytes("UTF-8"), "[B@3a6a863c");
   }
 
 }
