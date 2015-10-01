@@ -336,5 +336,10 @@ enterprise frameworks(Spring,Grails...), mobile and web development(Android,Angu
     From top menu, open File -> Settings -> Maven -> Repositories and verify that you have valid remote repository.
 * [Solved] Unregistered VCS root detected, directory is under Git but is not registered in the Settings, assign a root automatically:
     Go to File->Project Structure and assign a root, or click on the popup message to do it automatically
-
-
+## CSS
+Cascading Style
+### What is it?
+It's a language used to define the presentation of a document.
+### Who controls the specification of CSS ?
+It's specification is made by the World Wide Web Consortium, known as W3C, this specification serves a standard for
+browsers and ither computer applications acting as clients in network protocols.
