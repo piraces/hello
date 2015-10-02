@@ -135,6 +135,63 @@ In the next lines, there are some points which are important when we are using G
 * Do use useful tools
 * Do integrate with external tools
 
+###Using Branches
+A branch represent an independent line of devlopment which allows to isolate changes from the main line of
+development. Usually is used when a developer wants to add a new feature or fix a bug. He spawns a new branch to
+encapsulate the code's changes, which would make sure that unstable code is never commit to the main code.
+
+#####Usage
+* List all of the branches in the repository: <code>git branch</code>
+* Create a branch: <code>git branch <branch's name> </code>, this command only create a new branch, if you want
+  start adding commits to it, you need to select it.
+* Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
+* Merge one branch with the current branch: <code>git merge <branch's name></code>
+* Delete a branch: <code> git branch -d <branch's name></code>
+
+Here is another interesting command that you can use:
+* Create a branch and move to it: <code>git checkout -b <branch's name></code>
+* See the differences between two branchs: <code>git diff --stat <branch 1> <branch 2></code>
+* Undo a merge: <code>git reset --hard HEAD</code>
+
+###Additional info about Git
+
+####Git commands:
+#####fetch
+	Fetches all the objects from the remote repository that are not present in the local one.
+#####pull
+	Fetches the files from the remote repository and merges it with the local one. This command is equivalent to fetch + merge sequence.
+#####push
+	Copies all the modified local objects in the staging directory (after adding and commiting them) to the remote repository and advances its branches.
+#####add
+	Adds files changed in your working directory to the staging area.
+#####merge
+	Merges one or more branches into your current branch and automatically creates a new commit if there are no conflicts.
+#####branch
+	Lists existing branches, or creates a new branch if a name is provided. Branches are used to create another line of development.
+	Usually, a branch is created to work on a new feature. Once the feature is completed, it is merged back with the master branch and we delete the branch.
+#####checkout
+	Switches from the current branch to a different one.
+#####commit
+	Takes all changes written  since the last commit, creates a new one and sets the branch to point to this last commit. A commit is also named by SHA1 hash.
+	Every commit object has a pointer to the parent commit object. From a given commit, you can traverse back by looking at the parent pointer to view the history of the commit.
+#####clone
+	Makes a Git repository copy from a remote source. Automatically adds the original location as "origin" so you can fetch again and also push (if you have permissions).
+
+####Git concepts:
+#####Staging area
+	Set of files that have been commited but not yet pushed to the remote repository. You can modify a file, add it, commit it with a certain message (observation) and later repeat the same process with a different file but specifying a different message. Executing "push" will copy all the commits saved in the staging area to the final repository.
+#####Origin
+	Link provided when the repository was first cloned to the local machine.
+#####Upstream
+	Link of the original master repository, the one you forked to create a copy in your account.
+#####Differences between these last two
+	When working with other developers, you all have the same upstream from which you download the merged changes (after pull requests).
+	Each one of you pushes his/hers local changes to his/her origin.
+	After that he/she will send a pull request to the owner of the repository.
+	If the changes can be automatically merged and the owner accepts them, they will be automatically merged to the existing code in the master repository.
+	Then the rest of the developers will have to pull these changes to their local repositories to continue working with an updated copy.
+	
+
 ##Spring Framework
 
 ###Spring Framework Annotations
@@ -241,26 +298,6 @@ This is used in "welcome.jsp"
 ###Obtain client's System Information
 We can obtain de client's IP system information, using "request.getHeader("User-Agent")".
 This is used in "welcome.jsp"
-
-
-###Using Branches
-A branch represent an independent line of devlopment which allows to isolate changes from the main line of
-development. Usually is used when a developer wants to add a new feature or fix a bug. He spawns a new branch to
-encapsulate the code's changes, which would make sure that unstable code is never commit to the main code.
-
-#####Usage
-* List all of the branches in the repository: <code>git branch</code>
-* Create a branch: <code>git branch <branch's name> </code>, this command only create a new branch, if you want
-  start adding commits to it, you need to select it.
-* Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
-* Merge one branch with the current branch: <code>git merge <branch's name></code>
-* Delete a branch: <code> git branch -d <branch's name></code>
-
-Here is another interesting command that you can use:
-* Create a branch and move to it: <code>git checkout -b <branch's name></code>
-* See the differences between two branchs: <code>git diff --stat <branch 1> <branch 2></code>
-* Undo a merge: <code>git reset --hard HEAD</code>
-
 
 ##Heroku
 
