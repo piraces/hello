@@ -58,7 +58,8 @@ Provides to the main JSP page of the project, a simple way to make the client-si
 <span class="input-group-addon" >Speciality</span>
   <input type="text" class="form-control" placeholder="What speciality are you in?" name="speciality" required></div></div>
 <br/>
-	<input class="btn btn-default" type="submit" value="Send" />
+<div class="col-md-offset-4">
+	<input class="btn btn-default" type="submit" value="Send" /></div>
 </form>
 
 </html>
