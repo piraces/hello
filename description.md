@@ -373,9 +373,11 @@ In additional to the search and follow feature, VersionEye can actively monitor 
 ###More about dependencies
 - In the original project, two libraries were being used (jQuery and bootstrap). Taking a look at the dependencies (running `gradle dependencies`), it looks like it has two recursive dependencies. It's because one library used in bootstrap is jquery (that is also included). Watching this, we are making gradle to work a little more. We can just drop the jquery library and gradle will take it from the bootstrap dependency (without having recursive libraries). The problem can be seen here:
 
+```
 	+--- org.webjars:bootstrap:3.3.5
 	|    \--- org.webjars:jquery:1.11.1 -> 2.1.4
 	+--- org.webjars:jquery:2.1.4
+```
 
 - Another problem is libraries versions. In order to obtain the latest versions of library dependencies, we can use `gradle` or the `spring-boot-gradle` plugin to resolve that. But, in fact, the `spring-boot-gradle` plugin doesn't support automatically version resolving for bootstrap library (see the plugin [appendix](http://docs.spring.io/spring-boot/docs/current/reference/html/appendix-dependency-versions.html)), and gradle doesn't pick the correct latest version. 
 
