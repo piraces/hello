@@ -414,11 +414,11 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 
 ### Build your own <i>docker</i>
 1. Write a Dockerfile. A Dockerfile describes the software that is “baked” into an image such as environment to use or what commands to run.
-2. Build yor image of docker by typing: docker build -t <i>name</i> .
-3. Run your docker by typing: docker run <i>name</i> 
+2. Build yor docker's image typing: docker build -t <i>name</i> .
+3. Run your docker typing: docker run <i>name</i> 
 
 ### Dockerfile's command
-1. FROM <i> image </i>: sets the Base Image for subsequent instructions, should be a valid image.
+1. FROM <i> image </i>: set the Base Image for subsequent instructions, should be a valid image.
 2. RUN <i> commands </i>: execute commands in the current images.
 3. ADD <i> src dst </i>: copies new files and directories from src to dst.
 4. CMD <i> commands </i>: default execute for a image.
@@ -433,5 +433,5 @@ Automated Builds allow you to use Docker Hub’s build clusters to automatically
 3. Select “Create Automated Build” from the top right “Create” menu item.
 4. Pick a GitHub or BitBucket project that has a Dockerfile you want to build.
 5. Follow the instructions from the web page.
-
+a
 
