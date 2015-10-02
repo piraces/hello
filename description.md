@@ -155,42 +155,52 @@ Here is another interesting command that you can use:
 
 ###Additional info about Git
 
-####Git commands:
-#####fetch
-	Fetches all the objects from the remote repository that are not present in the local one.
-#####pull
-	Fetches the files from the remote repository and merges it with the local one. This command is equivalent to fetch + merge sequence.
-#####push
-	Copies all the modified local objects in the staging directory (after adding and commiting them) to the remote repository and advances its branches.
-#####add
-	Adds files changed in your working directory to the staging area.
+###Git commands:
+####fetch
+Fetches all the objects from the remote repository that are not present in the local one.
+####pull
+Fetches the files from the remote repository and merges it with the local one. This command is equivalent to
+fetch + merge sequence.
+####push
+Copies all the modified local objects in the staging directory (after adding and commiting them) to the remote
+repository and advances its branches.
+####add
+Adds files changed in your working directory to the staging area.
 #####merge
-	Merges one or more branches into your current branch and automatically creates a new commit if there are no conflicts.
-#####branch
-	Lists existing branches, or creates a new branch if a name is provided. Branches are used to create another line of development.
-	Usually, a branch is created to work on a new feature. Once the feature is completed, it is merged back with the master branch and we delete the branch.
-#####checkout
-	Switches from the current branch to a different one.
-#####commit
-	Takes all changes written  since the last commit, creates a new one and sets the branch to point to this last commit. A commit is also named by SHA1 hash.
-	Every commit object has a pointer to the parent commit object. From a given commit, you can traverse back by looking at the parent pointer to view the history of the commit.
-#####clone
-	Makes a Git repository copy from a remote source. Automatically adds the original location as "origin" so you can fetch again and also push (if you have permissions).
+Merges one or more branches into your current branch and automatically creates a new commit if there are no conflicts.
+####branch
+Lists existing branches, or creates a new branch if a name is provided. Branches are used to create another line of
+development. Usually, a branch is created to work on a new feature. Once the feature is completed, it is merged back
+with the master branch and we delete the branch.
+####checkout
+Switches from the current branch to a different one.
+####commit
+Takes all changes written  since the last commit, creates a new one and sets the branch to point to this last commit.
+A commit is also named by SHA1 hash. Every commit object has a pointer to the parent commit object. From a given commit,
+you can traverse back by looking at the parent pointer to view the history of the commit.
+####clone
+Makes a Git repository copy from a remote source. Automatically adds the original location as "origin" so you can fetch
+again and also push (if you have permissions).
 
-####Git concepts:
-#####Staging area
-	Set of files that have been commited but not yet pushed to the remote repository. You can modify a file, add it, commit it with a certain message (observation) and later repeat the same process with a different file but specifying a different message. Executing "push" will copy all the commits saved in the staging area to the final repository.
-#####Origin
+###Git concepts:
+####Staging area
+	Set of files that have been commited but not yet pushed to the remote repository. You can modify a file, add it,
+	commit it with a certain message (observation) and later repeat the same process with a different file but specifying
+	a different message. Executing "push" will copy all the commits saved in the staging area to the final repository.
+####Origin
 	Link provided when the repository was first cloned to the local machine.
-#####Upstream
+####Upstream
 	Link of the original master repository, the one you forked to create a copy in your account.
-#####Differences between these last two
-	When working with other developers, you all have the same upstream from which you download the merged changes (after pull requests).
+####Differences between these last two
+	When working with other developers, you all have the same upstream from which you download the merged changes
+	    (after pull requests).
 	Each one of you pushes his/hers local changes to his/her origin.
 	After that he/she will send a pull request to the owner of the repository.
-	If the changes can be automatically merged and the owner accepts them, they will be automatically merged to the existing code in the master repository.
-	Then the rest of the developers will have to pull these changes to their local repositories to continue working with an updated copy.
-	
+	If the changes can be automatically merged and the owner accepts them, they will be automatically merged to the
+	    existing code in the master repository.
+	Then the rest of the developers will have to pull these changes to their local repositories to continue working
+	    with an updated copy.
+
 
 ##Spring Framework
 
