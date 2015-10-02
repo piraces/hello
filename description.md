@@ -298,6 +298,31 @@ In this file, we tell Heroku how to run our app. In this case, it executes the b
 
 This file has been added in order to specify the project name. Without it, "installApp" task doesn't work well.
 
+##VersionEye: checking dependencies automatically.
+
+### What is it?
+VersionEye is a cross-platform search engine for free/libre/open source software libraries. Currently tracking more than 650K free/libre/open source libraries from Java, Ruby, Python, Node.JS, PHP, JavaScript, CSS, Objective-C, R and Clojure. It allows to follow some dependencies and search some libraries status.
+
+In additional to the search and follow feature, VersionEye can actively monitor source code from projects (from github too) and notify you about outdated dependencies in your project. Beside that it shows you which licenses your dependencies are using.
+
+###Set-up dependencies checking in your repo
+1. Register at [www.versioneye.com](https://www.versioneye.com) and choose "Create from GitHub" (in main projects dashboard).
+2. Connect it to your Github account (if you didn't before).
+3. Choose one repo to add to the dashboard and start the check.
+4. Enable the branches to be checked, then click at "build.gradle" link.
+5. After a little time, you'll see a graphic showing the dependencies of the repo and the licenses of them.
+
+###How does it work?
+1. It works with daily, weekly, monthly or manual sync.
+2. When it's time to sync, VersionEye checks (and parses) the file "build.gradle" to obtain dependencies and versions.
+3. Once checked the file, it searchs around for new versions of dependencies and licenses of dependencies.
+4. If there are some updates for libraries, it will notify you in order to update "build.gradle" and use latest libraries (badge in red). Otherwise, the badge and status, don't change.
+5. Congratulations! Now you'll be always updated and using the latest libraries for your project.
+
+###The project and it's dependencies
+- It's important for any project of any kind, to check dependencies frequently. Otherwise, your project can contain outdated libraries. Outdated libraries can cause security breaches or bugs of any type, than can affect to the project in a hard way.
+- Several popular github (and others) repositories check their dependencies like do VersionEye. Dependencies and updates are so boring and frequently (but important). The solution is automatize the check of updates, and get notified when they are outdated. Some examples of projects using this are: bootstrap, emberjs and famous Java (or JavaScript) libraries. 
+
 
 ##Static content
 For convention in using Spring Boot, static content (images for example) is served in /src/main/resources/static classpath. In this web app, we use an imaged served in /src/main/resources/static/images/Head.png. We can call this image just with the /images/Head.png path, thanks to the facilities that Spring Boot provides us.
