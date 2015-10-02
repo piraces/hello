@@ -2,6 +2,7 @@
 #this file in the description.md file
 /bin/
 /build/
+/.idea/
 /.gradle/
 /.settings/
 /.classpath
@@ -11,3 +12,4 @@
 
 #VIM buffer files
 .*.swp
+*.iml

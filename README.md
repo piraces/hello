@@ -6,7 +6,7 @@ Please, go to the [Wiki](https://github.com/UNIZAR-30246-WebEngineering/hello/wi
 User name | NIA | Travis-CI|CodeCov|Heroku|Score
 ----------|-----|----------|-------|------|-----------
 [UNIZAR-30246-WebEngineering](https://github.com/UNIZAR-30246-WebEngineering/hello) |30246 | [![Build Status](https://travis-ci.org/UNIZAR-30246-WebEngineering/hello.svg)](https://travis-ci.org/UNIZAR-30246-WebEngineering/hello) | [![codecov.io](http://codecov.io/github/UNIZAR-30246-WebEngineering/hello/coverage.svg?branch=master)](http://codecov.io/github/UNIZAR-30246-WebEngineering/hello?branch=master) | [App](https://uz-30246-webengineering-hello.herokuapp.com)
-[AlejandroDiesteCortes](https://github.com/AlejandroDiesteCortes/hello) | 541892 | [![Build Status](https://travis-ci.org/AlejandroDiesteCortes/hello.svg)](https://travis-ci.org/AlejandroDiesteCortes/hello)
+[AlejandroDiesteCortes](https://github.com/AlejandroDiesteCortes/hello) | 541892 | [![Build Status](https://travis-ci.org/AlejandroDiesteCortes/hello.svg)](https://travis-ci.org/AlejandroDiesteCortes/hello)  |  [![codecov.io](http://codecov.io/github/AlejandroDiesteCortes/hello/coverage.svg?branch=master)](http://codecov.io/github/AlejandroDiesteCortes/hello?branch=master) | [App](http://dieestex.herokuapp.com/)
 [Cristian Román](https://github.com/khmDEV/hello) |646564 | [![Build Status](https://travis-ci.org/khmDEV/hello.svg)](https://travis-ci.org/khmDEV/hello)
 [Javier Beltran Jorba] (https://github.com/MrJavo94/hello) | 532581 | [![Build Status](https://travis-ci.org/MrJavo94/hello.svg)](https://travis-ci.org/MrJavo94/hello) |  [![codecov.io](http://codecov.io/github/MrJavo94/hello/coverage.svg?branch=master)](http://codecov.io/github/MrJavo94/hello?branch=master) | [App](http://hello-application.herokuapp.com/)
 [MarcosCM](https://github.com/MarcosCM/hello) | 467716 | [![Build Status](https://travis-ci.org/MarcosCM/hello.svg)](https://travis-ci.org/MarcosCM/hello)
@@ -29,3 +29,4 @@ Adrian Susinos Moreno | 650220 | [![Build Status](https://travis-ci.org/ader9/he
 Alberto Sabater Bailón | 546297 | [![Build Status](https://travis-ci.org/asabater94/hello.svg)](https://travis-ci.org/asabater94/hello)
 Agustin Navarro Torres | 587570 | [![Build Status](https://travis-ci.org/SirBargus/hello.svg)](https://travis-ci.org/SirBargus/hello)
 [Alejandro Solanas Bonilla](https://github.com/Naxsel/hello) | 647647 | [![Build Status](https://travis-ci.org/Naxsel/hello.svg)](https://travis-ci.org/Naxsel/hello)
+Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/your-github-username/hello.svg)](https://travis-ci.org/luisjesuspellicer/hello)
