@@ -381,7 +381,7 @@ In additional to the search and follow feature, VersionEye can actively monitor 
 
 - Another problem is libraries versions. In order to obtain the latest versions of library dependencies, we can use `gradle` or the `spring-boot-gradle` plugin to resolve that. But, in fact, the `spring-boot-gradle` plugin doesn't support automatically version resolving for bootstrap library (see the plugin [appendix](http://docs.spring.io/spring-boot/docs/current/reference/html/appendix-dependency-versions.html)), and gradle doesn't pick the correct latest version. 
 
-Using the syntax `compile 'org.webjars:bootstrap:latest.release'` give us a alpha version of bootstrap that crashes when building the project. Also using the syntax `compile 'org.webjars:bootstrap:3.+'` to obtain latest minor version of mayor 3 version, give us the 3.3.4 version (which is outdated).
+- Using the syntax `compile 'org.webjars:bootstrap:latest.release'` give us a alpha version of bootstrap that crashes when building the project. Also using the syntax `compile 'org.webjars:bootstrap:3.+'` to obtain latest minor version of mayor 3 version, give us the 3.3.4 version (which is outdated).
 
 In conclusion, we need to specify the bootstrap version manually to keep the project updated and working, because other workarounds don't work. VersionEye will notify if a newer bootstrap version is available to pick it, and this doesn't suppose a problem for the project.
 
