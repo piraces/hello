@@ -13,7 +13,7 @@ buildscript {
 
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE") 
-        classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
+        classpath("io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE")
     }
 }
 
@@ -53,7 +53,7 @@ configurations {
 
 
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web' 
+    compile 'org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE' 
     compile 'org.webjars:bootstrap:3.3.5'
 
     // 'providedRuntime' dependencies are not added to the WAR archive
