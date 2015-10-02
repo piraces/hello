@@ -29,3 +29,4 @@ Adrian Susinos Moreno | 650220 | [![Build Status](https://travis-ci.org/ader9/he
 Alberto Sabater Bailón | 546297 | [![Build Status](https://travis-ci.org/asabater94/hello.svg)](https://travis-ci.org/asabater94/hello)
 Agustin Navarro Torres | 587570 | [![Build Status](https://travis-ci.org/SirBargus/hello.svg)](https://travis-ci.org/SirBargus/hello)
 [Alejandro Solanas Bonilla](https://github.com/Naxsel/hello) | 647647 | [![Build Status](https://travis-ci.org/Naxsel/hello.svg)](https://travis-ci.org/Naxsel/hello)
+Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/your-github-username/hello.svg)](https://travis-ci.org/luisjesuspellicer/hello)
