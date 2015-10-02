@@ -51,10 +51,10 @@ configurations {
     providedRuntime
 }
 
+
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web' 
     compile 'org.webjars:bootstrap:3.3.5'
-    compile 'org.webjars:jquery:2.1.4'    
 
     // 'providedRuntime' dependencies are not added to the WAR archive
     // because they should already be in the execution environment
