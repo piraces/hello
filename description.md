@@ -370,6 +370,19 @@ In additional to the search and follow feature, VersionEye can actively monitor 
 - It's important for any project of any kind, to check dependencies frequently. Otherwise, your project can contain outdated libraries. Outdated libraries can cause security breaches or bugs of any type, than can affect to the project in a hard way.
 - Several popular github (and others) repositories check their dependencies like do VersionEye. Dependencies and updates are so boring and frequently (but important). The solution is automatize the check of updates, and get notified when they are outdated. Some examples of projects using this are: bootstrap, emberjs and famous Java (or JavaScript) libraries. 
 
+###More about dependencies
+- In the original project, two libraries were being used (jQuery and bootstrap). Taking a look at the dependencies (running `gradle dependencies`), it looks like it has two recursive dependencies. It's because one library used in bootstrap is jquery (that is also included). Watching this, we are making gradle to work a little more. We can just drop the jquery library and gradle will take it from the bootstrap dependency (without having recursive libraries). The problem can be seen here:
+
+	+--- org.webjars:bootstrap:3.3.5
+	|    \--- org.webjars:jquery:1.11.1 -> 2.1.4
+	+--- org.webjars:jquery:2.1.4
+
+- Another problem is libraries versions. In order to obtain the latest versions of library dependencies, we can use `gradle` or the `spring-boot-gradle` plugin to resolve that. But, in fact, the `spring-boot-gradle` plugin doesn't support automatically version resolving for bootstrap library (see the plugin [appendix](http://docs.spring.io/spring-boot/docs/current/reference/html/appendix-dependency-versions.html)), and gradle doesn't pick the correct latest version. 
+
+Using the syntax `compile 'org.webjars:bootstrap:latest.release'` give us a alpha version of bootstrap that crashes when building the project. Also using the syntax `compile 'org.webjars:bootstrap:3.+'` to obtain latest minor version of mayor 3 version, give us the 3.3.4 version (which is outdated).
+
+In conclusion, we need to specify the bootstrap version manually to keep the project updated and working, because other workarounds don't work. VersionEye will notify if a newer bootstrap version is available to pick it, and this doesn't suppose a problem for the project.
+
 
 ##Static content
 For convention in using Spring Boot, static content (images for example) is served in /src/main/resources/static classpath. In this web app, we use an imaged served in /src/main/resources/static/images/Head.png. We can call this image just with the /images/Head.png path, thanks to the facilities that Spring Boot provides us.
