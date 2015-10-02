@@ -310,3 +310,45 @@ in the logback.xml file where we can define which level we want our different lo
 using Logback. In addition, we make use of the SpringBoot's default configuration adding a log file which
 reference is the value of the field logging.file in application.properties. You can find more info about
 logback [here](logback.qos.ch).
+
+
+## IntelliJ IDEA
+
+### What is it?
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) is a Java integrated development environment(IDE) fro developing computer software, but also offers
+enterprise frameworks(Spring,Grails...), mobile and web development(Android,AngularJS,JavaScript...)
+
+### Set-up process
+
+1. Set up your GitHub account
+2. Set up JDK home.
+3. Select check out from version control and clone the "hello" repository from your GitHub account.
+    * You can also use git or download from GitHub, but in this case, the project must be created manually.
+4. Import project from Gradle, set up gradle home and JVM
+    * This wouldn't be necessary by using a gradle wrapper
+5. Select project format type: .idea(directory based).
+6. IntelliJ automatically resolves dependencies and downloads necessary repositories.
+7. Select Run tests in hello (Gradle option) (This will download Gradle dependencies if they aren't already installed)
+8. Use VCS->Update Project and VCS->Commit changes to work with git
+
+### Problems found
+* [Solved] Maven repositories aren't updated:
+    From top menu, open File -> Settings -> Maven -> Repositories and verify that you have valid remote repository.
+* [Solved] Unregistered VCS root detected, directory is under Git but is not registered in the Settings, assign a root automatically:
+    Go to File->Project Structure and assign a root, or click on the popup message to do it automatically
+## CSS
+Cascading Style
+### What is it?
+It's a language used to define the presentation of a document. Can define fonts, colors, margins, lines height, width, background images, advanced positioning and other subjects.
+### Who controls the specification of CSS ?
+It's specification is made by the World Wide Web Consortium, known as W3C, this specification serves a standard for
+browsers and ither computer applications acting as clients in network protocols.
+### Benefits
+1. Control of presentation on a unique sheet of style.
+2. Application of different presentations to different media types.
+3. Quality improvement.
+4. In one file Css you can define the style of multiple html files.
+### Forms of use by author
+1. Inline: It not recommend because the code can be dirty.
+2. Internal style sheet: It's a better option than the last, because it separate the style and the code. But the file can be confuse.
+3. External style sheet: It's more potent than other because it separate completely the formatting of the code. This option is the most used and recommended in web development.
