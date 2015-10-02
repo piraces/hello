@@ -166,7 +166,7 @@ Copies all the modified local objects in the staging directory (after adding and
 repository and advances its branches.
 ####add
 Adds files changed in your working directory to the staging area.
-#####merge
+####merge
 Merges one or more branches into your current branch and automatically creates a new commit if there are no conflicts.
 ####branch
 Lists existing branches, or creates a new branch if a name is provided. Branches are used to create another line of
