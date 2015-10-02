@@ -9,10 +9,6 @@
     -  Google Java Style
        https://google-styleguide.googlecode.com/svn-history/r130/trunk/javaguide.html
        
-    Checkstyle is very configurable. Be sure to read the documentation at
-    http://checkstyle.sf.net (or in your downloaded distribution).
-    Most Checks are configurable, be sure to consult the documentation.
-    To completely disable a check, just comment it out or delete it from the file.
     Authors: Max Vetrenko, Ruslan Diachenko, Roman Ivanov.
     
  -->
@@ -20,13 +16,14 @@
 <module name = "Checker">
     <property name="charset" value="UTF-8"/>
     
-    <property name="severity" value="warning"/>
-    
-    <!-- Checks for whitespace                               -->
-    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
-        <module name="FileTabCharacter">
-            <property name="eachLine" value="true"/>
-        </module>
+	
+	<!-- Now all tests have severity set to error-->
+	<!-- It's possible to set specific tests in other severity grade -->
+    <property name="severity" value="error"/>
+
+	<module name="FileTabCharacter">
+		<property name="eachLine" value="true"/>
+	</module>
     
     <module name="TreeWalker">
         <module name="OuterTypeFilename"/>

@@ -86,8 +86,6 @@ public class UnitTest {
   * does or does not exists and, in that case, if the Date on the time field
   * is correct or not). Failing in any of the test will result on an
   * exception, thrown by the function.
-  *
-  * @throws Exception
   */
   @Test
   public void testMessage() throws Exception {
