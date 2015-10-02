@@ -28,4 +28,8 @@ Adrian Susinos Moreno | 650220 | [![Build Status](https://travis-ci.org/ader9/he
 [Adrián Moreno Jimeno](https://github.com/Adriem/hello) | 631537 | [![Build Status](https://travis-ci.org/Adriem/hello.svg)](https://travis-ci.org/Adriem/hello) | [![codecov.io](http://codecov.io/github/UNIZAR-30246-WebEngineering/hello/coverage.svg?branch=master)](http://codecov.io/github/UNIZAR-30246-WebEngineering/hello?branch=master) | |:gift:
 Alberto Sabater Bailón | 546297 | [![Build Status](https://travis-ci.org/asabater94/hello.svg)](https://travis-ci.org/asabater94/hello)
 Agustin Navarro Torres | 587570 | [![Build Status](https://travis-ci.org/SirBargus/hello.svg)](https://travis-ci.org/SirBargus/hello)
+<<<<<<< HEAD
 [Diego Sánchez Castillo](https://github.com/diegozgz92/hello) | 628279 | [![Build Status](https://travis-ci.org/diegozgz92/hello.svg)](https://travis-ci.org/diegozgz92/hello)
+=======
+[Alejandro Solanas Bonilla](https://github.com/Naxsel/hello) | 647647 | [![Build Status](https://travis-ci.org/Naxsel/hello.svg)](https://travis-ci.org/Naxsel/hello)
+>>>>>>> upstream/master
