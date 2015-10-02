@@ -1,4 +1,4 @@
-# Web Engineering 2015-2016 / Hello
+﻿# Web Engineering 2015-2016 / Hello
 
 Please, go to the [Wiki](https://github.com/UNIZAR-30246-WebEngineering/hello/wiki) in order to get the instructions for this assignment.
 
@@ -29,4 +29,5 @@ Adrian Susinos Moreno | 650220 | [![Build Status](https://travis-ci.org/ader9/he
 Alberto Sabater Bailón | 546297 | [![Build Status](https://travis-ci.org/asabater94/hello.svg)](https://travis-ci.org/asabater94/hello)
 Agustin Navarro Torres | 587570 | [![Build Status](https://travis-ci.org/SirBargus/hello.svg)](https://travis-ci.org/SirBargus/hello)
 [Alejandro Solanas Bonilla](https://github.com/Naxsel/hello) | 647647 | [![Build Status](https://travis-ci.org/Naxsel/hello.svg)](https://travis-ci.org/Naxsel/hello)
+Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/luisjesuspellicer/hello.svg)](https://travis-ci.org/luisjesuspellicer/hello)
 [Daniel Forcén Esteban](https://github.com/dforcen/hello) | 558471 | [![Build Status](https://travis-ci.org/dforcen/hello.svg)](https://travis-ci.org/dforcen/hello)

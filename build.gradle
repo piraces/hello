@@ -24,6 +24,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot' 
 apply plugin: 'io.spring.dependency-management' 
 apply plugin: 'jacoco' //Plugin to calculate code coverage
+apply plugin: 'checkstyle' 
 apply plugin: 'pmd' //Plugin of a source code analyzer. It finds common programming flaws like unused variables,
 					// empty catch blocks, unnecessary object creation, and so forth. Additionally it includes copy-paste-detector.
 apply plugin: 'jdepend' //Plugin to calculate extensibility, reusability, and maintainability
@@ -31,29 +32,19 @@ apply plugin: 'jdepend' //Plugin to calculate extensibility, reusability, and ma
 pmd {
 	//it defines the rules checked by the pmd plugin. More rules can be add.
       ruleSets = [
-        'java-basic',
-        'java-braces',
-        'java-clone',
-        'java-codesize',
-        'java-comments',
-        'java-controversial',
-        'java-design',
-        'java-empty',
-        'java-finalizers',
-        'java-j2ee',
-        'java-javabeans',
-        'java-junit',
-        'java-logging-jakarta-commons',
-        'java-logging-java',
-        'java-migrating',
-        'java-naming',
-        'java-optimizations',
-        'java-strictexception',
-        'java-strings',
-        'java-sunsecure',
-        'java-typeresolution',
-        'java-unnecessary',
-        'java-unusedcode'           
+        'java-basic', //The Basic ruleset contains a collection of good practices which should be followed., http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/basic.html
+        'java-braces', //The Braces ruleset contains rules regarding the use and placement of braces, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/braces.html
+        'java-codesize', //The Code Size ruleset contains rules that find problems related to code size or complexity, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/codesize.html
+        'java-comments', //Rules intended to catch errors related to code comments, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/comments.html
+        'java-controversial', //The Controversial ruleset contains rules that, for whatever reason, are considered controversial. They are held here to allow people to include them as they see fit within their custom rulesets, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/controversial.html
+        'java-design', //The Design ruleset contains rules that flag suboptimal code implementations. Alternate approaches are suggested, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/design.html
+        'java-empty', //The Empty Code ruleset contains rules that find empty statements of any kind (empty method, empty block statement, empty try or catch block,…), http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/empty.html
+        'java-imports', //These rules deal with different problems that can occur with import statements, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/imports.html
+        'java-naming', //The Naming Ruleset contains rules regarding preferred usage of names and identifiers, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/naming.html
+        'java-optimizations', //These rules deal with different optimizations that generally apply to best practices, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/optimizations.html
+        'java-strings', //These rules deal with different issues that can arise with manipulation of the String, StringBuffer, or StringBuilder instances, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/strings.html
+        'java-unnecessary', //The Unnecessary Ruleset contains a collection of rules for unnecessary code, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/unnecessary.html
+        'java-unusedcode' //The Unused Code ruleset contains rules that find unused or ineffective code, http://pmd.sourceforge.net/snapshot/pmd-java/rules/java/unusedcode.html
         ]
     toolVersion = '5.1.1'
     ignoreFailures = true
@@ -120,6 +111,10 @@ jacocoTestReport {
         csv.enabled = false
         html.enabled = true
     }
+}
+
+checkstyle {
+	toolVersion = "6.0"
 }
 
 test {
