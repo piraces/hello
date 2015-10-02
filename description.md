@@ -398,4 +398,39 @@ browsers and ither computer applications acting as clients in network protocols.
 ### Forms of use by author
 1. Inline: It not recommend because the code can be dirty.
 2. Internal style sheet: It's a better option than the last, because it separate the style and the code. But the file can be confuse.
-3. External style sheet: It's more potent than other because it separate completely the formatting of the code. This option is the most used and recommended in web development.
+3. External style sheet: It's more potent than other because it separate completely the 
+4. formatting of the code. This option is the most used and recommended in web development.
+
+
+## Docker
+
+### What is it?
+Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.
+
+### Components of docker
+1. A <b>container</b> is a stripped-to-basics version of a Linux operating system.
+2. An <b>image</b> is software you load into a container.
+3. A <b>repository</b> Docker Hub for sharing and managing Docker containers.
+
+### Build your own <i>docker</i>
+1. Write a Dockerfile. A Dockerfile describes the software that is “baked” into an image such as environment to use or what commands to run.
+2. Build yor image of docker by typing the <code>docker build -t <i>name</i> . <code>
+3. Run your docker by typing <code>docker run <i>name</i><code> 
+
+### Dockerfile's command
+1. FROM <i> image </i>: sets the Base Image for subsequent instructions, should be a valid image.
+2. RUN <i> commands </i>: execute commands in the current images.
+3. ADD <i> src dst </i>: copies new files and directories from src to dst.
+4. CMD <i> commands </i>: default execute for a image.
+
+### Automated Builds from github
+Automated Builds allow you to use Docker Hub’s build clusters to automatically create images from a GitHub repository containing a Dockerfile.
+
+#### Set up
+1. Create a Docker Hub account and log in.
+2. Link your Hub account by referring to the GitHub.
+3. Select “Create Automated Build” from the top right “Create ▼” menu item.
+4. Pick a GitHub or BitBucket project that has a Dockerfile you want to build.
+5. Follow the instructions from the web page.
+
+
