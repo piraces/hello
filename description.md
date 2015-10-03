@@ -141,20 +141,20 @@ development. Usually is used when a developer wants to add a new feature or fix 
 encapsulate the code's changes, which would make sure that unstable code is never commit to the main code.
 
 #####Usage
-* List all of the branches in the repository: <code>git branch</code>
-* Create a branch: <code>git branch <branch's name></code> , this command only create a new branch, if you want
+* List all of the branches in the repository: `git branch`
+* Create a branch: `git branch <branch's name>`, this command only create a new branch, if you want
   start adding commits to it, you need to select it.
-* Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
-* Merge one branch with the current branch: <code>git merge <branch's name></code>
-* Delete a branch: <code> git branch -d <branch's name></code>
-* Delete a branch on your remote repository: <code> git push origin :"branch's name"</code>
-* Push the branch to your remote repository, so others can use it: <code>git push origin "branch's name"</code>
-* Push all branches to your remote repository: <code>git push --all origin</code>
+* Navigate between the differents branch in a proyect: `git checkout <branch's name>`
+* Merge one branch with the current branch: `git merge <branch's name>`
+* Delete a branch: `git branch -d <branch's name>`
+* Delete a branch on your remote repository: `git push origin :<branch's name>`
+* Push the branch to your remote repository, so others can use it: `git push origin <branch's name>`
+* Push all branches to your remote repository: `git push --all origin`
 
 Here is another interesting command that you can use:
-* Create a branch and move to it: <code>git checkout -b <branch's name></code>
-* See the differences between two branchs: <code>git diff --stat <branch 1> <branch 2></code>
-* Undo a merge: <code>git reset --hard HEAD</code>
+* Create a branch and move to it: `git checkout -b <branch's name>`
+* See the differences between two branchs: `git diff --stat <branch 1> <branch 2>`
+* Undo a merge: `git reset --hard HEAD`
 
 ###Additional info about Git
 
