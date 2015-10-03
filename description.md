@@ -142,14 +142,14 @@ encapsulate the code's changes, which would make sure that unstable code is neve
 
 #####Usage
 * List all of the branches in the repository: <code>git branch</code>
-* Create a branch: <code>git branch </code><branch's name> , this command only create a new branch, if you want
+* Create a branch: <code>git branch <branch's name></code> , this command only create a new branch, if you want
   start adding commits to it, you need to select it.
-* Navigate between the differents branch in a proyect: <code>git checkout </code><branch's name>
-* Merge one branch with the current branch: <code>git merge </code><branch's name>
-* Delete a branch: <code> git branch -d </code><branch's name>
-* Delete a branch on your remote repository: <code> git push origin :</code><branchname>
-*Push the branch to your remote repository, so others can use it: <code>git push origin </code><branchname>
-*Push all branches to your remote repository: <code>git push --all origin</code>
+* Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
+* Merge one branch with the current branch: <code>git merge <branch's name></code>
+* Delete a branch: <code> git branch -d <branch's name></code>
+* Delete a branch on your remote repository: <code> git push origin :"branch's name"></code><
+* Push the branch to your remote repository, so others can use it: <code>git push origin "branch's name"</code>
+* Push all branches to your remote repository: <code>git push --all origin</code>
 
 Here is another interesting command that you can use:
 * Create a branch and move to it: <code>git checkout -b <branch's name></code>
@@ -193,7 +193,7 @@ Type this into the command line to bring up the 21 most common git commands. You
 
 ###Connect to a remote repository
 If you haven't connected your local repository to a remote server, add the server to be able to push to it:
-<code>git remote add origin </code><server>
+<code>git remote add origin "server"</code>
 List all currently configured remote repositories:
 <code>git remote -v</code>
 
@@ -220,7 +220,7 @@ List all currently configured remote repositories:
 ##GitHub Desktop
 If you want to simplify essential steps in your GitHub workflow you can install the [GitHub Desktop] (https://desktop.github.com/) app on your Windows or Mac computer.
 This app is an alternative to use git from the command line, but is more suited to developers who are in the development-to-deployment workflow and not for those working on open source projects or who use GitHub to monitor bugs, feature requests or other problems in existing applications. 
-[Here] (https://help.github.com/desktop/) you can find all necessary documentation for getting started
+[Here] (https://help.github.com/desktop/) you can find all necessary documentation for getting started.
 
 ##Spring Framework
 
