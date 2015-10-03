@@ -46,15 +46,11 @@ Provides to the main JSP page of the project, a simple way to make the client-si
 <span class="input-group-addon" >Age</span>
   <input type="text" class="form-control" placeholder="What's your age?" name="age" required></div></div>
 <br/>
-<<<<<<< HEAD
 	<!-- Input group in the formulary where user must type in which course is -->
 <div class="input-group input-group-lg">
 <div class="col-md-4 col-md-offset-3">
 <span class="input-group-addon" >Curse</span>
   <input type="text" class="form-control" placeholder="What curse are you in?" name="curse" required></div></div>
-<div class="input-group">
-<span class="input-group-addon" >Course</span>
-  <input type="text" class="form-control" placeholder="What curse are you in?" name="curse" required></div>
 <br/>
 	<!-- Input group in the formulary where user must type in which speciality is -->
 <div class="input-group input-group-lg">
