@@ -135,6 +135,73 @@ In the next lines, there are some points which are important when we are using G
 * Do use useful tools
 * Do integrate with external tools
 
+###Using Branches
+A branch represent an independent line of devlopment which allows to isolate changes from the main line of
+development. Usually is used when a developer wants to add a new feature or fix a bug. He spawns a new branch to
+encapsulate the code's changes, which would make sure that unstable code is never commit to the main code.
+
+#####Usage
+* List all of the branches in the repository: <code>git branch</code>
+* Create a branch: <code>git branch <branch's name> </code>, this command only create a new branch, if you want
+  start adding commits to it, you need to select it.
+* Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
+* Merge one branch with the current branch: <code>git merge <branch's name></code>
+* Delete a branch: <code> git branch -d <branch's name></code>
+
+Here is another interesting command that you can use:
+* Create a branch and move to it: <code>git checkout -b <branch's name></code>
+* See the differences between two branchs: <code>git diff --stat <branch 1> <branch 2></code>
+* Undo a merge: <code>git reset --hard HEAD</code>
+
+###Additional info about Git
+
+###Git commands:
+####fetch
+Fetches all the objects from the remote repository that are not present in the local one.
+####pull
+Fetches the files from the remote repository and merges it with the local one. This command is equivalent to
+fetch + merge sequence.
+####push
+Copies all the modified local objects in the staging directory (after adding and commiting them) to the remote
+repository and advances its branches.
+####add
+Adds files changed in your working directory to the staging area.
+####merge
+Merges one or more branches into your current branch and automatically creates a new commit if there are no conflicts.
+####branch
+Lists existing branches, or creates a new branch if a name is provided. Branches are used to create another line of
+development. Usually, a branch is created to work on a new feature. Once the feature is completed, it is merged back
+with the master branch and we delete the branch.
+####checkout
+Switches from the current branch to a different one.
+####commit
+Takes all changes written  since the last commit, creates a new one and sets the branch to point to this last commit.
+A commit is also named by SHA1 hash. Every commit object has a pointer to the parent commit object. From a given commit,
+you can traverse back by looking at the parent pointer to view the history of the commit.
+####clone
+Makes a Git repository copy from a remote source. Automatically adds the original location as "origin" so you can fetch
+again and also push (if you have permissions).
+
+###Git concepts:
+####Staging area
+	Set of files that have been commited but not yet pushed to the remote repository. You can modify a file, add it,
+	commit it with a certain message (observation) and later repeat the same process with a different file but specifying
+	a different message. Executing "push" will copy all the commits saved in the staging area to the final repository.
+####Origin
+	Link provided when the repository was first cloned to the local machine.
+####Upstream
+	Link of the original master repository, the one you forked to create a copy in your account.
+####Differences between these last two
+	When working with other developers, you all have the same upstream from which you download the merged changes
+	    (after pull requests).
+	Each one of you pushes his/hers local changes to his/her origin.
+	After that he/she will send a pull request to the owner of the repository.
+	If the changes can be automatically merged and the owner accepts them, they will be automatically merged to the
+	    existing code in the master repository.
+	Then the rest of the developers will have to pull these changes to their local repositories to continue working
+	    with an updated copy.
+
+
 ##Spring Framework
 
 ###Spring Framework Annotations
@@ -242,26 +309,6 @@ This is used in "welcome.jsp"
 We can obtain de client's IP system information, using "request.getHeader("User-Agent")".
 This is used in "welcome.jsp"
 
-
-###Using Branches
-A branch represent an independent line of devlopment which allows to isolate changes from the main line of
-development. Usually is used when a developer wants to add a new feature or fix a bug. He spawns a new branch to
-encapsulate the code's changes, which would make sure that unstable code is never commit to the main code.
-
-#####Usage
-* List all of the branches in the repository: <code>git branch</code>
-* Create a branch: <code>git branch <branch's name> </code>, this command only create a new branch, if you want
-  start adding commits to it, you need to select it.
-* Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
-* Merge one branch with the current branch: <code>git merge <branch's name></code>
-* Delete a branch: <code> git branch -d <branch's name></code>
-
-Here is another interesting command that you can use:
-* Create a branch and move to it: <code>git checkout -b <branch's name></code>
-* See the differences between two branchs: <code>git diff --stat <branch 1> <branch 2></code>
-* Undo a merge: <code>git reset --hard HEAD</code>
-
-
 ##Heroku
 
 ### What is it?
@@ -297,6 +344,46 @@ In this file, we tell Heroku how to run our app. In this case, it executes the b
 **settings.gradle:**
 
 This file has been added in order to specify the project name. Without it, "installApp" task doesn't work well.
+
+##VersionEye: checking dependencies automatically.
+
+### What is it?
+VersionEye is a cross-platform search engine for free/libre/open source software libraries. Currently tracking more than 650K free/libre/open source libraries from Java, Ruby, Python, Node.JS, PHP, JavaScript, CSS, Objective-C, R and Clojure. It allows to follow some dependencies and search some libraries status.
+
+In additional to the search and follow feature, VersionEye can actively monitor source code from projects (from github too) and notify you about outdated dependencies in your project. Beside that it shows you which licenses your dependencies are using.
+
+###Set-up dependencies checking in your repo
+1. Register at [www.versioneye.com](https://www.versioneye.com) and choose "Create from GitHub" (in main projects dashboard).
+2. Connect it to your Github account (if you didn't before).
+3. Choose one repo to add to the dashboard and start the check.
+4. Enable the branches to be checked, then click at "build.gradle" link.
+5. After a little time, you'll see a graphic showing the dependencies of the repo and the licenses of them.
+
+###How does it work?
+1. It works with daily, weekly, monthly or manual sync.
+2. When it's time to sync, VersionEye checks (and parses) the file "build.gradle" to obtain dependencies and versions.
+3. Once checked the file, it searchs around for new versions of dependencies and licenses of dependencies.
+4. If there are some updates for libraries, it will notify you in order to update "build.gradle" and use latest libraries (badge in red). Otherwise, the badge and status, don't change.
+5. Congratulations! Now you'll be always updated and using the latest libraries for your project.
+
+###The project and it's dependencies
+- It's important for any project of any kind, to check dependencies frequently. Otherwise, your project can contain outdated libraries. Outdated libraries can cause security breaches or bugs of any type, than can affect to the project in a hard way.
+- Several popular github (and others) repositories check their dependencies like do VersionEye. Dependencies and updates are so boring and frequently (but important). The solution is automatize the check of updates, and get notified when they are outdated. Some examples of projects using this are: bootstrap, emberjs and famous Java (or JavaScript) libraries. 
+
+###More about dependencies
+- In the original project, two libraries were being used (jQuery and bootstrap). Taking a look at the dependencies (running `gradle dependencies`), it looks like it has two recursive dependencies. It's because one library used in bootstrap is jquery (that is also included). Watching this, we are making gradle to work a little more. We can just drop the jquery library and gradle will take it from the bootstrap dependency (without having recursive libraries). The problem can be seen here:
+
+```
+	+--- org.webjars:bootstrap:3.3.5
+	|    \--- org.webjars:jquery:1.11.1 -> 2.1.4
+	+--- org.webjars:jquery:2.1.4
+```
+
+- Another problem is libraries versions. In order to obtain the latest versions of library dependencies, we can use `gradle` or the `spring-boot-gradle` plugin to resolve that. But, in fact, the `spring-boot-gradle` plugin doesn't support automatically version resolving for bootstrap library (see the plugin [appendix](http://docs.spring.io/spring-boot/docs/current/reference/html/appendix-dependency-versions.html)), and gradle doesn't pick the correct latest version. 
+
+- Using the syntax `compile 'org.webjars:bootstrap:latest.release'` give us a alpha version of bootstrap that crashes when building the project. Also using the syntax `compile 'org.webjars:bootstrap:3.+'` to obtain latest minor version of mayor 3 version, give us the 3.3.4 version (which is outdated).
+
+In conclusion, we need to specify the bootstrap version manually to keep the project updated and working, because other workarounds don't work. VersionEye will notify if a newer bootstrap version is available to pick it, and this doesn't suppose a problem for the project.
 
 
 ##Static content
