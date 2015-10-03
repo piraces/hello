@@ -9,6 +9,7 @@
 /.project
 /dist/
 /gradle/
+/info_app/
 
 #VIM buffer files
 .*.swp

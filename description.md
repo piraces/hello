@@ -184,18 +184,18 @@ Takes all changes written  since the last commit, creates a new one and sets the
 A commit is also named by SHA1 hash. Every commit object has a pointer to the parent commit object. From a given commit,
 you can traverse back by looking at the parent pointer to view the history of the commit.
 ####clone
-Makes a Git repository copy from a remote source. Automatically adds the original location as "origin" so you can fetch
+Makes a Git repository copy from a remote source. Automatically adds the original location as `origin` so you can fetch
 again and also push (if you have permissions).
 ####status
 List the files you've changed and those you still need to add or commit
 ####help
-Type this into the command line to bring up the 21 most common git commands. You can also be more specific and type “git help init” or another term to figure out how to use and configure a specific git command.
+Type this into the command line to bring up the 21 most common git commands. You can also be more specific and type `git help init` or another term to figure out how to use and configure a specific git command.
 
 ###Connect to a remote repository
 * If you haven't connected your local repository to a remote server, add the server to be able to push to it:
-<code>git remote add origin "server"</code>
+`git remote add origin <server>`
 * List all currently configured remote repositories:
-<code>git remote -v</code>
+`git remote -v`
 
 ###Git concepts:
 ####Staging area
