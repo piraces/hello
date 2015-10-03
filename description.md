@@ -147,7 +147,7 @@ encapsulate the code's changes, which would make sure that unstable code is neve
 * Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
 * Merge one branch with the current branch: <code>git merge <branch's name></code>
 * Delete a branch: <code> git branch -d <branch's name></code>
-* Delete a branch on your remote repository: <code> git push origin :"branch's name"></code><
+* Delete a branch on your remote repository: <code> git push origin :"branch's name"</code>
 * Push the branch to your remote repository, so others can use it: <code>git push origin "branch's name"</code>
 * Push all branches to your remote repository: <code>git push --all origin</code>
 
@@ -192,9 +192,9 @@ List the files you've changed and those you still need to add or commit
 Type this into the command line to bring up the 21 most common git commands. You can also be more specific and type “git help init” or another term to figure out how to use and configure a specific git command.
 
 ###Connect to a remote repository
-If you haven't connected your local repository to a remote server, add the server to be able to push to it:
+* If you haven't connected your local repository to a remote server, add the server to be able to push to it:
 <code>git remote add origin "server"</code>
-List all currently configured remote repositories:
+* List all currently configured remote repositories:
 <code>git remote -v</code>
 
 ###Git concepts:
