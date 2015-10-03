@@ -409,10 +409,9 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 
 ### Why use it?
 1. Consistent development environments. All developers use the same OS, libraries, etc.
-2. You only need Docker. You don't need to install a bunch of language environments on your machine.
-3. It's easy to use.
+2. You only need Docker. Install a bunch of language environments on your machine is not needed.
+3. Easy to use.
 4. Save time.
-5. And more...
 
 ### Components of docker
 1. A <b>container</b> is a stripped-to-basics version of a Linux operating system.
@@ -421,14 +420,14 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 
 ### Build your own <i>docker</i>
 
-1. Write a Dockerfile. A Dockerfile describes the software that is <i>baked</i> into an image such as environment to use or what commands to run.
+1. Write a Dockerfile that describes the software that is <i>baked</i> into an image such as environment to use or what commands to run.
 Eg: A Dockerfile for a Java app
 
 	```
 	FROM java:8
 	RUN apt-get update
 	ADD . /src
-	CMD ["java", "-jar", "/src/HelloWorld.jar"]
+	CMD ["java", "-jar", "/src/HelloDocker.jar"]
 	```
 2. Build yor docker's image (e.g.: my image) typing: 
 	
@@ -436,7 +435,7 @@ Eg: A Dockerfile for a Java app
 	$> docker build -t myimage .
 	```
 	
-	Then, docker load the image (e.g. <i>java:8</i>) if you don't download before.
+	Then, docker loads the image (e.g. <i>java:8</i>) if you didn't download before.
 	
 	```
 	Step 0: FROM java:8
@@ -452,10 +451,10 @@ Eg: A Dockerfile for a Java app
 	Ign http://archive.ubuntu.com trusty-updates InRelease
 	```
 	
-	Finally, Docker finishes the build and reports its outcome:
+	Finally, Docker finishes the build and reports comes out:
 	
 	```
-	Step 3 : CMD java -jar /src/HelloWorld.jar
+	Step 3 : CMD java -jar /src/HelloDocker.jar
 	 ---> Running in a8e6faa88df3
 	 ---> 7d9495d03763
 	Removing intermediate container a8e6faa88df3
