@@ -407,15 +407,72 @@ browsers and ither computer applications acting as clients in network protocols.
 ### What is it?
 Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.
 
+### Why use it?
+1. Consistent development environments. All developers use the same OS, libraries, etc.
+2. You only need Docker. You don't need to install a bunch of language environments on your machine.
+3. It's easy to use.
+4. Save time.
+5. And more...
+
 ### Components of docker
 1. A <b>container</b> is a stripped-to-basics version of a Linux operating system.
 2. An <b>image</b> is software you load into a container.
 3. A <b>repository</b> Docker Hub for sharing and managing Docker containers.
 
 ### Build your own <i>docker</i>
-1. Write a Dockerfile. A Dockerfile describes the software that is “baked” into an image such as environment to use or what commands to run.
-2. Build yor docker's image typing: docker build -t <i>name</i> .
-3. Run your docker typing: docker run <i>name</i> 
+
+1. Write a Dockerfile. A Dockerfile describes the software that is <i>baked</i> into an image such as environment to use or what commands to run.
+Eg: A Dockerfile for a Java app
+
+	```
+	FROM java:8
+	RUN apt-get update
+	ADD . /src
+	CMD ["java", "-jar", "/src/HelloWorld.jar"]
+	```
+2. Build yor docker's image (e.g.: my image) typing: 
+	
+	```
+	$> docker build -t myimage .
+	```
+	
+	Then, docker load the image (e.g. <i>java:8</i>) if you don't download before.
+	
+	```
+	Step 0: FROM java:8
+	 ---> fb434121fc77
+	```
+	
+	Later Docker moves onto the next steam, in the example update the apt-get and add the 	files:
+	
+	```
+	Step 1 : RUN apt-get -y update
+	 ---> Running in 27d224dfa5b2
+	Ign http://archive.ubuntu.com trusty InRelease
+	Ign http://archive.ubuntu.com trusty-updates InRelease
+	```
+	
+	Finally, Docker finishes the build and reports its outcome:
+	
+	```
+	Step 3 : CMD java -jar /src/HelloWorld.jar
+	 ---> Running in a8e6faa88df3
+	 ---> 7d9495d03763
+	Removing intermediate container a8e6faa88df3
+	Successfully built 7d9495d03763
+	```
+
+3. Run your docker typing: 
+	
+	<code>
+	$> docker run <i>name</i> 
+	</code>
+	
+	And you can see:
+	
+	```
+	Hello Docker!!!
+	```
 
 ### Dockerfile's command
 1. FROM <i> image </i>: set the Base Image for subsequent instructions, should be a valid image.
@@ -433,5 +490,29 @@ Automated Builds allow you to use Docker Hub’s build clusters to automatically
 3. Select “Create Automated Build” from the top right “Create” menu item.
 4. Pick a GitHub or BitBucket project that has a Dockerfile you want to build.
 5. Follow the instructions from the web page.
-a
+
+### Other commands:
+1. List the images you have locally:
+
+	```
+	$> docker images
+	
+	REPOSITORY           TAG          IMAGE ID          CREATED             VIRTUAL SIZE
+	docker-whale         latest       7d9495d03763      4 minutes ago       273.7 MB
+	docker/whalesay      latest       fb434121fc77      4 hours ago         247 MB
+	hello-world          latest       91c95931e552      5 weeks ago         910 B
+	```
+
+2. See the images which are running locally:
+
+	```
+	$> docker ps
+	
+	CONTAINER ID        IMAGE                        COMMAND                CREATED              	STATUS              PORTS               NAMES
+	4c01db0b339c        ubuntu:12.04                 bash                   17 seconds ago       	Up 16 seconds       3300-3310/tcp       webapp
+	```
+	
+	
+	
+	
 
