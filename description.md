@@ -141,21 +141,26 @@ development. Usually is used when a developer wants to add a new feature or fix 
 encapsulate the code's changes, which would make sure that unstable code is never commit to the main code.
 
 #####Usage
-* List all of the branches in the repository: <code>git branch</code>
-* Create a branch: <code>git branch <branch's name> </code>, this command only create a new branch, if you want
+* List all of the branches in the repository: `git branch`
+* Create a branch: `git branch <branch's name>`, this command only create a new branch, if you want
   start adding commits to it, you need to select it.
-* Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
-* Merge one branch with the current branch: <code>git merge <branch's name></code>
-* Delete a branch: <code> git branch -d <branch's name></code>
+* Navigate between the differents branch in a proyect: `git checkout <branch's name>`
+* Merge one branch with the current branch: `git merge <branch's name>`
+* Delete a branch: `git branch -d <branch's name>`
+* Delete a branch on your remote repository: `git push origin :<branch's name>`
+* Push the branch to your remote repository, so others can use it: `git push origin <branch's name>`
+* Push all branches to your remote repository: `git push --all origin`
 
 Here is another interesting command that you can use:
-* Create a branch and move to it: <code>git checkout -b <branch's name></code>
-* See the differences between two branchs: <code>git diff --stat <branch 1> <branch 2></code>
-* Undo a merge: <code>git reset --hard HEAD</code>
+* Create a branch and move to it: `git checkout -b <branch's name>`
+* See the differences between two branchs: `git diff --stat <branch 1> <branch 2>`
+* Undo a merge: `git reset --hard HEAD`
 
 ###Additional info about Git
 
 ###Git commands:
+####init
+Create a new local repository
 ####fetch
 Fetches all the objects from the remote repository that are not present in the local one.
 ####pull
@@ -179,8 +184,18 @@ Takes all changes written  since the last commit, creates a new one and sets the
 A commit is also named by SHA1 hash. Every commit object has a pointer to the parent commit object. From a given commit,
 you can traverse back by looking at the parent pointer to view the history of the commit.
 ####clone
-Makes a Git repository copy from a remote source. Automatically adds the original location as "origin" so you can fetch
+Makes a Git repository copy from a remote source. Automatically adds the original location as `origin` so you can fetch
 again and also push (if you have permissions).
+####status
+List the files you've changed and those you still need to add or commit
+####help
+Type this into the command line to bring up the 21 most common git commands. You can also be more specific and type `git help init` or another term to figure out how to use and configure a specific git command.
+
+###Connect to a remote repository
+* If you haven't connected your local repository to a remote server, add the server to be able to push to it:
+`git remote add origin <server>`
+* List all currently configured remote repositories:
+`git remote -v`
 
 ###Git concepts:
 ####Staging area
@@ -201,6 +216,11 @@ again and also push (if you have permissions).
 	Then the rest of the developers will have to pull these changes to their local repositories to continue working
 	    with an updated copy.
 
+
+##GitHub Desktop
+If you want to simplify essential steps in your GitHub workflow you can install the [GitHub Desktop] (https://desktop.github.com/) app on your Windows or Mac computer.
+This app is an alternative to use git from the command line, but is more suited to developers who are in the development-to-deployment workflow and not for those working on open source projects or who use GitHub to monitor bugs, feature requests or other problems in existing applications. 
+[Here] (https://help.github.com/desktop/) you can find all necessary documentation for getting started.
 
 ##Spring Framework
 
