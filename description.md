@@ -571,8 +571,21 @@ Automated Builds allow you to use Docker Hub’s build clusters to automatically
 	CONTAINER ID        IMAGE                        COMMAND                CREATED              	STATUS              PORTS               NAMES
 	4c01db0b339c        ubuntu:12.04                 bash                   17 seconds ago       	Up 16 seconds       3300-3310/tcp       webapp
 	```
-	
-	
-	
+
+
+### JDepend
+
+JDepend traverses Java class file directories and generates design quality metrics for each Java package. JDepend allows you to automatically measure the quality of a design in terms of its extensibility, reusability, and maintainability to manage package dependencies effectively. 
+
+ Before using JDepend, it is important to understand that "good" design quality metrics are not necessarily indicative of good designs. Likewise, "bad" design quality metrics are not necessarily indicative of bad designs. The design quality metrics produced by JDepend should not be used as yard sticks by which all designs are measured.
+
+The design quality metrics produced by JDepend are intended to be used by designers to measure the designs they create, understand those designs, and automatically check that the designs exhibit expected qualities while undergoing continuous refactoring. Refactoring will undoubtedly lead to some adjustment of these metrics as the shape of the design changes. 
+
+The JDepend plugin for Gradle performs quality checks on your project's source files using JDepend and generates reports from these checks.
+
+
+ **Identify Package Dependency Cycles**
+
+Packages participating in a package dependency cycle are in a deadly embrace with respect to reusability and their release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques. 
 	
 
