@@ -463,7 +463,7 @@ browsers and ither computer applications acting as clients in network protocols.
 4. formatting of the code. This option is the most used and recommended in web development.
 
 
-## Docker
+## [Docker] (https://www.docker.com)
 
 ### What is it?
 Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.
@@ -473,6 +473,12 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 2. You only need Docker. Install a bunch of language environments on your machine is not needed.
 3. Easy to use.
 4. Save time.
+
+### Docker-Machine
+If you've OS X or Windows you probably need a little setup after installing. This is because docker run inside a lightweight Linux VM, so you need to setup a docker machine. Usually if you install Docker Toolbox it installs also the docker machine but you can also install only the docker machine.
+When you init Docker, it automatically inits docker machine, but when you run a container you need some configuration (see above).
+
+If you want to learn more about the Docker Machine: [link](https://docs.docker.com/machine/) 
 
 ### Components of docker
 1. A <b>container</b> is a stripped-to-basics version of a Linux operating system.
@@ -533,6 +539,34 @@ Eg: A Dockerfile for a Java app
 	```
 	Hello Docker!!!
 	```
+	
+	
+### Container ports
+If you use windows or OSX probably you can't acces to your container. To fix this <i>problem</i> you need to expose ports from the container to your local host.
+
+When you run a continer you need to add the flag -p for redirect a public port to a private port in the container:
+
+```
+$> docker run -p 49160:8080 myimage
+```
+
+Also you need to know the dockers' ip, you can know with the command:
+
+```
+$> docker-machine ip default
+```
+
+And it returns something like that:
+
+```
+192.168.59.103
+```
+Now you can acces into your docker with the following URL:
+
+```
+192.168.59.103:49160
+```
+
 
 ### Dockerfile's command
 1. FROM <i> image </i>: set the Base Image for subsequent instructions, should be a valid image.
@@ -571,6 +605,7 @@ Automated Builds allow you to use Docker Hub’s build clusters to automatically
 	CONTAINER ID        IMAGE                        COMMAND                CREATED              	STATUS              PORTS               NAMES
 	4c01db0b339c        ubuntu:12.04                 bash                   17 seconds ago       	Up 16 seconds       3300-3310/tcp       webapp
 	```
+<<<<<<< HEAD
 
 
 ### JDepend
@@ -588,4 +623,35 @@ The JDepend plugin for Gradle performs quality checks on your project's source f
 
 Packages participating in a package dependency cycle are in a deadly embrace with respect to reusability and their release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques. 
 	
+=======
+	
+	
+## Markdown
+
+### What is it?
+
+Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+### Pros
+- **Easy to learn:** 
+ - In 10 minutes you can use markdown fluently.
+- **Easy to write and read:** 
+ - You can write and format text without using the mouse like a usual text editor (like Microsoft Word or LibreOffice Writer).
+ - When you write do not use long labels to indicate the format of the text like in HTML.
+ - You can read the text easily even in plain text.
+- **Versatile**
+ - Convertible in many other formats like HTML.
+
+### Markdown's editors
+Editors are good to learn easily all tags of markdown:
+- Haroopad (my recomendation)
+- Atom
+- GitBook
+- Remarkable
+- Any notepad
+
+
+
+
+>>>>>>> upstream/master
 
