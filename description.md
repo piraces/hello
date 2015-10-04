@@ -141,21 +141,27 @@ development. Usually is used when a developer wants to add a new feature or fix 
 encapsulate the code's changes, which would make sure that unstable code is never commit to the main code.
 
 #####Usage
-* List all of the branches in the repository: <code>git branch</code>
-* Create a branch: <code>git branch <branch's name> </code>, this command only create a new branch, if you want
+* List all of the branches in the repository: `git branch`
+* Create a branch: `git branch <branch's name>`, this command only create a new branch, if you want
   start adding commits to it, you need to select it.
-* Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
-* Merge one branch with the current branch: <code>git merge <branch's name></code>
-* Delete a branch: <code> git branch -d <branch's name></code>
+* Navigate between the differents branch in a proyect: `git checkout <branch's name>`
+* Merge one branch with the current branch: `git merge <branch's name>`
+* Delete a branch: `git branch -d <branch's name>`
+* Delete a branch on your remote repository: `git push origin :<branch's name>`
+* Push the branch to your remote repository, so others can use it: `git push origin <branch's name>`
+* Push all branches to your remote repository: `git push --all origin`
 
 Here is another interesting command that you can use:
-* Create a branch and move to it: <code>git checkout -b <branch's name></code>
-* See the differences between two branchs: <code>git diff --stat <branch 1> <branch 2></code>
-* Undo a merge: <code>git reset --hard HEAD</code>
+* Create a branch and move to it: `git checkout -b <branch's name>`
+* See the differences between two branchs: `git diff --stat <branch 1> <branch 2>`
+* Undo a merge: `git reset --hard HEAD`
+
 
 ###Additional info about Git
 
 ###Git commands:
+####init
+Create a new local repository
 ####fetch
 Fetches all the objects from the remote repository that are not present in the local one.
 ####pull
@@ -179,8 +185,18 @@ Takes all changes written  since the last commit, creates a new one and sets the
 A commit is also named by SHA1 hash. Every commit object has a pointer to the parent commit object. From a given commit,
 you can traverse back by looking at the parent pointer to view the history of the commit.
 ####clone
-Makes a Git repository copy from a remote source. Automatically adds the original location as "origin" so you can fetch
+Makes a Git repository copy from a remote source. Automatically adds the original location as `origin` so you can fetch
 again and also push (if you have permissions).
+####status
+List the files you've changed and those you still need to add or commit
+####help
+Type this into the command line to bring up the 21 most common git commands. You can also be more specific and type `git help init` or another term to figure out how to use and configure a specific git command.
+
+###Connect to a remote repository
+* If you haven't connected your local repository to a remote server, add the server to be able to push to it:
+`git remote add origin <server>`
+* List all currently configured remote repositories:
+`git remote -v`
 
 ###Git concepts:
 ####Staging area
@@ -201,6 +217,11 @@ again and also push (if you have permissions).
 	Then the rest of the developers will have to pull these changes to their local repositories to continue working
 	    with an updated copy.
 
+
+##GitHub Desktop
+If you want to simplify essential steps in your GitHub workflow you can install the [GitHub Desktop] (https://desktop.github.com/) app on your Windows or Mac computer.
+This app is an alternative to use git from the command line, but is more suited to developers who are in the development-to-deployment workflow and not for those working on open source projects or who use GitHub to monitor bugs, feature requests or other problems in existing applications. 
+[Here] (https://help.github.com/desktop/) you can find all necessary documentation for getting started.
 
 ##Spring Framework
 
@@ -438,4 +459,179 @@ browsers and ither computer applications acting as clients in network protocols.
 ### Forms of use by author
 1. Inline: It not recommend because the code can be dirty.
 2. Internal style sheet: It's a better option than the last, because it separate the style and the code. But the file can be confuse.
-3. External style sheet: It's more potent than other because it separate completely the formatting of the code. This option is the most used and recommended in web development.
+3. External style sheet: It's more potent than other because it separate completely the 
+4. formatting of the code. This option is the most used and recommended in web development.
+
+
+## [Docker] (https://www.docker.com)
+
+### What is it?
+Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.
+
+### Why use it?
+1. Consistent development environments. All developers use the same OS, libraries, etc.
+2. You only need Docker. Install a bunch of language environments on your machine is not needed.
+3. Easy to use.
+4. Save time.
+
+### Docker-Machine
+If you've OS X or Windows you probably need a little setup after installing. This is because docker run inside a lightweight Linux VM, so you need to setup a docker machine. Usually if you install Docker Toolbox it installs also the docker machine but you can also install only the docker machine.
+When you init Docker, it automatically inits docker machine, but when you run a container you need some configuration (see above).
+
+If you want to learn more about the Docker Machine: [link](https://docs.docker.com/machine/) 
+
+### Components of docker
+1. A <b>container</b> is a stripped-to-basics version of a Linux operating system.
+2. An <b>image</b> is software you load into a container.
+3. A <b>repository</b> Docker Hub for sharing and managing Docker containers.
+
+### Build your own <i>docker</i>
+
+1. Write a Dockerfile that describes the software that is <i>baked</i> into an image such as environment to use or what commands to run.
+Eg: A Dockerfile for a Java app
+
+	```
+	FROM java:8
+	RUN apt-get update
+	ADD . /src
+	CMD ["java", "-jar", "/src/HelloDocker.jar"]
+	```
+2. Build yor docker's image (e.g.: my image) typing: 
+	
+	```
+	$> docker build -t myimage .
+	```
+	
+	Then, docker loads the image (e.g. <i>java:8</i>) if you didn't download before.
+	
+	```
+	Step 0: FROM java:8
+	 ---> fb434121fc77
+	```
+	
+	Later Docker moves onto the next steam, in the example update the apt-get and add the 	files:
+	
+	```
+	Step 1 : RUN apt-get -y update
+	 ---> Running in 27d224dfa5b2
+	Ign http://archive.ubuntu.com trusty InRelease
+	Ign http://archive.ubuntu.com trusty-updates InRelease
+	```
+	
+	Finally, Docker finishes the build and reports comes out:
+	
+	```
+	Step 3 : CMD java -jar /src/HelloDocker.jar
+	 ---> Running in a8e6faa88df3
+	 ---> 7d9495d03763
+	Removing intermediate container a8e6faa88df3
+	Successfully built 7d9495d03763
+	```
+
+3. Run your docker typing: 
+	
+	<code>
+	$> docker run <i>name</i> 
+	</code>
+	
+	And you can see:
+	
+	```
+	Hello Docker!!!
+	```
+	
+	
+### Container ports
+If you use windows or OSX probably you can't acces to your container. To fix this <i>problem</i> you need to expose ports from the container to your local host.
+
+When you run a continer you need to add the flag -p for redirect a public port to a private port in the container:
+
+```
+$> docker run -p 49160:8080 myimage
+```
+
+Also you need to know the dockers' ip, you can know with the command:
+
+```
+$> docker-machine ip default
+```
+
+And it returns something like that:
+
+```
+192.168.59.103
+```
+Now you can acces into your docker with the following URL:
+
+```
+192.168.59.103:49160
+```
+
+
+### Dockerfile's command
+1. FROM <i> image </i>: set the Base Image for subsequent instructions, should be a valid image.
+2. RUN <i> commands </i>: execute commands in the current images.
+3. ADD <i> src dst </i>: copies new files and directories from src to dst.
+4. CMD <i> commands </i>: default execute for a image.
+
+### Automated Builds from github
+
+Automated Builds allow you to use Docker Hub’s build clusters to automatically create images from a GitHub repository containing a Dockerfile.
+
+#### Set up
+1. Create a Docker Hub account and log in.
+2. Link your Hub account by referring to the GitHub.
+3. Select “Create Automated Build” from the top right “Create” menu item.
+4. Pick a GitHub or BitBucket project that has a Dockerfile you want to build.
+5. Follow the instructions from the web page.
+
+### Other commands:
+1. List the images you have locally:
+
+	```
+	$> docker images
+	
+	REPOSITORY           TAG          IMAGE ID          CREATED             VIRTUAL SIZE
+	docker-whale         latest       7d9495d03763      4 minutes ago       273.7 MB
+	docker/whalesay      latest       fb434121fc77      4 hours ago         247 MB
+	hello-world          latest       91c95931e552      5 weeks ago         910 B
+	```
+
+2. See the images which are running locally:
+
+	```
+	$> docker ps
+	
+	CONTAINER ID        IMAGE                        COMMAND                CREATED              	STATUS              PORTS               NAMES
+	4c01db0b339c        ubuntu:12.04                 bash                   17 seconds ago       	Up 16 seconds       3300-3310/tcp       webapp
+	```
+	
+	
+## Markdown
+
+### What is it?
+
+Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+### Pros
+- **Easy to learn:** 
+ - In 10 minutes you can use markdown fluently.
+- **Easy to write and read:** 
+ - You can write and format text without using the mouse like a usual text editor (like Microsoft Word or LibreOffice Writer).
+ - When you write do not use long labels to indicate the format of the text like in HTML.
+ - You can read the text easily even in plain text.
+- **Versatile**
+ - Convertible in many other formats like HTML.
+
+### Markdown's editors
+Editors are good to learn easily all tags of markdown:
+- Haroopad (my recomendation)
+- Atom
+- GitBook
+- Remarkable
+- Any notepad
+
+
+
+
+
