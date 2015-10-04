@@ -632,6 +632,45 @@ Editors are good to learn easily all tags of markdown:
 - Any notepad
 
 
+### JDepend
+
+JDepend traverses Java class file directories and generates design quality metrics for each Java package. JDepend allows you to automatically measure the quality of a design in terms of its extensibility, reusability, and maintainability to manage package dependencies effectively. 
+
+Before using JDepend, it is important to understand that "good" design quality metrics are not necessarily indicative of good designs. Likewise, "bad" design quality metrics are not necessarily indicative of bad designs. The design quality metrics produced by JDepend should not be used as yard sticks by which all designs are measured.
+
+The design quality metrics produced by JDepend are intended to be used by designers to measure the designs they create, understand those designs, and automatically check that the designs exhibit expected qualities while undergoing continuous refactoring. Refactoring will undoubtedly lead to some adjustment of these metrics as the shape of the design changes. 
+
+The JDepend plugin for Gradle performs quality checks on your project's source files using JDepend and generates reports from these checks.
+
+
+**Identify Package Dependency Cycles**
+
+Packages participating in a package dependency cycle are in a deadly embrace with respect to reusability and their release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques. 
+
+Package dependency cycles are best observed using the textual or XML user interface. In general, all packages dependencies that intersect a dependency cycle are reported. This includes packages directly participating in a cycle and packages that depend on packages directly participating in a cycle.
+
+The intent is to identify sets of packages that must be reused and released together. To break reported cycles, focus on those packages directly participating in a cycle.
+
+Here's an example of a two-package cycle, as reported by the textual UI:
+
+        com.xyz.ejb
+           |
+           |   com.xyz.servlet
+           |-> com.xyz.ejb
+
+This indicates that the com.xyz.ejb package depends on the com.xyz.servlet package, which in turn depends on the com.xyz.ejb package. These two package must be released and reused together.
+ 
+Here's an example of a package that depends on the two-package cycle described above, as reported by the textual UI:
+ 
+        com.xyz.client
+           |
+           |-> com.xyz.ejb
+           |   com.xyz.servlet
+           |-> com.xyz.ejb
+ 
+This indicates that the com.xyz.client package depends on the com.xyz.ejb package, which in turn forms a cyclic dependency with the com.xyz.servlet package. The com.xyz.client package itself isn't part of the cycle, but since it depends on a package in the cycle, it can't be reused/released without it. 
+ 
+
 
 
 

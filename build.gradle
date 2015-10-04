@@ -25,6 +25,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'io.spring.dependency-management' 
 apply plugin: 'jacoco' //Plugin to calculate code coverage
 apply plugin: 'checkstyle' 
+apply plugin: 'jdepend'//Plugin to detect problem with dependencies
 
 // The jar block specifies how the JAR file will be named. In this case, it will render hello-1.0.jar.
 
@@ -75,6 +76,16 @@ eclipse {
              }
          }
     }
+}
+
+// This task checks the cyles of dependencies in the test
+jdependMain.doLast {
+   File file = new File(jdepend.reportsDir, "main.xml");
+   assert file.exists() && file.isFile(), "File '$file' must exist"
+ 
+   def numberOfCycles = new XmlSlurper().parse(file).Cycles.Package.size()
+   assert numberOfCycles == 0, """We have detected $numberOfCycles cycles. Checkout report file: $file.
+                                    """
 }
 
 // This task will generate a report file under $buildDir/reports/jacoco/test
