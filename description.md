@@ -463,7 +463,7 @@ browsers and ither computer applications acting as clients in network protocols.
 4. formatting of the code. This option is the most used and recommended in web development.
 
 
-## Docker
+## [Docker] (https://www.docker.com)
 
 ### What is it?
 Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.
@@ -473,6 +473,12 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 2. You only need Docker. Install a bunch of language environments on your machine is not needed.
 3. Easy to use.
 4. Save time.
+
+### Docker-Machine
+If you've OS X or Windows you probably need a little setup after installing. This is because docker run inside a lightweight Linux VM, so you need to setup a docker machine. Usually if you install Docker Toolbox it installs also the docker machine but you can also install only the docker machine.
+When you init Docker, it automatically inits docker machine, but when you run a container you need some configuration (see above).
+
+If you want to learn more about the Docker Machine: [link](https://docs.docker.com/machine/) 
 
 ### Components of docker
 1. A <b>container</b> is a stripped-to-basics version of a Linux operating system.
@@ -533,6 +539,34 @@ Eg: A Dockerfile for a Java app
 	```
 	Hello Docker!!!
 	```
+	
+	
+### Container ports
+If you use windows or OSX probably you can't acces to your container. To fix this <i>problem</i> you need to expose ports from the container to your local host.
+
+When you run a continer you need to add the flag -p for redirect a public port to a private port in the container:
+
+```
+$> docker run -p 49160:8080 myimage
+```
+
+Also you need to know the dockers' ip, you can know with the command:
+
+```
+$> docker-machine ip default
+```
+
+And it returns something like that:
+
+```
+192.168.59.103
+```
+Now you can acces into your docker with the following URL:
+
+```
+192.168.59.103:49160
+```
+
 
 ### Dockerfile's command
 1. FROM <i> image </i>: set the Base Image for subsequent instructions, should be a valid image.
