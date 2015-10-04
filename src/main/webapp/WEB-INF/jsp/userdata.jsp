@@ -5,10 +5,10 @@
 </head>
 <body>
 <center>
-<!--Writes a meesage with de user's data-->
+<!--Writes a message with de user's data-->
 <h1>Nice to meet you!</h1>
 <p>Hello <%= request.getParameter("name")%>, you are <%= request.getParameter("age")%> years old and you are in <%= request.getParameter("curse")%> curse, studying <%= request.getParameter("speciality")%>.<br>
-   Maybe these website were insteresting for you:<br></p>
+   Maybe these website were interesting for you:<br></p>
   <!--Links of pages related with the subject-->
   <ul>
   <li><p><a href="https://spring.io/"> Spring </a></p></li>

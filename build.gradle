@@ -13,7 +13,7 @@ buildscript {
 
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE") 
-        classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
+        classpath("io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE")
     }
 }
 
@@ -24,6 +24,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot' 
 apply plugin: 'io.spring.dependency-management' 
 apply plugin: 'jacoco' //Plugin to calculate code coverage
+apply plugin: 'checkstyle' 
 
 // The jar block specifies how the JAR file will be named. In this case, it will render hello-1.0.jar.
 
@@ -50,10 +51,10 @@ configurations {
     providedRuntime
 }
 
+
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web' 
+    compile 'org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE' 
     compile 'org.webjars:bootstrap:3.3.5'
-    compile 'org.webjars:jquery:2.1.4'    
 
     // 'providedRuntime' dependencies are not added to the WAR archive
     // because they should already be in the execution environment
@@ -86,6 +87,10 @@ jacocoTestReport {
         csv.enabled = false
         html.enabled = true
     }
+}
+
+checkstyle {
+	toolVersion = "6.0"
 }
 
 test {

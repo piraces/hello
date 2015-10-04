@@ -28,7 +28,7 @@ Provides to the main JSP page of the project, a simple way to make the client-si
 		<span class="glyphicon glyphicon-arrow-right" ><kbd> <%out.println("System:" + request.getHeader("User-Agent"));%></kbd></span><br<br><br>
 		
 	</div>
-	<h3>Complete with your dates:</h3>
+	<h3>Complete with your data:</h3>
 	<!-- Formulary which a user can write and send to the server. All the params are required-->
 	<form action="/" method="POST">
 <div class="input-group">
@@ -41,7 +41,7 @@ Provides to the main JSP page of the project, a simple way to make the client-si
   <input type="text" class="form-control" placeholder="What's age?" name="age" required></div>
 <br/>
 <div class="input-group">
-<span class="input-group-addon" >Curse</span>
+<span class="input-group-addon" >Course</span>
   <input type="text" class="form-control" placeholder="What curse are you in?" name="curse" required></div>
 <br/>
 <div class="input-group">
