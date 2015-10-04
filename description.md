@@ -607,6 +607,31 @@ Automated Builds allow you to use Docker Hub’s build clusters to automatically
 	```
 	
 	
-	
-	
+## Markdown
+
+### What is it?
+
+Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+### Pros
+- **Easy to learn:** 
+ - In 10 minutes you can use markdown fluently.
+- **Easy to write and read:** 
+ - You can write and format text without using the mouse like a usual text editor (like Microsoft Word or LibreOffice Writer).
+ - When you write do not use long labels to indicate the format of the text like in HTML.
+ - You can read the text easily even in plain text.
+- **Versatile**
+ - Convertible in many other formats like HTML.
+
+### Markdown's editors
+Editors are good to learn easily all tags of markdown:
+- Haroopad (my recomendation)
+- Atom
+- GitBook
+- Remarkable
+- Any notepad
+
+
+
+
 
