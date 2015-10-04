@@ -7,9 +7,6 @@ buildscript {
 
     repositories {
         mavenCentral()
-	maven {
-		url "https://plugins.gradle.org/m2/"
-	}
     }
 
     // The dependencies block contains all the external dependencies that are need.
