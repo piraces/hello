@@ -30,9 +30,5 @@ Alberto Sabater Bailón | 546297 | [![Build Status](https://travis-ci.org/asabate
 Agustin Navarro Torres | 587570 | [![Build Status](https://travis-ci.org/SirBargus/hello.svg)](https://travis-ci.org/SirBargus/hello)
 [Alejandro Solanas Bonilla](https://github.com/Naxsel/hello) | 647647 | [![Build Status](https://travis-ci.org/Naxsel/hello.svg)](https://travis-ci.org/Naxsel/hello)
 Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/luisjesuspellicer/hello.svg)](https://travis-ci.org/luisjesuspellicer/hello)
-<<<<<<< HEAD
-[Marcos Ruiz GarcÃ­a](https://github.com/marcosruiz/hello) | 648045 | [![Build Status](https://travis-ci.org/marcosruiz/hello.svg)](https://travis-ci.org/marcosruiz/hello)
-=======
+[Marcos Ruiz García](https://github.com/marcosruiz/hello) | 648045 | [![Build Status](https://travis-ci.org/marcosruiz/hello.svg)](https://travis-ci.org/marcosruiz/hello)
 Óscar Meler Murillo | 608919 | [![Build Status](https://travis-ci.org/oscarmeler/hello.svg)](https://travis-ci.org/oscarmeler/hello)
-
->>>>>>> upstream/master
