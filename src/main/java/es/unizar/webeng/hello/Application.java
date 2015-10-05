@@ -7,21 +7,25 @@ package es.unizar.webeng.hello;
 */
 import org.springframework.boot.SpringApplication;
 
-/* SpringBootApplication is used to indicate a configuration class that can declare
-* several @Bean methods and triggers. It is equivalent to declaring @Configuration
-* @EnableAutoConfiguration and @ComponentScan manually.
+/* SpringBootApplication is used to indicate a configuration class 
+* that can declare several @Bean methods and triggers. It is equivalent to
+* declaring @Configuration @EnableAutoConfiguration and @ComponentScan manually.
 */
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/* SpringApplicationBuilder is a simpler builder for SpringApplication and ApplicationContext
-* with an API.
+/* SpringApplicationBuilder is a simpler builder for SpringApplication 
+* and ApplicationContext with an API.
 */
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
-/* SpringBootServletInitializer binds an application that starts a Spring Boot with the servlet
-* and filter mappings.
+/* SpringBootServletInitializer binds an application that starts a 
+* Spring Boot with the servlet and filter mappings.
 */
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+/* 
+ * Enables Spring's scheduled task execution capability, similar to functionality
+ * found in Spring's <task:*> XML namespace.
+ * */
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
@@ -39,8 +43,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @SpringBootApplication
 /*
-* The @EnableScheduling annonation allows the application to run methods defined as @Scheduled
-*  which means executing task periodically.
+* The @EnableScheduling annonation allows the application to 
+* run methods defined as @Scheduled which means executing task periodically.
 */
 @EnableScheduling
 public class Application extends SpringBootServletInitializer {
@@ -52,9 +56,8 @@ public class Application extends SpringBootServletInitializer {
     * application might need. Nonetheless a SpringApplication instance can
     * also be created without passing the .class object
     */
-  public static void main(String[] args) {
+  public static void main(final String[] args) {
 
-    
     SpringApplication.run(Application.class, args);
   }
 
@@ -67,7 +70,7 @@ public class Application extends SpringBootServletInitializer {
   * @param application builder, contains parameters 
   * @return original application with Application class added in sources
   */
-  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+  protected SpringApplicationBuilder configure(final SpringApplicationBuilder application) {
     return application.sources(Application.class);
   }
 }
