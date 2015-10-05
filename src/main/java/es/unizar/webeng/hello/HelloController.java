@@ -32,28 +32,28 @@ import java.util.Map;
 
 /**
  * The annotation @Controller indicates that HelloController 
- * takes the role of a controller
+ * takes the role of a controller.
  */
 @Controller
 public class HelloController {
  /**
-  * @countReq Request counter
+  * @countReq Request counter.
   */
   private transient int countReq;
   
  /**
-  * @secondsRunning Seconds running the app
+  * @secondsRunning Seconds running the app.
   */  
   private transient int secondsRunning;
   
  /**
-  * @LOGGER Declares logger on this class
+  * @LOGGER Declares logger on this class.
   */
   private static final Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
   
  /**
   * The annotation @Value is used to set a default value
-  * from properties file
+  * from properties file.
   */
   @Value("${app.message:Hello World}")
   private transient String message;

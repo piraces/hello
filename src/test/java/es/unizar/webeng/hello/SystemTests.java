@@ -64,7 +64,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 public class SystemTests {
 
  /**
-  * @port It will contain the random port
+  * @port It will contain the random port.
   */
   @Value("${local.server.port}")
   private transient int port;
@@ -158,7 +158,7 @@ public class SystemTests {
 
  /**
   * Method that can be executed in order to test if Head.png is being served.
-  * @throws Exception if the image is not being served
+  * @throws Exception if the image is not being served.
   */
   @Test
   public void testHead() throws Exception {

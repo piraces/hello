@@ -670,6 +670,8 @@ Here's an example of a package that depends on the two-package cycle described a
  
 This indicates that the com.xyz.client package depends on the com.xyz.ejb package, which in turn forms a cyclic dependency with the com.xyz.servlet package. The com.xyz.client package itself isn't part of the cycle, but since it depends on a package in the cycle, it can't be reused/released without it. 
 
+This indicates that the com.xyz.client package depends on the com.xyz.ejb package, which in turn forms a cyclic dependency with the com.xyz.servlet package. The com.xyz.client package itself isn't part of the cycle, but since it depends on a package in the cycle, it can't be reused/released without it. 
+
 ##[PMD](https://pmd.github.io/)
 PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth.
 Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code.

@@ -47,7 +47,7 @@ import java.util.HashMap;
 public class UnitTest {
 
  /**
-  * @Autowired Place an instance of HelloController into field
+  * @Autowired Place an instance of HelloController into field.
   */
   @Autowired
   private transient HelloController controller;

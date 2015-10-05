@@ -1,9 +1,10 @@
 package es.unizar.webeng.hello;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.hamcrest.CoreMatchers.is;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
 
 import org.junit.Before;
 
@@ -53,13 +54,13 @@ import org.springframework.web.context.WebApplicationContext;
 public class IntegrationTests {
 
  /** @Autowire relationships between collaborating beans, in this case, place
-  *     an instance of WebApplicationContext into wac
+  *     an instance of WebApplicationContext into wac.
   */
   @Autowired
   private transient WebApplicationContext wac;
 
  /**
-  * Default @Value for message to compare at tests
+  * Default @Value for message to compare at tests.
   */
   @Value("${app.message:Hello World}")
   private transient String message;
@@ -72,7 +73,7 @@ public class IntegrationTests {
 
  /**
   * @Before Sentence to be executed before the test, in order to prepare the base
-  *     architecture for the proper functioning of the tests
+  *     architecture for the proper functioning of the tests.
   */
   @Before
   public void setUp() {
