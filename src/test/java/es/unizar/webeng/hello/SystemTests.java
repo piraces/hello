@@ -6,6 +6,7 @@ package es.unizar.webeng.hello;
  * Import a class called Test, which allows define a test in JUnit
  * */
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 
