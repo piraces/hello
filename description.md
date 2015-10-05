@@ -632,7 +632,6 @@ Editors are good to learn easily all tags of markdown:
 - Any notepad
 
 
-<<<<<<< HEAD
 =======
 ### JDepend
 
@@ -671,9 +670,3 @@ Here's an example of a package that depends on the two-package cycle described a
            |-> com.xyz.ejb
  
 This indicates that the com.xyz.client package depends on the com.xyz.ejb package, which in turn forms a cyclic dependency with the com.xyz.servlet package. The com.xyz.client package itself isn't part of the cycle, but since it depends on a package in the cycle, it can't be reused/released without it. 
- 
-
->>>>>>> upstream/master
-
-
-
