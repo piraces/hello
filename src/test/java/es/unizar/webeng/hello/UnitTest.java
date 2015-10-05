@@ -82,22 +82,22 @@ public class UnitTest {
     * It checks that the message returned by 'controller.welcome()' is
     * correct ("welcome")
     */
-    assertThat(view, is("welcome"));
+  assertThat(view, is("welcome"));
    /*
     * It checks that the field 'message' has been added successfully to the
     * map
     */
-    assertThat(map.containsKey("message"), is(true));
+  assertThat(map.containsKey("message"), is(true));
     // Check that the time field contain a Date object
-    assertThat(map.get("time"), instanceOf(Date.class));
+  assertThat(map.get("time"), instanceOf(Date.class));
     // Check that the Date is correct
-    Date date = ((Date) map.get("time"));
+  Date date = ((Date) map.get("time"));
    /*
     * An exception is thrown if the date given by 'controller.welcome()' is
     * later to date 'now'
     */
     Date now = new Date();
-    assertThat(date.after(now), is(false));
+assertThat(date.after(now), is(false));
   }
 
  /**
@@ -111,6 +111,6 @@ public class UnitTest {
     * It checks that the message returned by 'controller.userdata()' is
     * correct ("userdata")
     */
-    assertThat(view, is("userdata"));
+   assertThat(view, is("userdata"));
   }
 }
