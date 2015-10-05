@@ -1,12 +1,12 @@
 package es.unizar.webeng.hello;
 
-import static org.junit.Assert.*;
+
 
 /*
  * Import a class called Test, which allows define a test in JUnit
  * */
 import org.junit.Test;
-
+import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 
 /* Imports the SpringFramework's libraries */
