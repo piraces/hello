@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Logback file used to configure the log system, needed in order to personalize the way
+ the logger shows the data.-->
+<configuration>
+	<!--Using the features SpringBoot provides by default in base.xml, we use this to find the
+	 file defined in application.properties by logging.file. The loggings will now written to the
+	 console and to the file.-->
+	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+	<!--Configuring the appender that shows the messages on console-->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!--This is the pattern the logger will follow, it will print on standard output the
+		 	 hour (HH:mm:ss), the level of this log and the message generated. -->
+			<pattern> %d{HH:mm:ss} %-5level : %msg%n </pattern>
+		</encoder>
+	</appender>
+	<!--Configuring the root logger, this is first logger in their internal hierarchy and it has
+	 asigned the console as appender, what means this logger and all loggers will write at least on the 
+	 standard output. In addition, the level asigned to this logger and its descendants is the INFO 
+	 level and they will show any log with that level or higher. -->
+	<root level="info">
+		<appender-ref ref="STDOUT"  />
+	</root>
+</configuration>
