@@ -56,9 +56,9 @@ Testing your code is very easy.
   	 A problem occurred evaluating root project 'hello'.
   	 >org.gradle.api.tasks.TaskContainer.create(Ljava/lang/String;Ljava/lang/Class;)Lorg/gradle/api/Task;
 
-**Problem:** In the Ubuntu repository has a version less than [1.6 Gradle](http://gradle.org) , higher versions use other syntax.
+**Problem:** In the Ubuntu repository has a version less than 1.6 Gradle , higher versions use other syntax.
 
-**Solution:** Download the latest version from the official website.
+**Solution:** Download the latest version from the official website [Gradle](http://gradle.org).
 
 Execute:
 
