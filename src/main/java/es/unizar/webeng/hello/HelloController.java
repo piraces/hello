@@ -27,11 +27,6 @@ import java.util.Date;
 import java.util.Map;
 
 
-/* Imports java utilities */
-
-import java.util.Date;
-import java.util.Map;
-
 
 /*
  * This annotation indicates that HelloController takes the 
