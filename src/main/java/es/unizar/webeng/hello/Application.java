@@ -30,8 +30,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * be done manually. The @SpringBootApplication annotation is equivalent to
  * using @Configuration, @EnableAutoConfiguration and @ComponentScan with their
  * default attributes. The @ComponentScan annotation tells Spring to look for
- */
-/**
  * other components, configurations, and services in the the hello package,
  * allowing it to find the HelloController. The @Configuration annotation tags
  * the class as a source of bean definitions for the application context.

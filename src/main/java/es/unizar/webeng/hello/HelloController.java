@@ -47,9 +47,7 @@ public class HelloController {
  /**
   * The annotation @RequestMapping is used by Spring to
   * know which Controller or which Controller’s method must
-  *  each http customer call be addressed to.
-  */
- /**
+  * each http customer call be addressed to.
   * In this case,
   * we are informing that every http customer call to the
   * homepage, which was a request of GET kind,
@@ -65,15 +63,13 @@ public class HelloController {
   * In addition, it makes two new entries in the Map of Strings (as key)
   * and Objects (as value) passed by parameter. The first one has the key 
   * “time”, and its value is a Date object which manages the current date.
-  */
- /**  The second one has the key “message”, and its value is the
+  * The second one has the key “message”, and its value is the
   * reference to the String identified by “message” explained before.
   * @param model This parameter is used for passing data from the controller 
   *     to the view.
   *     Controller adds key-value pairs to the model and the view access them with 
   *     the ${key} syntax. When rendering, ${key} is replaced with its value.
-  */
- /** @return The name of the view responsible for rendering the HTML page. 
+  * @return The name of the view responsible for rendering the HTML page. 
   *     As "welcome" is returned, "welcome.jsp" file will render the page.
   */
   public String welcome(final Map<String, Object> model) {

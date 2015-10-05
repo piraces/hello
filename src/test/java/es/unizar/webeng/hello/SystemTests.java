@@ -96,9 +96,7 @@ public class SystemTests {
   * @testCss Method that can be executed in order to test the connection to styles
   *     sheet If the connection goes wrong or the CSS file is not well formed, this
   *     method throws an Exception
-  */ 
-  
- /** @throws Exception
+  * @throws Exception
   *             if the connection to the styles sheet is wrong or if it's bad
   *             formed.
   */

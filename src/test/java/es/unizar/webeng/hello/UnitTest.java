@@ -55,8 +55,6 @@ public class UnitTest {
  /**
   * The function run the unity tests, if a test fail, the function will throw
   * a Exception.
-  */
- /** 
   * Running this function will execute the unity tests on 'hello' application,
   * checking that all its parts are correct (messages, if the Date object
   * does or does not exists and, in that case, if the Date on the time field
