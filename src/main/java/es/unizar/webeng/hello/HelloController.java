@@ -1,5 +1,13 @@
 package es.unizar.webeng.hello;
 
+/* Imports the SpringFramework's libraries */
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /* 
  * Imports java utilities:
@@ -17,16 +25,6 @@ import java.util.Date;
  *   the iterators on the map's collection views return their elements. 	
  * */
 import java.util.Map;
-
-
-/* Imports the SpringFramework's libraries */
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 
 /* Imports java utilities */
