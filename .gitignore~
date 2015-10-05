@@ -9,6 +9,9 @@
 /.project
 /dist/
 /gradle/
+<<<<<<< HEAD
+info_app.log
+=======
 /info_app.log
 >>>>>>> upstream/master
 
