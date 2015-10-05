@@ -7,6 +7,7 @@
 <center>
 <!--Writes a message with de user's data-->
 <h1>Nice to meet you!</h1>
+<!--Writes a message and gets the name, the age, the curse and the speciality of the request to complete the message-->
 <p>Hello <%= request.getParameter("name")%>, you are <%= request.getParameter("age")%> years old and you are in <%= request.getParameter("curse")%> curse, studying <%= request.getParameter("speciality")%>.<br>
    Maybe these website were interesting for you:<br></p>
   <!--Links of pages related with the subject-->

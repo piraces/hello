@@ -6,8 +6,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import org.junit.Before;
+
+/*
+ * Import a class called Test, which allows define a test in JUnit
+ * */
 import org.junit.Test;
+
 import org.junit.runner.RunWith;
+
+/* Imports the SpringFramework's libraries */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;

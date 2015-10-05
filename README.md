@@ -34,3 +34,4 @@ Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/luisjesuspe
 [Marcos Ruiz García](https://github.com/marcosruiz/hello) | 648045 | [![Build Status](https://travis-ci.org/marcosruiz/hello.svg)](https://travis-ci.org/marcosruiz/hello)
 Óscar Meler Murillo | 608919 | [![Build Status](https://travis-ci.org/oscarmeler/hello.svg)](https://travis-ci.org/oscarmeler/hello)
 [Aron Collados Torres](https://github.com/rached193/hello) | 626558 | [![Build Status](https://travis-ci.org/rached193/hello.svg)](https://travis-ci.org/rached193/hello)
+[Diego Sánchez Castillo](https://github.com/diegozgz92/hello) | 628279 | [![Build Status](https://travis-ci.org/diegozgz92/hello.svg)](https://travis-ci.org/diegozgz92/hello)
