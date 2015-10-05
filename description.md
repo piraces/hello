@@ -52,23 +52,23 @@ Testing your code is very easy.
 
 ###Issues
 
-  	$ *What went wrong:
-  	$ A problem occurred evaluating root project 'hello'.
-  	$ >org.gradle.api.tasks.TaskContainer.create(Ljava/lang/String;Ljava/lang/Class;)Lorg/gradle/api/Task;
+  	 *What went wrong:
+  	 A problem occurred evaluating root project 'hello'.
+  	 >org.gradle.api.tasks.TaskContainer.create(Ljava/lang/String;Ljava/lang/Class;)Lorg/gradle/api/Task;
 
-Problem: In the Ubuntu repository has a version less than 1.6 Gradle , higher versions use other syntax.
+Problem: In the Ubuntu repository has a version less than 1.6 Gradle[http://gradle.org] , higher versions use other syntax.
 
 Solution: Download the latest version from the official website.
 
 Execute:
 
-  	$ ~/Gradle-XX/bin/Gradle
+  	 ~/Gradle-XX/bin/Gradle
 
 Or add it to the environment variables to use as command.
 
-  	$ *What went wrong:
-  	$ Execution failed for task ':compileJava'.
-  	$ >invalid source release: 1.8
+  	 *What went wrong:
+  	 Execution failed for task ':compileJava'.
+  	 >invalid source release: 1.8
 
 Solution 1: Update Java Path
 
