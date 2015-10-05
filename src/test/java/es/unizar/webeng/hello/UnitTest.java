@@ -5,10 +5,14 @@ package es.unizar.webeng.hello;
  * Import a class called Test, which allows define a test in JUnit
  * */
 import org.junit.Test;
-
 import org.junit.runner.RunWith;
 
-/* Imports the SpringFramework's libraries */
+/* Imports the SpringFramework's libraries:
+ * Imports the Assert object that will contain a set
+ * of assertion methods (CoreMatchers, for example) and
+ * could be useful for writing methods. Failed assertions
+ * will be the only ones recorded.
+ */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -25,24 +29,6 @@ import java.util.Date;
  * given matchers.
  */
 import static org.hamcrest.CoreMatchers.*;
-/*
- * Imports the Assert object that will contain a set
- * of assertion methods (CoreMatchers, for example) and
- * could be useful for writing methods. Failed assertions
- * will be the only ones recorded.
- */
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.Date;
-import java.util.HashMap;
-
 
 
 /*
