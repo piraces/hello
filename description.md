@@ -56,9 +56,9 @@ Testing your code is very easy.
   	 A problem occurred evaluating root project 'hello'.
   	 >org.gradle.api.tasks.TaskContainer.create(Ljava/lang/String;Ljava/lang/Class;)Lorg/gradle/api/Task;
 
-Problem: In the Ubuntu repository has a version less than 1.6 Gradle[http://gradle.org] , higher versions use other syntax.
+**Problem:** In the Ubuntu repository has a version less than 1.6 Gradle[http://gradle.org] , higher versions use other syntax.
 
-Solution: Download the latest version from the official website.
+**Solution:** Download the latest version from the official website.
 
 Execute:
 
@@ -70,9 +70,9 @@ Or add it to the environment variables to use as command.
   	 Execution failed for task ':compileJava'.
   	 >invalid source release: 1.8
 
-Solution 1: Update Java Path
+**Solution 1:** Update Java Path
 
-Solution 2: Make sure that you have installed JDK not the JRE
+**Solution 2:** Make sure that you have installed JDK not the JRE
 
 The later command will compile normal and tests classes in your project. Then test classes will be executed and tested.
 Error message will appear in the screen if something has gone wrong.
