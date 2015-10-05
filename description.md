@@ -135,6 +135,94 @@ In the next lines, there are some points which are important when we are using G
 * Do use useful tools
 * Do integrate with external tools
 
+###Using Branches
+A branch represent an independent line of devlopment which allows to isolate changes from the main line of
+development. Usually is used when a developer wants to add a new feature or fix a bug. He spawns a new branch to
+encapsulate the code's changes, which would make sure that unstable code is never commit to the main code.
+
+#####Usage
+* List all of the branches in the repository: `git branch`
+* Create a branch: `git branch <branch's name>`, this command only create a new branch, if you want
+  start adding commits to it, you need to select it.
+* Navigate between the differents branch in a proyect: `git checkout <branch's name>`
+* Merge one branch with the current branch: `git merge <branch's name>`
+* Delete a branch: `git branch -d <branch's name>`
+* Delete a branch on your remote repository: `git push origin :<branch's name>`
+* Push the branch to your remote repository, so others can use it: `git push origin <branch's name>`
+* Push all branches to your remote repository: `git push --all origin`
+
+Here is another interesting command that you can use:
+* Create a branch and move to it: `git checkout -b <branch's name>`
+* See the differences between two branchs: `git diff --stat <branch 1> <branch 2>`
+* Undo a merge: `git reset --hard HEAD`
+
+
+###Additional info about Git
+
+###Git commands:
+####init
+Create a new local repository
+####fetch
+Fetches all the objects from the remote repository that are not present in the local one.
+####pull
+Fetches the files from the remote repository and merges it with the local one. This command is equivalent to
+fetch + merge sequence.
+####push
+Copies all the modified local objects in the staging directory (after adding and commiting them) to the remote
+repository and advances its branches.
+####add
+Adds files changed in your working directory to the staging area.
+####merge
+Merges one or more branches into your current branch and automatically creates a new commit if there are no conflicts.
+####branch
+Lists existing branches, or creates a new branch if a name is provided. Branches are used to create another line of
+development. Usually, a branch is created to work on a new feature. Once the feature is completed, it is merged back
+with the master branch and we delete the branch.
+####checkout
+Switches from the current branch to a different one.
+####commit
+Takes all changes written  since the last commit, creates a new one and sets the branch to point to this last commit.
+A commit is also named by SHA1 hash. Every commit object has a pointer to the parent commit object. From a given commit,
+you can traverse back by looking at the parent pointer to view the history of the commit.
+####clone
+Makes a Git repository copy from a remote source. Automatically adds the original location as `origin` so you can fetch
+again and also push (if you have permissions).
+####status
+List the files you've changed and those you still need to add or commit
+####help
+Type this into the command line to bring up the 21 most common git commands. You can also be more specific and type `git help init` or another term to figure out how to use and configure a specific git command.
+
+###Connect to a remote repository
+* If you haven't connected your local repository to a remote server, add the server to be able to push to it:
+`git remote add origin <server>`
+* List all currently configured remote repositories:
+`git remote -v`
+
+###Git concepts:
+####Staging area
+	Set of files that have been commited but not yet pushed to the remote repository. You can modify a file, add it,
+	commit it with a certain message (observation) and later repeat the same process with a different file but specifying
+	a different message. Executing "push" will copy all the commits saved in the staging area to the final repository.
+####Origin
+	Link provided when the repository was first cloned to the local machine.
+####Upstream
+	Link of the original master repository, the one you forked to create a copy in your account.
+####Differences between these last two
+	When working with other developers, you all have the same upstream from which you download the merged changes
+	    (after pull requests).
+	Each one of you pushes his/hers local changes to his/her origin.
+	After that he/she will send a pull request to the owner of the repository.
+	If the changes can be automatically merged and the owner accepts them, they will be automatically merged to the
+	    existing code in the master repository.
+	Then the rest of the developers will have to pull these changes to their local repositories to continue working
+	    with an updated copy.
+
+
+##GitHub Desktop
+If you want to simplify essential steps in your GitHub workflow you can install the [GitHub Desktop] (https://desktop.github.com/) app on your Windows or Mac computer.
+This app is an alternative to use git from the command line, but is more suited to developers who are in the development-to-deployment workflow and not for those working on open source projects or who use GitHub to monitor bugs, feature requests or other problems in existing applications. 
+[Here] (https://help.github.com/desktop/) you can find all necessary documentation for getting started.
+
 ##Spring Framework
 
 ###Spring Framework Annotations
@@ -242,26 +330,6 @@ This is used in "welcome.jsp"
 We can obtain de client's IP system information, using "request.getHeader("User-Agent")".
 This is used in "welcome.jsp"
 
-
-###Using Branches
-A branch represent an independent line of devlopment which allows to isolate changes from the main line of
-development. Usually is used when a developer wants to add a new feature or fix a bug. He spawns a new branch to
-encapsulate the code's changes, which would make sure that unstable code is never commit to the main code.
-
-#####Usage
-* List all of the branches in the repository: <code>git branch</code>
-* Create a branch: <code>git branch <branch's name> </code>, this command only create a new branch, if you want
-  start adding commits to it, you need to select it.
-* Navigate between the differents branch in a proyect: <code>git checkout <branch's name></code>
-* Merge one branch with the current branch: <code>git merge <branch's name></code>
-* Delete a branch: <code> git branch -d <branch's name></code>
-
-Here is another interesting command that you can use:
-* Create a branch and move to it: <code>git checkout -b <branch's name></code>
-* See the differences between two branchs: <code>git diff --stat <branch 1> <branch 2></code>
-* Undo a merge: <code>git reset --hard HEAD</code>
-
-
 ##Heroku
 
 ### What is it?
@@ -297,6 +365,46 @@ In this file, we tell Heroku how to run our app. In this case, it executes the b
 **settings.gradle:**
 
 This file has been added in order to specify the project name. Without it, "installApp" task doesn't work well.
+
+##VersionEye: checking dependencies automatically.
+
+### What is it?
+VersionEye is a cross-platform search engine for free/libre/open source software libraries. Currently tracking more than 650K free/libre/open source libraries from Java, Ruby, Python, Node.JS, PHP, JavaScript, CSS, Objective-C, R and Clojure. It allows to follow some dependencies and search some libraries status.
+
+In additional to the search and follow feature, VersionEye can actively monitor source code from projects (from github too) and notify you about outdated dependencies in your project. Beside that it shows you which licenses your dependencies are using.
+
+###Set-up dependencies checking in your repo
+1. Register at [www.versioneye.com](https://www.versioneye.com) and choose "Create from GitHub" (in main projects dashboard).
+2. Connect it to your Github account (if you didn't before).
+3. Choose one repo to add to the dashboard and start the check.
+4. Enable the branches to be checked, then click at "build.gradle" link.
+5. After a little time, you'll see a graphic showing the dependencies of the repo and the licenses of them.
+
+###How does it work?
+1. It works with daily, weekly, monthly or manual sync.
+2. When it's time to sync, VersionEye checks (and parses) the file "build.gradle" to obtain dependencies and versions.
+3. Once checked the file, it searchs around for new versions of dependencies and licenses of dependencies.
+4. If there are some updates for libraries, it will notify you in order to update "build.gradle" and use latest libraries (badge in red). Otherwise, the badge and status, don't change.
+5. Congratulations! Now you'll be always updated and using the latest libraries for your project.
+
+###The project and it's dependencies
+- It's important for any project of any kind, to check dependencies frequently. Otherwise, your project can contain outdated libraries. Outdated libraries can cause security breaches or bugs of any type, than can affect to the project in a hard way.
+- Several popular github (and others) repositories check their dependencies like do VersionEye. Dependencies and updates are so boring and frequently (but important). The solution is automatize the check of updates, and get notified when they are outdated. Some examples of projects using this are: bootstrap, emberjs and famous Java (or JavaScript) libraries. 
+
+###More about dependencies
+- In the original project, two libraries were being used (jQuery and bootstrap). Taking a look at the dependencies (running `gradle dependencies`), it looks like it has two recursive dependencies. It's because one library used in bootstrap is jquery (that is also included). Watching this, we are making gradle to work a little more. We can just drop the jquery library and gradle will take it from the bootstrap dependency (without having recursive libraries). The problem can be seen here:
+
+```
+	+--- org.webjars:bootstrap:3.3.5
+	|    \--- org.webjars:jquery:1.11.1 -> 2.1.4
+	+--- org.webjars:jquery:2.1.4
+```
+
+- Another problem is libraries versions. In order to obtain the latest versions of library dependencies, we can use `gradle` or the `spring-boot-gradle` plugin to resolve that. But, in fact, the `spring-boot-gradle` plugin doesn't support automatically version resolving for bootstrap library (see the plugin [appendix](http://docs.spring.io/spring-boot/docs/current/reference/html/appendix-dependency-versions.html)), and gradle doesn't pick the correct latest version. 
+
+- Using the syntax `compile 'org.webjars:bootstrap:latest.release'` give us a alpha version of bootstrap that crashes when building the project. Also using the syntax `compile 'org.webjars:bootstrap:3.+'` to obtain latest minor version of mayor 3 version, give us the 3.3.4 version (which is outdated).
+
+In conclusion, we need to specify the bootstrap version manually to keep the project updated and working, because other workarounds don't work. VersionEye will notify if a newer bootstrap version is available to pick it, and this doesn't suppose a problem for the project.
 
 
 ##Static content
@@ -351,4 +459,218 @@ browsers and ither computer applications acting as clients in network protocols.
 ### Forms of use by author
 1. Inline: It not recommend because the code can be dirty.
 2. Internal style sheet: It's a better option than the last, because it separate the style and the code. But the file can be confuse.
-3. External style sheet: It's more potent than other because it separate completely the formatting of the code. This option is the most used and recommended in web development.
+3. External style sheet: It's more potent than other because it separate completely the 
+4. formatting of the code. This option is the most used and recommended in web development.
+
+
+## [Docker] (https://www.docker.com)
+
+### What is it?
+Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.
+
+### Why use it?
+1. Consistent development environments. All developers use the same OS, libraries, etc.
+2. You only need Docker. Install a bunch of language environments on your machine is not needed.
+3. Easy to use.
+4. Save time.
+
+### Docker-Machine
+If you've OS X or Windows you probably need a little setup after installing. This is because docker run inside a lightweight Linux VM, so you need to setup a docker machine. Usually if you install Docker Toolbox it installs also the docker machine but you can also install only the docker machine.
+When you init Docker, it automatically inits docker machine, but when you run a container you need some configuration (see above).
+
+If you want to learn more about the Docker Machine: [link](https://docs.docker.com/machine/) 
+
+### Components of docker
+1. A <b>container</b> is a stripped-to-basics version of a Linux operating system.
+2. An <b>image</b> is software you load into a container.
+3. A <b>repository</b> Docker Hub for sharing and managing Docker containers.
+
+### Build your own <i>docker</i>
+
+1. Write a Dockerfile that describes the software that is <i>baked</i> into an image such as environment to use or what commands to run.
+Eg: A Dockerfile for a Java app
+
+	```
+	FROM java:8
+	RUN apt-get update
+	ADD . /src
+	CMD ["java", "-jar", "/src/HelloDocker.jar"]
+	```
+2. Build yor docker's image (e.g.: my image) typing: 
+	
+	```
+	$> docker build -t myimage .
+	```
+	
+	Then, docker loads the image (e.g. <i>java:8</i>) if you didn't download before.
+	
+	```
+	Step 0: FROM java:8
+	 ---> fb434121fc77
+	```
+	
+	Later Docker moves onto the next steam, in the example update the apt-get and add the 	files:
+	
+	```
+	Step 1 : RUN apt-get -y update
+	 ---> Running in 27d224dfa5b2
+	Ign http://archive.ubuntu.com trusty InRelease
+	Ign http://archive.ubuntu.com trusty-updates InRelease
+	```
+	
+	Finally, Docker finishes the build and reports comes out:
+	
+	```
+	Step 3 : CMD java -jar /src/HelloDocker.jar
+	 ---> Running in a8e6faa88df3
+	 ---> 7d9495d03763
+	Removing intermediate container a8e6faa88df3
+	Successfully built 7d9495d03763
+	```
+
+3. Run your docker typing: 
+	
+	<code>
+	$> docker run <i>name</i> 
+	</code>
+	
+	And you can see:
+	
+	```
+	Hello Docker!!!
+	```
+	
+	
+### Container ports
+If you use windows or OSX probably you can't acces to your container. To fix this <i>problem</i> you need to expose ports from the container to your local host.
+
+When you run a continer you need to add the flag -p for redirect a public port to a private port in the container:
+
+```
+$> docker run -p 49160:8080 myimage
+```
+
+Also you need to know the dockers' ip, you can know with the command:
+
+```
+$> docker-machine ip default
+```
+
+And it returns something like that:
+
+```
+192.168.59.103
+```
+Now you can acces into your docker with the following URL:
+
+```
+192.168.59.103:49160
+```
+
+
+### Dockerfile's command
+1. FROM <i> image </i>: set the Base Image for subsequent instructions, should be a valid image.
+2. RUN <i> commands </i>: execute commands in the current images.
+3. ADD <i> src dst </i>: copies new files and directories from src to dst.
+4. CMD <i> commands </i>: default execute for a image.
+
+### Automated Builds from github
+
+Automated Builds allow you to use Docker Hub’s build clusters to automatically create images from a GitHub repository containing a Dockerfile.
+
+#### Set up
+1. Create a Docker Hub account and log in.
+2. Link your Hub account by referring to the GitHub.
+3. Select “Create Automated Build” from the top right “Create” menu item.
+4. Pick a GitHub or BitBucket project that has a Dockerfile you want to build.
+5. Follow the instructions from the web page.
+
+### Other commands:
+1. List the images you have locally:
+
+	```
+	$> docker images
+	
+	REPOSITORY           TAG          IMAGE ID          CREATED             VIRTUAL SIZE
+	docker-whale         latest       7d9495d03763      4 minutes ago       273.7 MB
+	docker/whalesay      latest       fb434121fc77      4 hours ago         247 MB
+	hello-world          latest       91c95931e552      5 weeks ago         910 B
+	```
+
+2. See the images which are running locally:
+
+	```
+	$> docker ps
+	
+	CONTAINER ID        IMAGE                        COMMAND                CREATED              	STATUS              PORTS               NAMES
+	4c01db0b339c        ubuntu:12.04                 bash                   17 seconds ago       	Up 16 seconds       3300-3310/tcp       webapp
+	```
+	
+	
+## Markdown
+
+### What is it?
+
+Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
+### Pros
+- **Easy to learn:** 
+ - In 10 minutes you can use markdown fluently.
+- **Easy to write and read:** 
+ - You can write and format text without using the mouse like a usual text editor (like Microsoft Word or LibreOffice Writer).
+ - When you write do not use long labels to indicate the format of the text like in HTML.
+ - You can read the text easily even in plain text.
+- **Versatile**
+ - Convertible in many other formats like HTML.
+
+### Markdown's editors
+Editors are good to learn easily all tags of markdown:
+- Haroopad (my recomendation)
+- Atom
+- GitBook
+- Remarkable
+- Any notepad
+
+
+### JDepend
+
+JDepend traverses Java class file directories and generates design quality metrics for each Java package. JDepend allows you to automatically measure the quality of a design in terms of its extensibility, reusability, and maintainability to manage package dependencies effectively. 
+
+Before using JDepend, it is important to understand that "good" design quality metrics are not necessarily indicative of good designs. Likewise, "bad" design quality metrics are not necessarily indicative of bad designs. The design quality metrics produced by JDepend should not be used as yard sticks by which all designs are measured.
+
+The design quality metrics produced by JDepend are intended to be used by designers to measure the designs they create, understand those designs, and automatically check that the designs exhibit expected qualities while undergoing continuous refactoring. Refactoring will undoubtedly lead to some adjustment of these metrics as the shape of the design changes. 
+
+The JDepend plugin for Gradle performs quality checks on your project's source files using JDepend and generates reports from these checks.
+
+
+**Identify Package Dependency Cycles**
+
+Packages participating in a package dependency cycle are in a deadly embrace with respect to reusability and their release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques. 
+
+Package dependency cycles are best observed using the textual or XML user interface. In general, all packages dependencies that intersect a dependency cycle are reported. This includes packages directly participating in a cycle and packages that depend on packages directly participating in a cycle.
+
+The intent is to identify sets of packages that must be reused and released together. To break reported cycles, focus on those packages directly participating in a cycle.
+
+Here's an example of a two-package cycle, as reported by the textual UI:
+
+        com.xyz.ejb
+           |
+           |   com.xyz.servlet
+           |-> com.xyz.ejb
+
+This indicates that the com.xyz.ejb package depends on the com.xyz.servlet package, which in turn depends on the com.xyz.ejb package. These two package must be released and reused together.
+ 
+Here's an example of a package that depends on the two-package cycle described above, as reported by the textual UI:
+ 
+        com.xyz.client
+           |
+           |-> com.xyz.ejb
+           |   com.xyz.servlet
+           |-> com.xyz.ejb
+ 
+This indicates that the com.xyz.client package depends on the com.xyz.ejb package, which in turn forms a cyclic dependency with the com.xyz.servlet package. The com.xyz.client package itself isn't part of the cycle, but since it depends on a package in the cycle, it can't be reused/released without it. 
+ 
+
+
+
+
