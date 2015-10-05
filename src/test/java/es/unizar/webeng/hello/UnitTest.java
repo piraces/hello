@@ -1,34 +1,29 @@
 package es.unizar.webeng.hello;
 
-
-/*
- * Import a class called Test, which allows define a test in JUnit
- * */
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
-/* Imports the SpringFramework's libraries:
- * Imports the Assert object that will contain a set
- * of assertion methods (CoreMatchers, for example) and
- * could be useful for writing methods. Failed assertions
- * will be the only ones recorded.
- */
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-/* 
- * Imports java utilities
- **/
-import java.util.HashMap;
-import java.util.Date;
-
 /* Imports the CoreMatchers object that will be used
  * to examine if the specified objects match with the
  * given matchers.
  */
 import static org.hamcrest.CoreMatchers.*;
+/*
+ * Imports the Assert object that will contain a set
+ * of assertion methods (CoreMatchers, for example) and
+ * could be useful for writing methods. Failed assertions
+ * will be the only ones recorded.
+ */
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+/** import Java utilities */
+import java.util.Date;
+import java.util.HashMap;
+
 
 
 /*
@@ -82,22 +77,22 @@ public class UnitTest {
     * It checks that the message returned by 'controller.welcome()' is
     * correct ("welcome")
     */
-  assertThat(view, is("welcome"));
+    assertThat(view, is("welcome"));
    /*
     * It checks that the field 'message' has been added successfully to the
     * map
     */
-  assertThat(map.containsKey("message"), is(true));
+    assertThat(map.containsKey("message"), is(true));
     // Check that the time field contain a Date object
-  assertThat(map.get("time"), instanceOf(Date.class));
+    assertThat(map.get("time"), instanceOf(Date.class));
     // Check that the Date is correct
-  Date date = ((Date) map.get("time"));
+    Date date = ((Date) map.get("time"));
    /*
     * An exception is thrown if the date given by 'controller.welcome()' is
     * later to date 'now'
     */
     Date now = new Date();
-assertThat(date.after(now), is(false));
+    assertThat(date.after(now), is(false));
   }
 
  /**
@@ -111,6 +106,6 @@ assertThat(date.after(now), is(false));
     * It checks that the message returned by 'controller.userdata()' is
     * correct ("userdata")
     */
-   assertThat(view, is("userdata"));
+    assertThat(view, is("userdata"));
   }
 }
