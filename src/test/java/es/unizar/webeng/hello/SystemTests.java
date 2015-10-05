@@ -8,6 +8,7 @@ package es.unizar.webeng.hello;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+
 import org.junit.runner.RunWith;
 
 /* Imports the SpringFramework's libraries */
