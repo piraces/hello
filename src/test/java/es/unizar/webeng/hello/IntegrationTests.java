@@ -1,9 +1,10 @@
 package es.unizar.webeng.hello;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
 
 import org.junit.Before;
 
@@ -24,14 +25,13 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-
  /*
   * Indicates that the class should use Spring's JUnit facilities. 
   *SpringJUnit4ClassRunner is a custom extension of JUnit's BlockJUnit4ClassRunner
   * which provides functionality of the Spring TestContext Framework
   */
-
 @RunWith(SpringJUnit4ClassRunner.class)
+
  /*
   * SpringApplicationConfiguration is a Class which especifies how to load and
   * configure an ApplicationContext for integration tests.
@@ -53,25 +53,30 @@ import org.springframework.web.context.WebApplicationContext;
   */
 public class IntegrationTests {
 
-  // Autowire relationships between collaborating beans, in this case, place
-  // an instance of WebApplicationContext into wac
+ /** @Autowire relationships between collaborating beans, in this case, place
+  *     an instance of WebApplicationContext into wac.
+  */
   @Autowired
-  private WebApplicationContext wac;
+  private transient WebApplicationContext wac;
 
-  // Default value for message to compare at tests
+ /**
+  * Default @Value for message to compare at tests.
+  */
   @Value("${app.message:Hello World}")
-  private String message;
+  private transient String message;
 
-  // Create a new MockMvc object for test which in turn is used perform
-  // requests and define expectations.
-  private MockMvc mockMvc;
+ /** 
+  * Create a new MockMvc object for test which in turn is used perform
+  * requests and define expectations.
+  */
+  private transient MockMvc mockMvc;
 
- /*
-  * Sentence to be executed before the test, in order to prepare the base
-  * architecture for the proper functioning of the tests
+ /**
+  * @Before Sentence to be executed before the test, in order to prepare the base
+  *     architecture for the proper functioning of the tests.
   */
   @Before
-  public void setup() {
+  public void setUp() {
     // Build a MockMvc using the given WebApplicationContext
     this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
   }
@@ -97,7 +102,8 @@ public class IntegrationTests {
     .andDo(print()) 
     // Verify status is Ok
     .andExpect(status().isOk()) 
-    // Verify attribute "message" in the model equals to the value in the field message
+    // Verify attribute "message" in the model equals to the value in 
+    // the field message
       .andExpect(model().attribute("message", is(message))); 
   }
 }
