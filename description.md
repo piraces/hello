@@ -632,7 +632,6 @@ Editors are good to learn easily all tags of markdown:
 - Any notepad
 
 
-=======
 ### JDepend
 
 JDepend traverses Java class file directories and generates design quality metrics for each Java package. JDepend allows you to automatically measure the quality of a design in terms of its extensibility, reusability, and maintainability to manage package dependencies effectively. 

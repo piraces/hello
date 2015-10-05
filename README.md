@@ -30,7 +30,6 @@ Alberto Sabater Bailén | 546297 | [![Build Status](https://travis-ci.org/asabat
 Agustin Navarro Torres | 587570 | [![Build Status](https://travis-ci.org/SirBargus/hello.svg)](https://travis-ci.org/SirBargus/hello)||||[![Docker pulls](https://img.shields.io/docker/pulls/sirbargus/hello.svg)](https://hub.docker.com/r/sirbargus/hello/) | :gift:
 [Alejandro Solanas Bonilla](https://github.com/Naxsel/hello) | 647647 | [![Build Status](https://travis-ci.org/Naxsel/hello.svg)](https://travis-ci.org/Naxsel/hello)
 [Christian García Artero] | 597578 | [![Build Status](https://travis-ci.org/christianjaka94/hello.svg)](https://travis-ci.org/christianjaka94/hello)
-Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/your-github-username/hello.svg)](https://travis-ci.org/luisjesuspellicer/hello)
 Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/luisjesuspellicer/hello.svg)](https://travis-ci.org/luisjesuspellicer/hello)
 [Marcos Ruiz García](https://github.com/marcosruiz/hello) | 648045 | [![Build Status](https://travis-ci.org/marcosruiz/hello.svg)](https://travis-ci.org/marcosruiz/hello)
 Óscar Meler Murillo | 608919 | [![Build Status](https://travis-ci.org/oscarmeler/hello.svg)](https://travis-ci.org/oscarmeler/hello)
