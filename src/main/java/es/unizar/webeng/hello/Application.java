@@ -22,6 +22,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 * Spring Boot with the servlet and filter mappings.
 */
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+/* 
+ * Enables Spring's scheduled task execution capability, similar to functionality
+ * found in Spring's <task:*> XML namespace.
+ * */
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
@@ -54,7 +58,6 @@ public class Application extends SpringBootServletInitializer {
     */
   public static void main(final String[] args) {
 
-    
     SpringApplication.run(Application.class, args);
   }
 

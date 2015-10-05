@@ -28,27 +28,38 @@ Provides to the main JSP page of the project, a simple way to make the client-si
 		<span class="glyphicon glyphicon-arrow-right" ><kbd> <%out.println("System:" + request.getHeader("User-Agent"));%></kbd></span><br<br><br>
 		
 	</div>
-	<h3>Complete with your dates:</h3>
+	<h3>Complete with your data:</h3>
 	<!-- Formulary which a user can write and send to the server. All the params are required-->
 	<form action="/" method="POST">
-<div class="input-group">
+	<!-- Input group-lg is added to every input group classes to add automatically resizing -->
+	<!-- Input group from formulary where user must type his name-->
+<div class="input-group input-group-lg">
+<!-- The class col-md-* resize the width of the input group, to set it a suitable size,
+	 col-md-offset-* moves to the rigth the input group the value of * columns-->
+<div class="col-md-4 col-md-offset-3">
 <span class="input-group-addon" >Name</span>
   <input type="text" class="form-control" placeholder="What's your name?" name="name" required></div></div>
 <br/>
-
-<div class="input-group">
+	<!-- Input group from formulary where user must type his age-->
+<div class="input-group input-group-lg">
+<div class="col-md-4 col-md-offset-3">
 <span class="input-group-addon" >Age</span>
-  <input type="text" class="form-control" placeholder="What's age?" name="age" required></div>
+  <input type="text" class="form-control" placeholder="What's your age?" name="age" required></div></div>
 <br/>
-<div class="input-group">
+	<!-- Input group from formulary where user must type in which course is -->
+<div class="input-group input-group-lg">
+<div class="col-md-4 col-md-offset-3">
 <span class="input-group-addon" >Curse</span>
-  <input type="text" class="form-control" placeholder="What curse are you in?" name="curse" required></div>
+  <input type="text" class="form-control" placeholder="What curse are you in?" name="curse" required></div></div>
 <br/>
-<div class="input-group">
+	<!-- Input group from formulary where user must type in which speciality is -->
+<div class="input-group input-group-lg">
+<div class="col-md-4 col-md-offset-3">
 <span class="input-group-addon" >Speciality</span>
-  <input type="text" class="form-control" placeholder="What speciality are you in?" name="speciality" required></div>
+  <input type="text" class="form-control" placeholder="What speciality are you in?" name="speciality" required></div></div>
 <br/>
-	<input class="btn btn-default" type="submit" value="Send" />
+<div class="col-md-offset-4">
+	<input class="btn btn-default" type="submit" value="Send" /></div>
 </form>
 
 </html>
