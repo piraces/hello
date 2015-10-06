@@ -1,5 +1,5 @@
 // This block defines the dependencies of the build script itself.
-buildscript { 
+buildscript {
 
     // The repositories block indicates that the build should resolve its dependencies from the Maven
     // Central repository. Gradle leans heavily on many conventions and facilities established by the
@@ -12,7 +12,7 @@ buildscript {
     // The dependencies block contains all the external dependencies that are need.
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE") 
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE")
         classpath("io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE")
     }
 }
@@ -21,10 +21,10 @@ apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
-apply plugin: 'spring-boot' 
-apply plugin: 'io.spring.dependency-management' 
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
 apply plugin: 'jacoco' //Plugin to calculate code coverage
-apply plugin: 'checkstyle' 
+apply plugin: 'checkstyle'
 apply plugin: 'jdepend'//Plugin to detect problem with dependencies
 
 // The jar block specifies how the JAR file will be named. In this case, it will render hello-1.0.jar.
@@ -54,7 +54,7 @@ configurations {
 
 
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE' 
+    compile 'org.springframework.boot:spring-boot-starter-web:1.2.6.RELEASE'
     compile 'org.webjars:bootstrap:3.3.5'
 
     // 'providedRuntime' dependencies are not added to the WAR archive
@@ -82,7 +82,7 @@ eclipse {
 jdependMain.doLast {
    File file = new File(jdepend.reportsDir, "main.xml");
    assert file.exists() && file.isFile(), "File '$file' must exist"
- 
+
    def numberOfCycles = new XmlSlurper().parse(file).Cycles.Package.size()
    assert numberOfCycles == 0, """We have detected $numberOfCycles cycles. Checkout report file: $file.
                                     """
@@ -119,13 +119,13 @@ task wrapper(type: Wrapper) {
 }
 
 //When installApp task is fired, it will create production files on dist/ folder
-installApp{ 
-        destinationDir = file('dist') 
-} 
+installApp{
+        destinationDir = file('dist')
+}
 
 //This task is called by Heroku on every github push.
 //It only declares that needs "build" and installApp" task to run
 //InstallApp tasks prepare production files that are going to be executed
 task stage(dependsOn: [build,installApp]) {
- 
+
 }
