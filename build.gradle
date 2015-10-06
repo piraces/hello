@@ -24,9 +24,10 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'jacoco' //Plugin to calculate code coverage
-apply plugin: 'checkstyle'
 apply from: "${rootProject.rootDir}/config/pmd/pmd.gradle"      //Plugin of a source code analyzer. It finds common programming flaws like unused variables,
-							        // empty catch blocks, unnecessary object creation, and so forth. Additionally it includes copy-paste-detector.
+                      // empty catch blocks, unnecessary object creation, and so forth. Additionally it includes copy-paste-detector.
+apply plugin: 'checkstyle'
+apply plugin: 'jdepend'//Plugin to detect problem with dependencies
 
 // The jar block specifies how the JAR file will be named. In this case, it will render hello-1.0.jar.
 
@@ -102,7 +103,7 @@ jacocoTestReport {
 }
 
 checkstyle {
-	toolVersion = "6.0"
+  toolVersion = "6.0"
 }
 
 test {
