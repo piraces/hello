@@ -196,7 +196,7 @@ public class SystemTests {
     */
     assertEquals("Wrong length\n", entity.getHeaders().getContentLength(), 442526);
 
-    final File fichero = new File("/images/Head.png");
+    final File fichero = new File("/static/images/Head.png");
     final FileInputStream ficheroStream = new FileInputStream(fichero);
     final byte[] contenido = new byte[(int)fichero.length()];
     ficheroStream.read(contenido);
