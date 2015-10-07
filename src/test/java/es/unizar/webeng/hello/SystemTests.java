@@ -22,7 +22,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import java.io.InputStream;
 import java.util.Arrays;
 
  /*
@@ -30,7 +29,6 @@ import java.util.Arrays;
   * SpringJUnit4ClassRunner is a custom extension of JUnit's BlockJUnit4ClassRunner
   * which provides functionality of the Spring TestContext Framework
   */
-
 @RunWith(SpringJUnit4ClassRunner.class)
  /*
   * SpringApplicationConfiguration is a Class which especifies how to load and
@@ -66,12 +64,24 @@ import java.util.Arrays;
   */
 public class SystemTests {
 
+  /* Length of our Head.png file in bytes */
+  private static int HEADLENGTH = 442526;
+
  /**
   * @port It will contain the random port.
   */
   @Value("${local.server.port}")
   private transient int port;
-  
+
+  /**
+   * Returns the content of the file named by "path"
+   */
+  @Before public byte[] fileContent(String path) {
+    final byte[] content = new byte[HEADLENGTH];
+    getClass().getResourceAsStream(path).read(content);
+    return content;
+  }
+
  /**
   * Method that can be executed in order to test the connection to the Home
   * page If something goes wrong (the connection fails or the page has a
@@ -173,7 +183,13 @@ public class SystemTests {
     final ResponseEntity<byte[]> entity = new TestRestTemplate()
                  .getForEntity("http:/" + "/localhost:" 
                  + this.port + "/images/Head.png", byte[].class);
+    testHeaders(entity); testBody(entity);
+  }
 
+ /**
+  * Checks if the headers of a file are correct
+  */
+  private void testHeaders (ResponseEntity<byte[]> entity) throws Exception {
    /*
     * Check if the StatusCode is equal to 200 (HttpStatus.OK) which is the 
     * standard response for succesful HTTP requests. If correct, it means 
@@ -194,19 +210,19 @@ public class SystemTests {
     * the returned entity has the same length as the png file we are testing. If the
     * verification is not positive it throws an error with the given message.
     */
-    assertEquals("Wrong length\n", entity.getHeaders().getContentLength(), 442526);
+    assertEquals("Wrong length\n", entity.getHeaders().getContentLength(), HEADLENGTH);
+  }
 
-    // It reads the content of the file in server, to compare it after.
-    final InputStream reader = getClass().getResourceAsStream("/static/images/Head.png");
-    final byte[] contenido = new byte[442526];
-    reader.read(contenido);
-
+ /**
+  * Checks if the body of a file is the correct
+  */
+  private void testBody (ResponseEntity<byte[]> entity) throws Exception {
    /*
     * Checks if the content of the GET petition is correct. This means, the returned
     * entity is the png file we wanted. If the verification is not positive it throws
     * an error with the given message.
     */
-    assertTrue("Wrong content\n", Arrays.equals(entity.getBody(), contenido));
-    reader.close();
+    assertTrue("Wrong content\n", Arrays.equals(entity.getBody(),
+                        fileContent("/static/images/Head.png")));
   }
 }
