@@ -247,6 +247,18 @@ If you want to simplify essential steps in your GitHub workflow you can install 
 This app is an alternative to use git from the command line, but is more suited to developers who are in the development-to-deployment workflow and not for those working on open source projects or who use GitHub to monitor bugs, feature requests or other problems in existing applications.
 [Here] (https://help.github.com/desktop/) you can find all necessary documentation for getting started.
 
+##SourceTree
+Other way to simplify your work with GitHub is using SourceTree with is other of app, just like GitHub desktop but with some differences.
+With SourceTree you can have local repositories from other repository sites like mercurial.
+SourceTree also works with windows and mac.
+You can get SourceTree app from the [SourceTreeApp website] (https://www.sourcetreeapp.com/)
+
+Installation guide (For windows):
+- First you have to download the app, [Here is the link] (https://www.sourcetreeapp.com/download)
+- Run the downloaded file.
+- Continue the required steps until the installation ask you for you git/mercurial account. Then you can log in and get the repositories from your account or skip that phase and do it later. 
+- If you want to add a repository after the installation you have to click the button at the bottom left with (Add Repository) and add the path or select it from the web and add the local path wherre you want to clone it.
+
 ##Spring Framework
 
 ###Spring Framework Annotations
