@@ -4,9 +4,10 @@ import static org.junit.Assert.*;
 
 /*
  * Import a class called Test, which allows define a test in JUnit
- * */
- 
-import org.junit.Test;
+ *
+ */
+
+import org.junit.*; 
 
 import org.junit.runner.RunWith;
 
@@ -64,9 +65,10 @@ import java.util.Arrays;
   */
 public class SystemTests {
 
-  /* Length of our Head.png file in bytes */
-  final private static int HEADLENGTH = 442526;
+  /** Length of our Head.png file in bytes. */
+  private static final int HEADLENGTH = 442526;
 
+  /** Buffer to store content's file. */
   private static byte[] content;
 
  /**
@@ -76,9 +78,9 @@ public class SystemTests {
   private transient int port;
 
   /**
-   * Returns the content of the file named by "path"
+   * Returns the content of the file named by "path".
    */
-  @Before public void fileContent(String path) {
+  @Before public void fileContent(final String path) throws Exception {
     content = new byte[HEADLENGTH];
     getClass().getResourceAsStream(path).read(content);
   }
@@ -184,13 +186,14 @@ public class SystemTests {
     final ResponseEntity<byte[]> entity = new TestRestTemplate()
                  .getForEntity("http:/" + "/localhost:" 
                  + this.port + "/images/Head.png", byte[].class);
-    testHeaders(entity); testBody(entity);
+    testHeaders(entity);  // Check Header
+    testBody(entity);     // Check body
   }
 
  /**
-  * Checks if the headers of a file are correct
+  * Checks if the headers of a file are correct.
   */
-  private void testHeaders (ResponseEntity<byte[]> entity) throws Exception {
+  public void testHeaders(final ResponseEntity<byte[]> entity) throws Exception {
    /*
     * Check if the StatusCode is equal to 200 (HttpStatus.OK) which is the 
     * standard response for succesful HTTP requests. If correct, it means 
@@ -215,15 +218,16 @@ public class SystemTests {
   }
 
  /**
-  * Checks if the body of a file is the correct
+  * Checks if the body of a file is the correct.
   */
-  private void testBody (ResponseEntity<byte[]> entity) throws Exception {
+  public void testBody(final ResponseEntity<byte[]> entity) throws Exception {
+    /* It reads the content of the file stayed in server */
     fileContent("/static/images/Head.png");
    /*
     * Checks if the content of the GET petition is correct. This means, the returned
     * entity is the png file we wanted. If the verification is not positive it throws
     * an error with the given message.
     */
-    assertTrue("Wrong content\n", Arrays.equals(entity.getBody(), content);
+    assertTrue("Wrong content\n", Arrays.equals(entity.getBody(), content));
   }
 }
