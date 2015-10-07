@@ -177,7 +177,7 @@ public class SystemTests {
   * @throws Exception if the image is not being served.
   */
   @Test
-  public void testHeaders(final ResponseEntity<byte[]> entity) throws Exception {
+  public void testHeaders() throws Exception {
    /*  
     * Information given by a GET petition to the URL specified by the first
     * parameter is stored on an ResponseEntity.
@@ -213,7 +213,7 @@ public class SystemTests {
   * @throws Exception if the image is not being served.
   */
   @Test
-  public void testBody(final ResponseEntity<byte[]> entity) throws Exception {
+  public void testBody() throws Exception {
    /*  
     * Information given by a GET petition to the URL specified by the first
     * parameter is stored on an ResponseEntity.
