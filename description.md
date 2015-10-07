@@ -250,18 +250,18 @@ This app is an alternative to use git from the command line, but is more suited 
 ##Permissions
 If you have issues with file permissions, you can change them with the command:
 
-$> git update-index --chmod=[opt] [file]
+    $> git update-index --chmod=[opt] [file]
 
 Options are like linux command chmod. File can be an absolute path.
 
 For example, if you want to remove executable permissions to the SystemTests.java file, you'd have to do:
 
-$> git update-index --chmod=-x src/test/java/es/unizar/webeng/hello/SystemTests.java
+    $> git update-index --chmod=-x src/test/java/es/unizar/webeng/hello/SystemTests.java
 
 Then, save your changes:
 
-$> git commit -m "Changing file permissions"
-$> git push
+    $> git commit -m "Changing file permissions"
+    $> git push
 
 ##Spring Framework
 
