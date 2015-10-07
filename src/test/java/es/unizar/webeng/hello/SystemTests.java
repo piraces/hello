@@ -173,12 +173,11 @@ public class SystemTests {
   }
 
  /**
-  * Method that can be executed in order to test if Head.png is being served.
+  * Checks if the headers of a file are correct.
   * @throws Exception if the image is not being served.
   */
   @Test
-  public void testHead() throws Exception {
-
+  public void testHeaders(final ResponseEntity<byte[]> entity) throws Exception {
    /*  
     * Information given by a GET petition to the URL specified by the first
     * parameter is stored on an ResponseEntity.
@@ -186,14 +185,6 @@ public class SystemTests {
     final ResponseEntity<byte[]> entity = new TestRestTemplate()
                  .getForEntity("http:/" + "/localhost:" 
                  + this.port + "/images/Head.png", byte[].class);
-    testHeaders(entity);  // Check Header
-    testBody(entity);     // Check body
-  }
-
- /**
-  * Checks if the headers of a file are correct.
-  */
-  public void testHeaders(final ResponseEntity<byte[]> entity) throws Exception {
    /*
     * Check if the StatusCode is equal to 200 (HttpStatus.OK) which is the 
     * standard response for succesful HTTP requests. If correct, it means 
@@ -219,8 +210,17 @@ public class SystemTests {
 
  /**
   * Checks if the body of a file is the correct.
+  * @throws Exception if the image is not being served.
   */
+  @Test
   public void testBody(final ResponseEntity<byte[]> entity) throws Exception {
+   /*  
+    * Information given by a GET petition to the URL specified by the first
+    * parameter is stored on an ResponseEntity.
+    */
+    final ResponseEntity<byte[]> entity = new TestRestTemplate()
+                 .getForEntity("http:/" + "/localhost:" 
+                 + this.port + "/images/Head.png", byte[].class);
    /*
     * Checks if the content of the GET petition is correct. This means, the returned
     * entity is the png file we wanted. If the verification is not positive it throws
