@@ -33,5 +33,6 @@ Agustin Navarro Torres | 587570 | [![Build Status](https://travis-ci.org/SirBarg
 Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/luisjesuspellicer/hello.svg)](https://travis-ci.org/luisjesuspellicer/hello)
 [Marcos Ruiz García](https://github.com/marcosruiz/hello) | 648045 | [![Build Status](https://travis-ci.org/marcosruiz/hello.svg)](https://travis-ci.org/marcosruiz/hello)
 Óscar Meler Murillo | 608919 | [![Build Status](https://travis-ci.org/oscarmeler/hello.svg)](https://travis-ci.org/oscarmeler/hello)
+[Aron Collados Torres](https://github.com/rached193/hello) | 626558 | [![Build Status](https://travis-ci.org/rached193/hello.svg)](https://travis-ci.org/rached193/hello)
 [Diego Sánchez Castillo](https://github.com/diegozgz92/hello) | 628279 | [![Build Status](https://travis-ci.org/diegozgz92/hello.svg)](https://travis-ci.org/diegozgz92/hello)
 [Daniel Forcén Esteban](https://github.com/dforcen/hello) | 558471 | [![Build Status](https://travis-ci.org/dforcen/hello.svg)](https://travis-ci.org/dforcen/hello) | | | | | :gift:
