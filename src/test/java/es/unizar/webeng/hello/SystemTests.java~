@@ -218,13 +218,12 @@ public class SystemTests {
   * Checks if the body of a file is the correct
   */
   private void testBody (ResponseEntity<byte[]> entity) throws Exception {
-    /* It reads the content of the file stayed in server */
     fileContent("/static/images/Head.png");
    /*
     * Checks if the content of the GET petition is correct. This means, the returned
     * entity is the png file we wanted. If the verification is not positive it throws
     * an error with the given message.
     */
-    assertTrue("Wrong content\n", Arrays.equals(entity.getBody(), content));
+    assertTrue("Wrong content\n", Arrays.equals(entity.getBody(), content);
   }
 }
