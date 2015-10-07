@@ -22,6 +22,9 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.io.InputStream;
+import java.util.Arrays;
+
  /*
   * Indicates that the class should use Spring's JUnit facilities. 
   * SpringJUnit4ClassRunner is a custom extension of JUnit's BlockJUnit4ClassRunner
@@ -176,7 +179,6 @@ public class SystemTests {
     * standard response for succesful HTTP requests. If correct, it means 
     * that is available to connect and the connection has been succesful.
     */
-  
     assertEquals("the code is reachable",HttpStatus.OK, entity.getStatusCode());
   
    /* 
@@ -186,5 +188,25 @@ public class SystemTests {
     */
     assertEquals("Wrong content type:\n" + entity.getHeaders().getContentType(),
                MediaType.valueOf("image/png;charset=UTF-8"), entity.getHeaders().getContentType());
+ 
+   /*
+    * Checks if the 'Content-length' field of the GET petition is correct. This means,
+    * the returned entity has the same length as the png file we are testing. If the
+    * verification is not positive it throws an error with the given message.
+    */
+    assertEquals("Wrong length\n", entity.getHeaders().getContentLength(), 442526);
+
+    // It reads the content of the file in server, to compare it after.
+    final InputStream reader = getClass().getResourceAsStream("/static/images/Head.png");
+    final byte[] contenido = new byte[442526];
+    reader.read(contenido);
+
+   /*
+    * Checks if the content of the GET petition is correct. This means, the returned
+    * entity is the png file we wanted. If the verification is not positive it throws
+    * an error with the given message.
+    */
+    assertTrue("Wrong content\n", Arrays.equals(entity.getBody(), contenido));
+    reader.close();
   }
 }
