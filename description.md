@@ -247,6 +247,22 @@ If you want to simplify essential steps in your GitHub workflow you can install 
 This app is an alternative to use git from the command line, but is more suited to developers who are in the development-to-deployment workflow and not for those working on open source projects or who use GitHub to monitor bugs, feature requests or other problems in existing applications.
 [Here] (https://help.github.com/desktop/) you can find all necessary documentation for getting started.
 
+##Permissions
+If you have issues with file permissions, you can change them with the command:
+
+    $> git update-index --chmod=[opt] [file]
+
+Options are like linux command chmod. File can be an absolute path.
+
+For example, if you want to remove executable permissions to the SystemTests.java file, you'd have to do:
+
+    $> git update-index --chmod=-x src/test/java/es/unizar/webeng/hello/SystemTests.java
+
+Then, save your changes:
+
+    $> git commit -m "Changing file permissions"
+    $> git push
+
 ##SourceTree
 Other way to simplify your work with GitHub is using SourceTree with is other of app, just like GitHub desktop but with some differences.
 With SourceTree you can have local repositories from other repository sites like mercurial.

@@ -4,9 +4,10 @@ import static org.junit.Assert.*;
 
 /*
  * Import a class called Test, which allows define a test in JUnit
- * */
- 
-import org.junit.Test;
+ *
+ */
+
+import org.junit.*; 
 
 import org.junit.runner.RunWith;
 
@@ -22,7 +23,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import java.io.InputStream;
 import java.util.Arrays;
 
  /*
@@ -30,7 +30,6 @@ import java.util.Arrays;
   * SpringJUnit4ClassRunner is a custom extension of JUnit's BlockJUnit4ClassRunner
   * which provides functionality of the Spring TestContext Framework
   */
-
 @RunWith(SpringJUnit4ClassRunner.class)
  /*
   * SpringApplicationConfiguration is a Class which especifies how to load and
@@ -66,12 +65,26 @@ import java.util.Arrays;
   */
 public class SystemTests {
 
+  /** Length of our Head.png file in bytes. */
+  private static final int HEADLENGTH = 442526;
+
+  /** Buffer to store content's file. */
+  private static byte[] content;
+
  /**
   * @port It will contain the random port.
   */
   @Value("${local.server.port}")
   private transient int port;
-  
+
+  /**
+   * Returns the content of the file named by "path".
+   */
+  @Before public void fileContent() throws Exception {
+    content = new byte[HEADLENGTH];
+    getClass().getResourceAsStream("/static/images/Head.png").read(content);
+  }
+
  /**
   * Method that can be executed in order to test the connection to the Home
   * page If something goes wrong (the connection fails or the page has a
@@ -160,12 +173,11 @@ public class SystemTests {
   }
 
  /**
-  * Method that can be executed in order to test if Head.png is being served.
+  * Checks if the headers of a file are correct.
   * @throws Exception if the image is not being served.
   */
   @Test
-  public void testHead() throws Exception {
-
+  public void testHeaders() throws Exception {
    /*  
     * Information given by a GET petition to the URL specified by the first
     * parameter is stored on an ResponseEntity.
@@ -173,7 +185,6 @@ public class SystemTests {
     final ResponseEntity<byte[]> entity = new TestRestTemplate()
                  .getForEntity("http:/" + "/localhost:" 
                  + this.port + "/images/Head.png", byte[].class);
-
    /*
     * Check if the StatusCode is equal to 200 (HttpStatus.OK) which is the 
     * standard response for succesful HTTP requests. If correct, it means 
@@ -194,19 +205,27 @@ public class SystemTests {
     * the returned entity has the same length as the png file we are testing. If the
     * verification is not positive it throws an error with the given message.
     */
-    assertEquals("Wrong length\n", entity.getHeaders().getContentLength(), 442526);
+    assertEquals("Wrong length\n", entity.getHeaders().getContentLength(), HEADLENGTH);
+  }
 
-    // It reads the content of the file in server, to compare it after.
-    final InputStream reader = getClass().getResourceAsStream("/static/images/Head.png");
-    final byte[] contenido = new byte[442526];
-    reader.read(contenido);
-
+ /**
+  * Checks if the body of a file is the correct.
+  * @throws Exception if the image is not being served.
+  */
+  @Test
+  public void testBody() throws Exception {
+   /*  
+    * Information given by a GET petition to the URL specified by the first
+    * parameter is stored on an ResponseEntity.
+    */
+    final ResponseEntity<byte[]> entity = new TestRestTemplate()
+                 .getForEntity("http:/" + "/localhost:" 
+                 + this.port + "/images/Head.png", byte[].class);
    /*
     * Checks if the content of the GET petition is correct. This means, the returned
     * entity is the png file we wanted. If the verification is not positive it throws
     * an error with the given message.
     */
-    assertTrue("Wrong content\n", Arrays.equals(entity.getBody(), contenido));
-    reader.close();
+    assertTrue("Wrong content\n", Arrays.equals(entity.getBody(), content));
   }
 }
