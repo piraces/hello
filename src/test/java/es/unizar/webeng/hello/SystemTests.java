@@ -22,8 +22,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.InputStream;
 
  /*
   * Indicates that the class should use Spring's JUnit facilities. 
@@ -196,16 +195,16 @@ public class SystemTests {
     */
     assertEquals("Wrong length\n", entity.getHeaders().getContentLength(), 442526);
 
-    final File fichero = new File("/static/images/Head.png");
-    final FileInputStream ficheroStream = new FileInputStream(fichero);
-    final byte[] contenido = new byte[(int)fichero.length()];
-    ficheroStream.read(contenido);
+    final InputStream reader = getClass().getResourceAsStream("/static/images/Head.png");
 
    /*
     * Checks if the content of the GET petition is correct. This means, the returned
     * entity is the png file we wanted. If the verification is not positive it throws
     * an error with the given message.
     */
-    assertEquals("Wrong content\n", entity.getBody(), contenido);
+    for (int i = 0; i < entity.getBody().length; i++) {
+      assertEquals("Wrong content\n", entity.getBody()[i], reader.read());
+    }
+    reader.close();
   }
 }
