@@ -221,8 +221,6 @@ public class SystemTests {
   * Checks if the body of a file is the correct.
   */
   public void testBody(final ResponseEntity<byte[]> entity) throws Exception {
-    /* It reads the content of the file stayed in server */
-    fileContent();
    /*
     * Checks if the content of the GET petition is correct. This means, the returned
     * entity is the png file we wanted. If the verification is not positive it throws
