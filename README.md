@@ -1,4 +1,4 @@
-# Web Engineering 2015-2016 / Hello
+﻿# Web Engineering 2015-2016 / Hello
 
 Please, go to the [Wiki](https://github.com/UNIZAR-30246-WebEngineering/hello/wiki) in order to get the instructions for this assignment.
 
@@ -17,11 +17,11 @@ Jorge Martinez Lascorz | 571735 | [![Build Status](https://travis-ci.org/JorgeCo
 [David Nicuesa Aranda](https://travis-ci.org/Nicu1309/hello) | 653224 | [![Build Status](https://travis-ci.org/Nicu1309/hello.svg)](https://travis-ci.org/Nicu1309/hello)
 [EduIbanez](https://github.com/EduIbanez/hello) | 528074 | [![Build Status](https://travis-ci.org/EduIbanez/hello.svg)](https://travis-ci.org/EduIbanez/hello)
 [Sergio Soro Miranda](https://github.com/teruyi/hello) | 671250 | [![Build Status](https://travis-ci.org/teruyi/hello.svg)](https://travis-ci.org/teruyi/hello)
-[Alberto Álvarez Aldea](https://github.com/albert17hello)| 681687 | [![Build Status](https://travis-ci.org/albert17/hello.svg)](https://travis-ci.org/albert17/hello)
+[Alberto Álvarez Aldea](https://github.com/albert17hello)| 681687 | [![Build Status](https://travis-ci.org/albert17/hello.svg)](https://travis-ci.org/albert17/hello) | | | | | :gift:
 [Oscar Clemente Pedrico] (https://github.com/OscarClemente/hello) | 530162 | [![Build Status](https://travis-ci.org/OscarClemente/hello.svg)](https://travis-ci.org/OscarClemente/hello)
 [Iñigo Gascón Royo] (https://github.com/Gascon95/hello) | 685215 | [![Build Status](https://travis-ci.org/Gascon95/hello.svg)](https://travis-ci.org/Gascon95/hello)
 Adrian Susinos Moreno | 650220 | [![Build Status](https://travis-ci.org/ader9/hello.svg)](https://travis-ci.org/ader9/hello)
-[Santiago Gil Begué] (https://github.com/Santi-7/hello) | 683482 | [![Build Status](https://travis-ci.org/Santi-7/hello.svg)](https://travis-ci.org/Santi-7/hello)
+[Santiago Gil Begué] (https://github.com/Santi-7/hello) | 683482 | [![Build Status](https://travis-ci.org/Santi-7/hello.svg)](https://travis-ci.org/Santi-7/hello) | | | | | :gift:
 [Carlos Escuí­n Blasco](https://github.com/xarlieskin/hello) | 545003 | [![Build Status](https://travis-ci.org/xarlieskin/hello.svg)](https://travis-ci.org/xarlieskin/hello)
 [Alberto Revel] (https://github.com/albertorevel/hello) | 628704 | [![Build Status](https://travis-ci.org/albertorevel/hello.svg)](https://travis-ci.org/albertorevel/hello)
 [Raul Piracés Alastuey](https://github.com/piraces/hello) | 490790 | [![Build Status](https://travis-ci.org/piraces/hello.svg)](https://travis-ci.org/piraces/hello) | [![codecov.io](http://codecov.io/github/piraces/hello/coverage.svg?branch=master)](http://codecov.io/github/piraces/hello?branch=master) | [App](https://piraces-hello.herokuapp.com/) |  [![VersionEye.com](https://www.versioneye.com/user/projects/56096c4c5a262f001e000537/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56096c4c5a262f001e000537?child=summary) | | :gift:
@@ -33,5 +33,8 @@ Agustin Navarro Torres | 587570 | [![Build Status](https://travis-ci.org/SirBarg
 Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/luisjesuspellicer/hello.svg)](https://travis-ci.org/luisjesuspellicer/hello)
 [Marcos Ruiz García](https://github.com/marcosruiz/hello) | 648045 | [![Build Status](https://travis-ci.org/marcosruiz/hello.svg)](https://travis-ci.org/marcosruiz/hello)
 Óscar Meler Murillo | 608919 | [![Build Status](https://travis-ci.org/oscarmeler/hello.svg)](https://travis-ci.org/oscarmeler/hello)
+[Aron Collados Torres](https://github.com/rached193/hello) | 626558 | [![Build Status](https://travis-ci.org/rached193/hello.svg)](https://travis-ci.org/rached193/hello)
 [Diego Sánchez Castillo](https://github.com/diegozgz92/hello) | 628279 | [![Build Status](https://travis-ci.org/diegozgz92/hello.svg)](https://travis-ci.org/diegozgz92/hello)
 [Rubén Gabás Celimendiz](https://github.com/PhyrionX/hello) | 590738 | [![Build Status](https://travis-ci.org/PhyrionX/hello.svg)](https://travis-ci.org/PhyrionX/hello)
+[Daniel Forcén Esteban](https://github.com/dforcen/hello) | 558471 | [![Build Status](https://travis-ci.org/dforcen/hello.svg)](https://travis-ci.org/dforcen/hello) | | | | | :gift:
+Ramón José Arellano Bitrián | 594040 | [![Build Status](https://travis-ci.org/Enrohk/hello.svg)](https://travis-ci.org/Enrohk/hello)

@@ -13,7 +13,7 @@ Provides to the main JSP page of the project, a simple way to make the client-si
 
     <!-- Shows an image as head of our page-->
 
-	<img src="/images/Head.png" />
+	<img src="/images/Head.png" alt="Head" />
 
 	<!-- Shows the time and a message (From HelloController)
 	divided on two lines and one message per line, with glyphicons added

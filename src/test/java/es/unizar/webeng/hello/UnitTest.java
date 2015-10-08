@@ -1,5 +1,6 @@
 package es.unizar.webeng.hello;
 
+
 /* Imports the CoreMatchers object that will be used
  * to examine if the specified objects match with the
  * given matchers.
@@ -11,19 +12,16 @@ import static org.hamcrest.CoreMatchers.*;
  * could be useful for writing methods. Failed assertions
  * will be the only ones recorded.
  */
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
 import java.util.HashMap;
-
-
 
 /*
  * Indicates that the class should use Spring's JUnit facilities. 
@@ -48,13 +46,11 @@ import java.util.HashMap;
  */
 public class UnitTest {
 
-  // Set the default value from the config file: application.properties
-  @Value("${app.message:Hello World}")
-  private String message;
-
-  // Place an instance of HelloController into field
+ /**
+  * @Autowired Place an instance of HelloController into field.
+  */
   @Autowired
-  private HelloController controller;
+  private transient HelloController controller;
 
  /**
   * The function run the unity tests, if a test fail, the function will throw
@@ -68,8 +64,8 @@ public class UnitTest {
   @Test
   public void testMessage() throws Exception {
 
-    HashMap<String, Object> map = new HashMap<>();
-    String view = controller.welcome(map);   
+    final HashMap<String, Object> map = new HashMap<>();
+    final String view = controller.welcome(map);   
 
 
    /*
@@ -85,12 +81,12 @@ public class UnitTest {
     // Check that the time field contain a Date object
     assertThat(map.get("time"), instanceOf(Date.class));
     // Check that the Date is correct
-    Date date = ((Date) map.get("time"));
+    final Date date = ((Date) map.get("time"));
    /*
     * An exception is thrown if the date given by 'controller.welcome()' is
     * later to date 'now'
     */
-    Date now = new Date();
+    final Date now = new Date();
     assertThat(date.after(now), is(false));
   }
 
@@ -100,7 +96,7 @@ public class UnitTest {
   */
   @Test
   public void testUserdata() throws Exception {
-    String view = controller.userdata();
+    final String view = controller.userdata();
    /*
     * It checks that the message returned by 'controller.userdata()' is
     * correct ("userdata")

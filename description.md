@@ -1,4 +1,4 @@
-#Hello Application
+﻿#Hello Application
 
 ##About
 Hello is a web application that greets their clients and shows the current date and time. It is developed in Java and uses [Spring Framework] (http://projects.spring.io/spring-framework/).
@@ -49,6 +49,30 @@ Testing your code is very easy.
 
 	$ cd hello
 	$ gradle test
+
+###Issues
+
+
+  	 *What went wrong:
+  	 A problem occurred evaluating root project 'hello'.
+
+**Problem:** In the Ubuntu repository has a version less than 1.6 Gradle , higher versions use other syntax.
+
+**Solution:** Download the latest version from the official website [Gradle](http://gradle.org).
+
+Execute:
+
+    $ ~/Gradle-XX/bin/Gradle
+
+Or add it to the environment variables to use as command.
+
+    $ *What went wrong:
+    $ Execution failed for task ':compileJava'.
+    $ >invalid source release: 1.8
+
+**Solution 1:** Update Java Path
+
+**Solution 2:** Make sure that you have installed JDK not the JRE
 
 The later command will compile normal and tests classes in your project. Then test classes will be executed and tested.
 Error message will appear in the screen if something has gone wrong.
@@ -220,8 +244,36 @@ Type this into the command line to bring up the 21 most common git commands. You
 
 ##GitHub Desktop
 If you want to simplify essential steps in your GitHub workflow you can install the [GitHub Desktop] (https://desktop.github.com/) app on your Windows or Mac computer.
-This app is an alternative to use git from the command line, but is more suited to developers who are in the development-to-deployment workflow and not for those working on open source projects or who use GitHub to monitor bugs, feature requests or other problems in existing applications. 
+This app is an alternative to use git from the command line, but is more suited to developers who are in the development-to-deployment workflow and not for those working on open source projects or who use GitHub to monitor bugs, feature requests or other problems in existing applications.
 [Here] (https://help.github.com/desktop/) you can find all necessary documentation for getting started.
+
+##Permissions
+If you have issues with file permissions, you can change them with the command:
+
+    $> git update-index --chmod=[opt] [file]
+
+Options are like linux command chmod. File can be an absolute path.
+
+For example, if you want to remove executable permissions to the SystemTests.java file, you'd have to do:
+
+    $> git update-index --chmod=-x src/test/java/es/unizar/webeng/hello/SystemTests.java
+
+Then, save your changes:
+
+    $> git commit -m "Changing file permissions"
+    $> git push
+
+##SourceTree
+Other way to simplify your work with GitHub is using SourceTree with is other of app, just like GitHub desktop but with some differences.
+With SourceTree you can have local repositories from other repository sites like mercurial.
+SourceTree also works with windows and mac.
+You can get SourceTree app from the [SourceTreeApp website] (https://www.sourcetreeapp.com/)
+
+Installation guide (For windows):
+- First you have to download the app, [Here is the link] (https://www.sourcetreeapp.com/download)
+- Run the downloaded file.
+- Continue the required steps until the installation ask you for you git/mercurial account. Then you can log in and get the repositories from your account or skip that phase and do it later. 
+- If you want to add a repository after the installation you have to click the button at the bottom left with (Add Repository) and add the path or select it from the web and add the local path wherre you want to clone it.
 
 ##Spring Framework
 
@@ -389,7 +441,7 @@ In additional to the search and follow feature, VersionEye can actively monitor 
 
 ###The project and it's dependencies
 - It's important for any project of any kind, to check dependencies frequently. Otherwise, your project can contain outdated libraries. Outdated libraries can cause security breaches or bugs of any type, than can affect to the project in a hard way.
-- Several popular github (and others) repositories check their dependencies like do VersionEye. Dependencies and updates are so boring and frequently (but important). The solution is automatize the check of updates, and get notified when they are outdated. Some examples of projects using this are: bootstrap, emberjs and famous Java (or JavaScript) libraries. 
+- Several popular github (and others) repositories check their dependencies like do VersionEye. Dependencies and updates are so boring and frequently (but important). The solution is automatize the check of updates, and get notified when they are outdated. Some examples of projects using this are: bootstrap, emberjs and famous Java (or JavaScript) libraries.
 
 ###More about dependencies
 - In the original project, two libraries were being used (jQuery and bootstrap). Taking a look at the dependencies (running `gradle dependencies`), it looks like it has two recursive dependencies. It's because one library used in bootstrap is jquery (that is also included). Watching this, we are making gradle to work a little more. We can just drop the jquery library and gradle will take it from the bootstrap dependency (without having recursive libraries). The problem can be seen here:
@@ -400,7 +452,7 @@ In additional to the search and follow feature, VersionEye can actively monitor 
 	+--- org.webjars:jquery:2.1.4
 ```
 
-- Another problem is libraries versions. In order to obtain the latest versions of library dependencies, we can use `gradle` or the `spring-boot-gradle` plugin to resolve that. But, in fact, the `spring-boot-gradle` plugin doesn't support automatically version resolving for bootstrap library (see the plugin [appendix](http://docs.spring.io/spring-boot/docs/current/reference/html/appendix-dependency-versions.html)), and gradle doesn't pick the correct latest version. 
+- Another problem is libraries versions. In order to obtain the latest versions of library dependencies, we can use `gradle` or the `spring-boot-gradle` plugin to resolve that. But, in fact, the `spring-boot-gradle` plugin doesn't support automatically version resolving for bootstrap library (see the plugin [appendix](http://docs.spring.io/spring-boot/docs/current/reference/html/appendix-dependency-versions.html)), and gradle doesn't pick the correct latest version.
 
 - Using the syntax `compile 'org.webjars:bootstrap:latest.release'` give us a alpha version of bootstrap that crashes when building the project. Also using the syntax `compile 'org.webjars:bootstrap:3.+'` to obtain latest minor version of mayor 3 version, give us the 3.3.4 version (which is outdated).
 
@@ -459,7 +511,7 @@ browsers and ither computer applications acting as clients in network protocols.
 ### Forms of use by author
 1. Inline: It not recommend because the code can be dirty.
 2. Internal style sheet: It's a better option than the last, because it separate the style and the code. But the file can be confuse.
-3. External style sheet: It's more potent than other because it separate completely the 
+3. External style sheet: It's more potent than other because it separate completely the
 4. formatting of the code. This option is the most used and recommended in web development.
 
 
@@ -478,7 +530,7 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 If you've OS X or Windows you probably need a little setup after installing. This is because docker run inside a lightweight Linux VM, so you need to setup a docker machine. Usually if you install Docker Toolbox it installs also the docker machine but you can also install only the docker machine.
 When you init Docker, it automatically inits docker machine, but when you run a container you need some configuration (see above).
 
-If you want to learn more about the Docker Machine: [link](https://docs.docker.com/machine/) 
+If you want to learn more about the Docker Machine: [link](https://docs.docker.com/machine/)
 
 ### Components of docker
 1. A <b>container</b> is a stripped-to-basics version of a Linux operating system.
@@ -496,30 +548,30 @@ Eg: A Dockerfile for a Java app
 	ADD . /src
 	CMD ["java", "-jar", "/src/HelloDocker.jar"]
 	```
-2. Build yor docker's image (e.g.: my image) typing: 
-	
+2. Build yor docker's image (e.g.: my image) typing:
+
 	```
 	$> docker build -t myimage .
 	```
-	
+
 	Then, docker loads the image (e.g. <i>java:8</i>) if you didn't download before.
-	
+
 	```
 	Step 0: FROM java:8
 	 ---> fb434121fc77
 	```
-	
+
 	Later Docker moves onto the next steam, in the example update the apt-get and add the 	files:
-	
+
 	```
 	Step 1 : RUN apt-get -y update
 	 ---> Running in 27d224dfa5b2
 	Ign http://archive.ubuntu.com trusty InRelease
 	Ign http://archive.ubuntu.com trusty-updates InRelease
 	```
-	
+
 	Finally, Docker finishes the build and reports comes out:
-	
+
 	```
 	Step 3 : CMD java -jar /src/HelloDocker.jar
 	 ---> Running in a8e6faa88df3
@@ -528,19 +580,19 @@ Eg: A Dockerfile for a Java app
 	Successfully built 7d9495d03763
 	```
 
-3. Run your docker typing: 
-	
+3. Run your docker typing:
+
 	<code>
-	$> docker run <i>name</i> 
+	$> docker run <i>name</i>
 	</code>
-	
+
 	And you can see:
-	
+
 	```
 	Hello Docker!!!
 	```
-	
-	
+
+
 ### Container ports
 If you use windows or OSX probably you can't acces to your container. To fix this <i>problem</i> you need to expose ports from the container to your local host.
 
@@ -590,7 +642,7 @@ Automated Builds allow you to use Docker Hub’s build clusters to automatically
 
 	```
 	$> docker images
-	
+
 	REPOSITORY           TAG          IMAGE ID          CREATED             VIRTUAL SIZE
 	docker-whale         latest       7d9495d03763      4 minutes ago       273.7 MB
 	docker/whalesay      latest       fb434121fc77      4 hours ago         247 MB
@@ -601,12 +653,12 @@ Automated Builds allow you to use Docker Hub’s build clusters to automatically
 
 	```
 	$> docker ps
-	
+
 	CONTAINER ID        IMAGE                        COMMAND                CREATED              	STATUS              PORTS               NAMES
 	4c01db0b339c        ubuntu:12.04                 bash                   17 seconds ago       	Up 16 seconds       3300-3310/tcp       webapp
 	```
-	
-	
+
+
 ## Markdown
 
 ### What is it?
@@ -614,9 +666,9 @@ Automated Builds allow you to use Docker Hub’s build clusters to automatically
 Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
 
 ### Pros
-- **Easy to learn:** 
+- **Easy to learn:**
  - In 10 minutes you can use markdown fluently.
-- **Easy to write and read:** 
+- **Easy to write and read:**
  - You can write and format text without using the mouse like a usual text editor (like Microsoft Word or LibreOffice Writer).
  - When you write do not use long labels to indicate the format of the text like in HTML.
  - You can read the text easily even in plain text.
@@ -634,18 +686,18 @@ Editors are good to learn easily all tags of markdown:
 
 ### JDepend
 
-JDepend traverses Java class file directories and generates design quality metrics for each Java package. JDepend allows you to automatically measure the quality of a design in terms of its extensibility, reusability, and maintainability to manage package dependencies effectively. 
+JDepend traverses Java class file directories and generates design quality metrics for each Java package. JDepend allows you to automatically measure the quality of a design in terms of its extensibility, reusability, and maintainability to manage package dependencies effectively.
 
 Before using JDepend, it is important to understand that "good" design quality metrics are not necessarily indicative of good designs. Likewise, "bad" design quality metrics are not necessarily indicative of bad designs. The design quality metrics produced by JDepend should not be used as yard sticks by which all designs are measured.
 
-The design quality metrics produced by JDepend are intended to be used by designers to measure the designs they create, understand those designs, and automatically check that the designs exhibit expected qualities while undergoing continuous refactoring. Refactoring will undoubtedly lead to some adjustment of these metrics as the shape of the design changes. 
+The design quality metrics produced by JDepend are intended to be used by designers to measure the designs they create, understand those designs, and automatically check that the designs exhibit expected qualities while undergoing continuous refactoring. Refactoring will undoubtedly lead to some adjustment of these metrics as the shape of the design changes.
 
 The JDepend plugin for Gradle performs quality checks on your project's source files using JDepend and generates reports from these checks.
 
 
 **Identify Package Dependency Cycles**
 
-Packages participating in a package dependency cycle are in a deadly embrace with respect to reusability and their release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques. 
+Packages participating in a package dependency cycle are in a deadly embrace with respect to reusability and their release cycle. Package dependency cycles can be easily identified by reviewing the textual reports of dependency cycles. Once these dependency cycles have been identified with JDepend, they can be broken by employing various object-oriented techniques.
 
 Package dependency cycles are best observed using the textual or XML user interface. In general, all packages dependencies that intersect a dependency cycle are reported. This includes packages directly participating in a cycle and packages that depend on packages directly participating in a cycle.
 
@@ -659,9 +711,9 @@ Here's an example of a two-package cycle, as reported by the textual UI:
            |-> com.xyz.ejb
 
 This indicates that the com.xyz.ejb package depends on the com.xyz.servlet package, which in turn depends on the com.xyz.ejb package. These two package must be released and reused together.
- 
+
 Here's an example of a package that depends on the two-package cycle described above, as reported by the textual UI:
- 
+
         com.xyz.client
            |
            |-> com.xyz.ejb
@@ -730,3 +782,14 @@ The command line is one of the oldest tools in the programming toolbox. Firebug 
 Having a fancy JavaScript debugger is great, but sometimes the fastest way to find bugs is just to dump as much information to the console as you can. Firebug gives you a set of powerful logging functions that help you get answers fast.
 
  These are the basic features you need to properly analyze and develop proper and more comfortable a web application that allows us to view, modify results in real time without modifying your source documents. 
+
+##[PMD](https://pmd.github.io/)
+PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth.
+Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code.
+
+###What does it do?
+PMD checks the rules indicated in build.gradle:pmd:ruleSets (you can add or delete rules there) and make a report with the class which violate the rule, what the rule means and in which line the rule is violated. Also, the number or rules violated are shown when gradle is builded.
+
+###How to use it?
+It will be use automatically with gradle check and it will create a xml report and a html report in /build/reports/pmd from test and main folders. You can also use it with gradle pmdMain if you only want to have a report from main folder or pmdTest if you want a report from test folder.
+>>>>>>> upstream/master
