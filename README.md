@@ -38,3 +38,4 @@ Luis Jesus Pellicer| 520256 | [![Build Status](https://travis-ci.org/luisjesuspe
 [Rubén Gabás Celimendiz](https://github.com/PhyrionX/hello) | 590738 | [![Build Status](https://travis-ci.org/PhyrionX/hello.svg)](https://travis-ci.org/PhyrionX/hello)
 [Daniel Forcén Esteban](https://github.com/dforcen/hello) | 558471 | [![Build Status](https://travis-ci.org/dforcen/hello.svg)](https://travis-ci.org/dforcen/hello) | | | | | :gift:
 Ramón José Arellano Bitrián | 594040 | [![Build Status](https://travis-ci.org/Enrohk/hello.svg)](https://travis-ci.org/Enrohk/hello)
+Daniel Uroz | 545338 | [![Build Status](https://travis-ci.org/uZetta27/hello.svg)](https://travis-ci.org/uZetta27/hello)

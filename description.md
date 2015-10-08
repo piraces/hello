@@ -792,3 +792,31 @@ PMD checks the rules indicated in build.gradle:pmd:ruleSets (you can add or dele
 
 ###How to use it?
 It will be use automatically with gradle check and it will create a xml report and a html report in /build/reports/pmd from test and main folders. You can also use it with gradle pmdMain if you only want to have a report from main folder or pmdTest if you want a report from test folder.
+
+##The Gradle Wrapper
+
+### What is it?
+The Gradle Wrapper is a script when you distribute it with your project, anyone can work with it without needing to install Gradle beforehand and users of the build are guaranteed to use the version of Gradle that the build was designed to work with. It's also great for continuous integration servers as it requires no configuration on the server.
+
+###How do I use it?
+You install the wrapper into your project by running the wrapper task. To specify a Gradle version use --gradle-version on the command-line (with Gradle 2.4 or higher)
+
+```
+> gradle wrapper --gradle-version 2.0
+:wrapper
+
+BUILD SUCCESSFUL
+
+Total time: 1 secs
+```
+
+You need to generate wrapper's files once (for a particular version) and it will generate these new or updated files in your directory:
+
+    simple
+    |--gradlew
+    |--gradlew.bat
+    |--gradlew/wrapper
+    |  |--gradle-wrapper.jar
+    |  |--gradle-wrapper-properties
+
+After these files have been added to the project, the project should then be built with the added **gradlew** command. The gradlew command can be used **exactly** the same way as the gradle command.
