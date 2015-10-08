@@ -719,9 +719,69 @@ Here's an example of a package that depends on the two-package cycle described a
            |-> com.xyz.ejb
            |   com.xyz.servlet
            |-> com.xyz.ejb
+ 
+This indicates that the com.xyz.client package depends on the com.xyz.ejb package, which in turn forms a cyclic dependency with the com.xyz.servlet package. The com.xyz.client package itself isn't part of the cycle, but since it depends on a package in the cycle, it can't be reused/released without it. 
+
+#FIREBUG
+
+###What is it?
+
+Firebug is a free and open-source web browser extension for Mozilla Firefox that facilitates the live debugging, editing, and monitoring of any website's CSS, HTML, DOM, XHR, and JavaScript.
+
+In addition to debugging web pages, Firebug is a useful tool for web security testing and web page performance analysis.
+
+You can download and install this addon in: http://getfirebug.com
+
+Press f12 to launch firebug.
+
+### Basic Features
+
+####Always at your service
+
+Firebug is always just a keystroke away, but it never gets in your way. You can open Firebug in a separate window, or as a bar at the bottom of your browser. Firebug also gives you fine-grained control over which websites you want to enable it for. 
 
 
-This indicates that the com.xyz.client package depends on the com.xyz.ejb package, which in turn forms a cyclic dependency with the com.xyz.servlet package. The com.xyz.client package itself isn't part of the cycle, but since it depends on a package in the cycle, it can't be reused/released without it.
+####Inspect and edit HTML
+
+Firebug makes it simple to find HTML elements buried deep in the page. Once you've found what you're looking for, Firebug gives you a wealth of information, and lets you edit the HTML live.
+
+Firefox has a "View Source" window, but it doesn't show you what the HTML source really looks like once it has been transformed by JavaScript. Firebug's HTML tab shows you what the HTML looks like right now.
+
+Firebug gives you a really fun way to make experimental HTML changes and see them take effect instantly. You can create, delete, or edit HTML attributes and text just by clicking them and tabbing from one to the next. The changes will be applied immediately as you type. 
+
+You can find elements with the mouse.
+
+Right-click on any element, and you'll have several options for copying aspects of that element to the clipboard, including its HTML fragment, the value of its "innerHTML" property, or an XPath expression that identifies the element uniquely. 
+
+####Visualize CSS metrics
+
+When your CSS boxes aren't lining up correctly it can be difficult to understand why. Let Firebug be your eyes and it will measure and illustrate all the offsets, margins, borders, padding, and sizes for you.
+
+####Monitor network activity
+
+Allows us to analyze network traffic, load times of all components of our being able to monitor the total load time of the page and delays, also we will mark components that have not been able to load or components load times too high.
+
+####Debug and profile JavaScript
+
+Firebug includes a powerful JavaScript debugger that lets you pause execution at any time and have look at the state of the world. If your code is a little sluggish, use the JavaScript profiler to measure performance and find bottlenecks fast.
+
+####Quickly find errors
+
+When things go wrong, Firebug lets you know immediately and gives you detailed and useful information about errors in JavaScript, CSS, and XML.
+
+####Explore the DOM
+
+The Document Object Model is a great big hierarchy of objects and functions just waiting to be tickled by JavaScript. Firebug helps you find DOM objects quickly and then edit them on the fly.
+
+####Execute JavaScript on the fly
+
+The command line is one of the oldest tools in the programming toolbox. Firebug gives you a good ol' fashioned command line for JavaScript complete with very modern amenities.
+
+####Logging for JavaScript
+
+Having a fancy JavaScript debugger is great, but sometimes the fastest way to find bugs is just to dump as much information to the console as you can. Firebug gives you a set of powerful logging functions that help you get answers fast.
+
+ These are the basic features you need to properly analyze and develop proper and more comfortable a web application that allows us to view, modify results in real time without modifying your source documents. 
 
 ##[PMD](https://pmd.github.io/)
 PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth.
