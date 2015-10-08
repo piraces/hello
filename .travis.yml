@@ -1,7 +1,13 @@
+#Tell Travis CI that the project is written in Java
 language: java
+#Test against Oravle JDK 8
 jdk:
   - oraclejdk8
+
+#For a public repository on Travis CI where we want to apply codecov.io continous code coverage, we need to add the following custom commands.
+#Before the installation, we install an additional dependencie requiered by our project. In this case, to integrate codecov.io we are using the tool "pip" (http://pip.readthedocs.org/), wich install and manages Python packages.
 before_install:
-  - pip install --user codecov
+  - pip install --user codecov 
 after_success:
   - codecov
+#Once it has been succeeded built, the integration is done, as we can see in the example for the codecov.io coverage on Java at https://github.com/codecov/example-java
