@@ -792,4 +792,3 @@ PMD checks the rules indicated in build.gradle:pmd:ruleSets (you can add or dele
 
 ###How to use it?
 It will be use automatically with gradle check and it will create a xml report and a html report in /build/reports/pmd from test and main folders. You can also use it with gradle pmdMain if you only want to have a report from main folder or pmdTest if you want a report from test folder.
->>>>>>> upstream/master
